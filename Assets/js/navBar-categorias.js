@@ -16,5 +16,7 @@ function actualizarCategoriasNavBar(categorias){
         dropmenu.appendChild(item); //Se lo agregamos al dropmenu
     });
 }
-gt
+
 actualizarCategoriasNavBar(categorias);
+
+// <3 Me agradan amigos
