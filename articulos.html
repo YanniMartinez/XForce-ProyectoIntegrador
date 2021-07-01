@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>e -commerce</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">E-Commerse</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,152 +25,256 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            Categorias
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
+                        <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
+                            <!-- <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Something else here</a> -->
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="articulos.html" tabindex="-1" aria-disabled="true">Articulos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Carrito</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
     </header>
 
 
 
-    <div class="col-md-3 col-xl-2 bd-sidebar">
-        <form role="search" class="bd-search d-flex align-items-center">
-            <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input
-                    type="search" class="form-control ds-input" id="search-input" placeholder="Search..."
-                    aria-label="Search for..." autocomplete="off" data-docs-version="4.6" spellcheck="false"
-                    role="combobox" aria-autocomplete="list" aria-expanded="false"
-                    aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;"
-                    dir="auto">
-                <pre aria-hidden="true"
-                    style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
-                <span class="ds-dropdown-menu"
-                    style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"
-                    role="listbox" id="algolia-autocomplete-listbox-0">
-                    <div class="ds-dataset-1"></div>
-                </span>
-            </span>
-            <button class="btn bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse"
-                data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false"
-                aria-label="Toggle docs navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"
-                    focusable="false">
-                    <title>Menu</title>
-                    <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
-                        d="M4 7h22M4 15h22M4 23h22"></path>
-                </svg>
-            </button>
-        </form>
+    <!--Contenedor principal-->
+    <div class="container-fluid">
 
-        <div class="collapse d-md-block row" id="bd-docs-nav">
-            <nav class="bd-links" aria-label="Main navigation">
+            
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>Find Al Layout</h3>
+            </div>
+            <div class="col-sm-6" >
+                <h3>163 Layout</h3>
+            </div>
+            <div class="col-sm-1 p-2" >
+                
+                <h6>View Mode</h6>
+                
+            </div>
+            <div class="col-sm-2 align-center">
+                <a href="index.html">
+                    <img  src="https://www.pequeocio.com/wp-content/uploads/2016/05/acertijos-para-ninos-1-.jpg" alt="" width="65px">
+                </a>
+                
+            </div>
+        </div>
 
-                <div class="bd-toc-item active">
-                    <a class="bd-toc-link" href="/docs/4.6/getting-started/introduction/">
-                        Getting started
-                    </a>
-                    <ul class="nav bd-sidenav">
-                        <li class="active bd-sidenav-active">
-                            <a href="/docs/4.6/getting-started/introduction/">Introduction</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/download/">Download</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/contents/">Contents</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/browsers-devices/">Browsers &amp; devices</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/javascript/">JavaScript</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/theming/">Theming</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/build-tools/">Build tools</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/webpack/">Webpack</a>
-                        </li>
-                        <li>
-                            <a href="/docs/4.6/getting-started/accessibility/">Accessibility</a>
-                        </li>
-                    </ul>
+
+
+        <div class="row">
+            <div class="col-sm-3" >
+
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><h6>Search </h6> </button>
+                    </span>
                 </div>
 
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/layout/overview/">
-                        Layout
-                    </a>
+                <div>
+                    <input type="text" class="form-control ">
                 </div>
 
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/content/reboot/">
-                        Content
-                    </a>
-                </div>
-
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/components/alerts/">
-                        Components
-                    </a>
-                </div>
-
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/utilities/borders/">
-                        Utilities
-                    </a>
-                </div>
-
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/extend/approach/">
-                        Extend
-                    </a>
-                </div>
-
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/migration/">
-                        Migration
-                    </a>
-                </div>
-
-                <div class="bd-toc-item">
-                    <a class="bd-toc-link" href="/docs/4.6/about/overview/">
-                        About
-                    </a>
-                </div>
-                |
-            </nav>
-            <div class="col-5  bg-dark">
-
-                <p>jpña</p>
             </div>
 
+        
+            
         </div>
+
+        <!--Unicio segunda fila-->
+        <div class="row">
+
+            <div class="col-sm-3" >
+
+                <div>
+                    <br>
+                </div>
+
+                <div>
+                    <h6>Categories</h6>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Art & Design
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Business
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Community & Non-Profit
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Education
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Events
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Fashion & Beauty
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Foof & Drink
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Health & Fitness
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Online Store
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
+                    <label class="form-check-label" for="blankCheckbox">
+                        Services
+                    </label>
+                </div>
+                
+                
+
+            </div>
+
+            
+            <!--Primera seccion de cartas vertical-->
+            <div class="col-sm-3" class="card-group" >
+                
+                <div class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+
+                <div class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+
+                <div  class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Segunda seccion de cartas verticales-->
+            <div class="col-sm-3" class="card-group" >
+                
+                <div class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency Blog Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+
+                <div class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+
+                <div  class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tercera seccion de cartas vertical-->
+            <div class="col-sm-3" class="card-group" >
+                
+                <div  class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency Contact Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+
+                <div  class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+
+                <div  class="card p-3  border-0">
+                    <img src="https://items.templately.com/item-2c105ede3fa85b952e39321364234069/bizzmate-agency-about-page-thumbnail-TCVMM4C.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                        <h5 class="card-title">Agency About Page</h5>
+                        <p class="card-text">Layout</p>
+                    </div>
+                </div>
+            </div>
+            
+
+        <!--Fin segunda fila-->
+        </div>
+
+        
+    <!--Fin contenedor principal-->
+    </div>
 
         <!-- Columna de Elementos: -->
 
@@ -184,6 +288,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
+        <script src="assets/js/navBar-categorias.js"></script>
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--
