@@ -1,5 +1,5 @@
 //Clase para el objeto tarjeta
-class card
+class Card
 {
     #imagen="";
     #nombre="";
@@ -18,7 +18,7 @@ class card
     //Siver para poner los valores a los atributos principales del objeto
     set imagen(value){this.#imagen=value;}
     set nombre(value){this.#nombre=value;}
-    set descripcion(value){this.#descripcion=value;}
+        set descripcion(value){this.#descripcion=value;}
     set etiqueta(value){this.#etiqueta=value;}
 
     //Obtenemos los valores
@@ -59,9 +59,30 @@ class card
         div.appendChild(div2);
 
         return div;
-
     }
 }
+
+function insertarCards(cards){
+    let j = 0;
+    cards.forEach((card,i) => {
+        document.querySelector(`#card-group-${i-j}`).appendChild(card.crearCard());
+        if((i+1)%3 == 0){
+            j = j + 3
+        }
+    });
+}
+let array = [];
+for (let i = 0; i < 6; i++) {
+    let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
+    array.push(carro);
+}
+
+insertarCards(array);
+// document.querySelector('#producto').appendChild(crearSeccion(array));
+// let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
+// document.querySelector('#card-group-1').appendChild(carro.crearCard());
+// console.log();
+
 
 /**<div class="card p-3  border-0">
                         <img src="" class="card-img-top" alt="..." id="card">
