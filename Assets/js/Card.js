@@ -15,7 +15,7 @@ class Card{
 
     /*  Consumimos el API  y guardamos los valores en nuestros atributos*/
     getInfo(){
-        fetch(`https://workshop-mongo.herokuapp.com/pokemon/name/${this.sticker}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
+        fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${this.sticker}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
         .then(data => data.json())
         .then(data => {
             //console.log(data[0]); Sólo para comprobar que si nos devuelve la info
@@ -25,13 +25,27 @@ class Card{
             this.description = data[0].abilities[1]; //Asignamos una habilidad a nuestra descripción
             this.img = data[0].img; //Almancenamos el url en nuestro atributo img
             
+            
             this.modifTitle("#titulo");
             this.modifDescription("#descripcion");
-            
             this.modifImg("#imagen");
+
+            this.name = data[1].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
+            this.description = data[1].abilities[1]; //Asignamos una habilidad a nuestra descripción
+            this.img = data[1].img; //Almancenamos el url en nuestro atributo img
+            this.modifTitle("#titulo2");
+            this.modifDescription("#descripcion2");
+            this.modifImg("#imagen2");
+
+            this.name = data[2].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
+            this.description = data[2].abilities[1]; //Asignamos una habilidad a nuestra descripción
+            this.img = data[2].img; //Almancenamos el url en nuestro atributo img
+            this.modifTitle("#titulo3");
+            this.modifDescription("#descripcion3");
+            this.modifImg("#imagen3");
         }).catch(e => console.log(e));
         
-
+            
     }
 
     /**
@@ -63,6 +77,35 @@ class Card{
 
 }
 
-/* Probando */
-const Pikachu = new Card("pikachu"); //Declaramos un objeto tipo card y le mandamos como etiqueta "pikachu", esto de forma más profesional puede ser la categoria general como "hombre, mujer, etc".
-Pikachu.getInfo();
+
+
+/* Probando */    
+/*const Pikachu = new Card("pikachu"); //Declaramos un objeto tipo card y le mandamos como etiqueta "pikachu", esto de forma más profesional puede ser la categoria general como "hombre, mujer, etc".
+Pikachu.getInfo();*/
+
+let button=document.querySelector('#Agua'); //Relacionando con el botón.
+button.addEventListener('click', event => {
+    //Llamamos a nuestra funcion mian
+    
+    const Agua = new Card("water"); 
+    Agua.getInfo();
+
+})
+
+let button1=document.querySelector('#Fuego'); //Relacionando con el botón.
+button1.addEventListener('click', event => {
+    //Llamamos a nuestra funcion mian
+    
+    const Fuego = new Card("fire"); 
+    Fuego.getInfo()
+    
+})
+
+let button2=document.querySelector('#Hierva'); //Relacionando con el botón.
+button2.addEventListener('click', event => {
+    //Llamamos a nuestra funcion mian
+    
+    const Hierva = new Card("grass"); 
+    Hierva.getInfo()
+
+})
