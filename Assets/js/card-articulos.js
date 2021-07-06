@@ -62,7 +62,7 @@ class Card
     }
 }
 
-function insertarCards(cards){
+function insertCards(cards){
     let j = 0;
     cards.forEach((card,i) => {
         document.querySelector(`#card-group-${i-j}`).appendChild(card.crearCard());
@@ -71,13 +71,49 @@ function insertarCards(cards){
         }
     });
 }
-let array = [];
-for (let i = 0; i < 6; i++) {
-    let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
-    array.push(carro);
+
+function loadCards(){
+    let obj = [];
+    let categoria = "water"; 
+    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    .then(resp => resp.json())
+    .then(data => {
+        let cards = jsonToCard(data);
+        console.log(cards);
+        insertCards(cards);
+    });
 }
 
-insertarCards(array);
+function loadCards(categoria){
+    let obj = [];
+    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    .then(resp => resp.json())
+    .then(data => {
+        let cards = jsonToCard(data);
+        console.log(cards);
+        insertCards(cards);
+    });
+}
+
+function jsonToCard(data){
+    let cards = [];
+    data.forEach(d => {
+        let card = new Card(d.img,d.name,d.species,d.evolution);
+        cards.push(card);
+    });
+    return cards;
+}
+// document.body.onload = loadCards();
+loadCards("water");
+
+
+// let array = [];
+// for (let i = 0; i < 10; i++) {
+//     let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
+//     array.push(carro);
+// }
+
+// insertarCards(array);
 // document.querySelector('#producto').appendChild(crearSeccion(array));
 // let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
 // document.querySelector('#card-group-1').appendChild(carro.crearCard());
