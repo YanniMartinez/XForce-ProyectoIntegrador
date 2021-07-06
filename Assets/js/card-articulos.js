@@ -31,6 +31,7 @@ class Card
     {
         let div= document.createElement("div");
         div.classList="card p-3  border-0";
+        div.style = "width: 18rem;";
 
         let img=document.createElement("img");
         img.classList="card-img-top";
