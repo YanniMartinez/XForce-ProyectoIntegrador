@@ -71,22 +71,9 @@ function insertarCategorias(categorias){
     });
 }
 
-
-let button=document.querySelector('#btn-categorias-lat'); //Relacionando con el botón.
-button.addEventListener('click', event => {
-    let elements = document.querySelector("#categoriaslat").elements;
-    for(let i = 0; i < elements.length; i++){
-        if (elements[i].checked){
-            console.log(elements[i].value);
-        }    
-    }
-
-
-})
-
 let checks=[];
 
-let array = ["electrodomestico", "ropa","computo","celulares","videojuegos"];
+let array = ["water", "fire","grass","electric"];
 array.forEach(element => {
     let checkbox=new Check(element);
     checks.push(checkbox);
