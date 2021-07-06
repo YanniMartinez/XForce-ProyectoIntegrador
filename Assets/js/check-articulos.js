@@ -48,7 +48,7 @@ class Check
         let label=document.createElement("label");
         label.classList="form-check-label";
         label.for="blankCheckbox";
-        label.textContent=this.#nombre.toUpperCase();
+        label.textContent=  this.#nombre.charAt(0).toUpperCase() + this.#nombre.slice(1);
 
         
         
@@ -73,11 +73,12 @@ function insertarCategorias(categorias){
 
 let checks=[];
 
-let array = ["electrodomesticos", "ropa","computo","celulares","videojuegos"];
+let array = ["water", "fire","grass","electric"];
 array.forEach(element => {
     let checkbox=new Check(element);
     checks.push(checkbox);
 });
+
 
 
 insertarCategorias(checks); 

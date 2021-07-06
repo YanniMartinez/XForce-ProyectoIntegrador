@@ -31,6 +31,7 @@ class Card
     {
         let div= document.createElement("div");
         div.classList="card p-3  border-0";
+        div.style = "width: 18rem;";
 
         let img=document.createElement("img");
         img.classList="card-img-top";
@@ -103,8 +104,20 @@ function jsonToCard(data){
     });
     return cards;
 }
+
+let button=document.querySelector('#btn-categorias-lat'); //Relacionando con el botón.
+button.addEventListener('click', event => {
+    let elements = document.querySelector("#categoriaslat").elements;
+    for(let i = 0; i < elements.length; i++){
+        if (elements[i].checked){
+            loadCards(elements[i].value);
+        }    
+    }
+
+
+})
 // document.body.onload = loadCards();
-loadCards("water");
+loadCards("grass");
 
 
 // let array = [];
