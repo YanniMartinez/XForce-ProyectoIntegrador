@@ -1,58 +1,103 @@
-document.body.onload = addElement;
+//Clase para el objeto tarjeta
+class Card
+{
+    #imagen="";
+    #nombre="";
+    #descripcion="";
+    #etiqueta="";
 
-function addElement (categoria) {
-    console.log(categoria)
-      fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
-      .then(data => data.json())
-      .then(data => {
 
-            var newDiv = document.createElement("div");//Crea un div
-            newDiv.classList="card p-3  border-0"; //Le añade una clase
-           // newDiv.style.height = "18rem"; //Le añade el estilo para la altura
-  
-            var newImg =  document.createElement("img"); 
-            newImg.classList.add("card-img-top"); 
-            //newImg.height=300;
-  
-              var newDiv2 = document.createElement("div");
-              newDiv2.classList.add("card-body"); //Le añade una clase
-  
-                var h5 = document.createElement("h5");
-                h5.classList.add("card-title");
-  
-                var p = document.createElement("p");
-                p.classList.add("card-text");
-  
-                var a = document.createElement("a");
-                a.href = "#";
-                a.classList.add("btn","btn-primary");
-  
-              h5.textContent = data[0].name;
-              p.textContent = data[0].abilities[1];
-              a.textContent = "Comprar";
-              //Agregando hijos en el Div2
-              newDiv2.appendChild(h5); 
-              newDiv2.appendChild(p); 
-              newDiv2.appendChild(a); 
-  
-            newImg.src = data[0].img;
-            newDiv.appendChild(newImg); //añade texto al div creado.
-            newDiv.appendChild(newDiv2);
-  
-            // añade el elemento creado y su contenido al DOM
-            var currentDiv = document.getElementById("div1");
-            document.body.insertBefore(newDiv, currentDiv);
-  
-      }).catch(e => console.log(e));
-  
-  }
-  
-  let button=document.querySelector('#button'); //Relacionando con el botón.
-  button.addEventListener('click', event => {
-      //Llamamos a nuestra funcion mian
-      
-      addElement("water");
-      //const Agua = new Card("water"); 
-      //Agua.getInfo();
-  
-  })
+    constructor(imagen,nombre,descripcion,etiqueta)
+    {
+        this.#imagen=imagen;
+        this.#nombre=nombre;
+        this.#descripcion=descripcion;
+        this.#etiqueta=etiqueta;
+    }
+
+    //Siver para poner los valores a los atributos principales del objeto
+    set imagen(value){this.#imagen=value;}
+    set nombre(value){this.#nombre=value;}
+        set descripcion(value){this.#descripcion=value;}
+    set etiqueta(value){this.#etiqueta=value;}
+
+    //Obtenemos los valores
+    get imagen(){return this.#imagen;}
+    get nombre(){return this.#nombre;}
+    get descripcion(){return this.#descripcion;}
+    get etiqueta(){return this.#etiqueta;}
+
+    crearCard()
+    {
+        let div= document.createElement("div");
+        div.classList="card p-3  border-0";
+
+        let img=document.createElement("img");
+        img.classList="card-img-top";
+        img.src=this.#imagen;
+
+        let div2=document.createElement("div");
+        div2.classList="card-body ";
+
+        let h5=document.createElement("h5");
+        h5.classList="card-title";
+        h5.textContent=this.#nombre;
+
+        let p=document.createElement("p");
+        p.classList="card-text";
+        p.textContent=this.#descripcion;
+
+        let button=document.createElement("button");
+        button.classList="btn btn-outline-primary";
+        button.textContent="Ver más...";
+
+        div2.appendChild(h5);
+        div2.appendChild(p);
+        div2.appendChild(button);
+
+        div.appendChild(img);
+        div.appendChild(div2);
+
+        return div;
+    }
+}
+
+function insertCards(cards){
+
+        document.querySelector(`#card-group-1`).appendChild(cards[0].crearCard());
+    
+}
+
+function loadCards(){
+    let obj = [];
+    let categoria = "water"; 
+    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    .then(resp => resp.json())
+    .then(data => {
+        let cards = jsonToCard(data);
+        console.log(cards);
+        insertCards(cards);
+    });
+}
+
+function loadCards(categoria){
+
+    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    .then(resp => resp.json())
+    .then(data => {
+        let cards = jsonToCard(data);
+        console.log(cards);
+        insertCards(cards);
+    });
+}
+
+function jsonToCard(data){
+    let cards = [];
+    
+    let card = new Card(data[0].img, data[0].name, data[0].species, data[0].evolution);
+    cards.push(card);
+   
+    return cards;
+}
+// document.body.onload = loadCards();
+loadCards("water");
