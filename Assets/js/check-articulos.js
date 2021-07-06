@@ -48,7 +48,7 @@ class Check
         let label=document.createElement("label");
         label.classList="form-check-label";
         label.for="blankCheckbox";
-        label.textContent=this.#nombre.toUpperCase();
+        label.textContent=  this.#nombre.charAt(0).toUpperCase() + this.#nombre.slice(1);
 
         
         
@@ -71,13 +71,27 @@ function insertarCategorias(categorias){
     });
 }
 
+
+let button=document.querySelector('#btn-categorias-lat'); //Relacionando con el botón.
+button.addEventListener('click', event => {
+    let elements = document.querySelector("#categoriaslat").elements;
+    for(let i = 0; i < elements.length; i++){
+        if (elements[i].checked){
+            console.log(elements[i].value);
+        }    
+    }
+
+
+})
+
 let checks=[];
 
-let array = ["electrodomesticos", "ropa","computo","celulares","videojuegos"];
+let array = ["electrodomestico", "ropa","computo","celulares","videojuegos"];
 array.forEach(element => {
     let checkbox=new Check(element);
     checks.push(checkbox);
 });
+
 
 
 insertarCategorias(checks); 
