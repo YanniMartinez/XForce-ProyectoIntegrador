@@ -1,4 +1,7 @@
 //Clase para el objeto tarjeta
+let item = 0;
+
+
 class Card
 {
     #imagen="";
@@ -29,74 +32,85 @@ class Card
 
     crearCard()
     {
-        let div= document.createElement("div");
+        /* Este método crea el codigo HTML de la card */
+
+        let div= document.createElement("div"); //Contenedor de la card.
         div.classList="card p-3  border-0";
         div.style = "width: 18rem;";
 
-        let img=document.createElement("img");
-        img.classList="card-img-top";
-        img.src=this.#imagen;
+        let div3 = document.createElement('div'); //Contenedor de la imagen.
+        div3.style.height = '285px';
 
-        let div2=document.createElement("div");
+        let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
+        img.classList="card-img-top";   
+        img.src=this.#imagen;
+        img.style.margin = "10% 0px";
+
+        let div2=document.createElement("div"); //Contenedor del Cuerpo de la card.
         div2.classList="card-body ";
 
-        let h5=document.createElement("h5");
+        let h5=document.createElement("h5"); //Titulo de la card, se asigna el nombre del objeto.
         h5.classList="card-title";
         h5.textContent=this.#nombre;
 
-        let p=document.createElement("p");
+        let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
         p.classList="card-text";
         p.textContent=this.#descripcion;
 
-        let button=document.createElement("button");
+        let button=document.createElement("button"); // Botón
         button.classList="btn btn-outline-primary";
         button.textContent="Ver más...";
 
-        div2.appendChild(h5);
-        div2.appendChild(p);
-        div2.appendChild(button);
+        /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
+        div2.appendChild(h5); // h5 -> div2
+        div2.appendChild(p);  // p -> div2
+        div2.appendChild(button); // boton -> div2
+        div3.appendChild(img); // img -> div3
+        div.appendChild(div3); //div3 -> div
+        div.appendChild(div2); //div3 -> div
 
-        div.appendChild(img);
-        div.appendChild(div2);
-
-        return div;
+        return div; //regresamos el elemento.
     }
 }
 
 function insertCards(cards){
+
+    /* Esta funcion inserta las Cards en la columna correspondente */
+    
     let j = 0;
-    cards.forEach((card,i) => {
+    let i = item;
+    if (i == 0){
+
+    }
+    // Recorremos las cards para asignarlas a una columna.
+    cards.forEach((card) => {
         document.querySelector(`#card-group-${i-j}`).appendChild(card.crearCard());
-        if((i+1)%3 == 0){
+        // console.log(i,j,i-j); Si quieren ver como se asignan, pueden descomentar este console.
+        if((i-j+1)%3 == 0){
             j = j + 3
         }
+        item = (i - j + 1);
+        i++;
     });
 }
 
-function loadCards(){
-    let obj = [];
-    let categoria = "water"; 
-    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
-    .then(resp => resp.json())
-    .then(data => {
-        let cards = jsonToCard(data);
-        console.log(cards);
-        insertCards(cards);
-    });
-}
 
 function loadCards(categoria){
-    let obj = [];
+
+    /* Esta funcion carga las imagenes del api en el HTML */
+
     fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
     .then(resp => resp.json())
     .then(data => {
-        let cards = jsonToCard(data);
-        console.log(cards);
-        insertCards(cards);
+        let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
+        // console.log(cards); Si quieren ver el resultado, descomenten este consol
+        insertCards(cards); // Inserta las cards en el HTML
     });
 }
 
 function jsonToCard(data){
+
+    /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
     let cards = [];
     data.forEach(d => {
         let card = new Card(d.img,d.name,d.species,d.evolution);
@@ -107,38 +121,34 @@ function jsonToCard(data){
 
 let button=document.querySelector('#btn-categorias-lat'); //Relacionando con el botón.
 button.addEventListener('click', event => {
-    let elements = document.querySelector("#categoriaslat").elements;
-    for(let i = 0; i < elements.length; i++){
-        if (elements[i].checked){
-            loadCards(elements[i].value);
+    removeCards();
+    let elements = document.querySelector("#categoriaslat").elements; // Seleccionamos los elementos del formulario.
+    for(let i = 0; i < elements.length; i++){ // Recorremos cada elemento
+        if (elements[i].checked){   // Verificamos que este marcado
+            loadCards(elements[i].value); // Cargamos las categorias marcadas.
         }    
     }
 
 
 })
-// document.body.onload = loadCards();
-loadCards("grass");
+
+function init(){
+    loadCards('water');
+}
+
+function removeCards(){
+
+    /* Esta función elimina a todos los hijos de cada columna */
+
+    for(let i = 0; i < 3; i++){
+        let element = document.querySelector(`#card-group-${i}`);   // Referencia a la columna
+        while (element.firstChild){ // Solo si hay un primer hijo
+            element.removeChild(element.firstChild); // Remueve el susodicho hijo
+          };
+    }
+}
+
+document.body.onload = init; // Funcion que inicial cuando la pagina carga
 
 
-// let array = [];
-// for (let i = 0; i < 10; i++) {
-//     let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
-//     array.push(carro);
-// }
-
-// insertarCards(array);
-// document.querySelector('#producto').appendChild(crearSeccion(array));
-// let carro = new Card('https://http2.mlstatic.com/D_NQ_NP_633264-MLM44666763261_012021-O.jpg','Carro','Color: rojo', ['Automóvil','Transporte']);
-// document.querySelector('#card-group-1').appendChild(carro.crearCard());
-// console.log();
-
-
-/**<div class="card p-3  border-0">
-                        <img src="" class="card-img-top" alt="..." id="card">
-                        <div class="card-body ">
-                            <h5 class="card-title">Agency About Page</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <button type="button" class="btn btn-outline-primary">Ver más...</button>
-                        </div>
-                    </div> */
 
