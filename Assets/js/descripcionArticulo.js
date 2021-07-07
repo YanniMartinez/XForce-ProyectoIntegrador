@@ -99,7 +99,11 @@ function jsonToCard(data){
     return cards;
 }
 // document.body.onload = loadCards();
-loadCards("water"); //Despliega un sólo elemento de tipo AGUA
+//loadCards("water"); //Despliega un sólo elemento de tipo AGUA
+
+/* Lee el parámetro desde la url y genera el articulo */
+let parametroUrl = new URLSearchParams(document.location.search.substring(1)); //En la variable almacena el valor de la url
+loadCardName(parametroUrl.get("nombre")); //A la función le mandamos el valor que recibe desde la url
 
 //***************Haciendo una relación del boton search con el espacio de cards********************** */
 
