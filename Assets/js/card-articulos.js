@@ -57,9 +57,10 @@ class Card
         p.classList="card-text";
         p.textContent=this.#descripcion;
 
-        let button=document.createElement("button"); // Botón
+        let button=document.createElement("a"); // Botón con etiqueta a
         button.classList="btn btn-outline-primary";
         button.textContent="Ver más...";
+        button.href=`descripcionArticulo.html?nombre=${this.#nombre}`;
 
         /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
         div2.appendChild(h5); // h5 -> div2

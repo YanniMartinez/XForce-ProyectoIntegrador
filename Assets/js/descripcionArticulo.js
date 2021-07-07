@@ -135,6 +135,18 @@ function insertCard(cards){
     
 }
 
+function removeCards(){
+
+    /* Esta función elimina a todos los hijos de cada columna */
+
+    for(let i = 0; i < 3; i++){
+        let element = document.querySelector(`#card-group-1`);   // Referencia a la columna
+        while (element.firstChild){ // Solo si hay un primer hijo
+            element.removeChild(element.firstChild); // Remueve el susodicho hijo
+          };
+    }
+}
+
 /**
  * Relacionamos una variable botón con el boton cuyo ID es botonBusqueda
  * HAcemos un EventListener que al apretarse nos ejecutará la función "loadCardName" la cual nos
@@ -143,7 +155,9 @@ function insertCard(cards){
 let buttonSearch = document.querySelector("#botonBusqueda"); //Relaciona con el input de ID botonBusqueda
 buttonSearch.addEventListener("click", event =>{
     //alert("Q pdo");
+    removeCards();
     let nameInput = document.querySelector("#busqueda"); //Relaciona con el input de ID busqueda
     loadCardName(nameInput.value);
 
 });
+

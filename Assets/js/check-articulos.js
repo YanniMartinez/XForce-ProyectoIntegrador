@@ -48,6 +48,7 @@ class Check
         let label=document.createElement("label");
         label.classList="form-check-label";
         label.for="blankCheckbox";
+        //Esto simplemente hace que la palabra inicie con una letra Mayuscula
         label.textContent=  this.#nombre.charAt(0).toUpperCase() + this.#nombre.slice(1);
 
         
