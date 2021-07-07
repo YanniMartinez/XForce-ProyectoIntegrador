@@ -140,9 +140,10 @@ function insertCard(cards){
  * HAcemos un EventListener que al apretarse nos ejecutará la función "loadCardName" la cual nos
  * desplegará un pokemon con ese nombre en un espacio designado
  */
-let buttonSearch = document.querySelector("#botonBusqueda");
+let buttonSearch = document.querySelector("#botonBusqueda"); //Relaciona con el input de ID botonBusqueda
 buttonSearch.addEventListener("click", event =>{
     //alert("Q pdo");
-    loadCardName("pikachu");
+    let nameInput = document.querySelector("#busqueda"); //Relaciona con el input de ID busqueda
+    loadCardName(nameInput.value);
 
 });
