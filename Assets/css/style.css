@@ -1,0 +1,22 @@
+
+
+/*Esta clase nos permite agregar el scrol de la barra de articulos*/
+#scroll { 
+	height: 300px;
+	width: 200px;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+	overflow: auto;/*nos crea el scroll*/
+    position:fixed;/*Nos mueve el scroll con el contenido d ela pagina*/
+    word-wrap: break-word;/*El conenido no sale del contenedor*/
+
+    
+}
+
+/*Esta clase nos permite dar un margen a las cards para que no queden encima del scrol*/
+#card-group-0{
+margin-left: 330px; /*Agregamos un margen izquierdo*/
+margin-right: 10px; /*Agregamos un margen derecho*/
+
+}
+

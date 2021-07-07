@@ -74,7 +74,7 @@ function insertarCategorias(categorias){
 
 let checks=[];
 
-let array = ["water", "fire","grass","electric"];
+let array = ["water", "fire","grass","electric","uno","dos","tres","uno","uno","uno","uno","uno","uno"];
 array.forEach(element => {
     let checkbox=new Check(element);
     checks.push(checkbox);
