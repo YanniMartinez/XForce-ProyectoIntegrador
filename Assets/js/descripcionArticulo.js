@@ -99,7 +99,7 @@ function jsonToCard(data){
     return cards;
 }
 // document.body.onload = loadCards();
-//loadCards("water"); //Despliega un sólo elemento de tipo AGUA
+//loadCards("water"); //Despliega un sólo elemento de tipo AGUA Esto solo desplegaba el primer pokemon de agua
 
 /* Lee el parámetro desde la url y genera el articulo */
 let parametroUrl = new URLSearchParams(document.location.search.substring(1)); //En la variable almacena el valor de la url
