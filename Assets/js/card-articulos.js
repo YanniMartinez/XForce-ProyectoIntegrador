@@ -1,15 +1,29 @@
 //Clase para el objeto tarjeta
 let item = 0;
 
-
+/**
+ * Clase Card, como su nombre lo dice, está destinada a ser la que represente lo mejor posible una card
+ * contiene atributos como:
+ * Imagen, nombre, descripción y etiqueta
+ * Permitiendonos abstraer lo máximo posible el objeto y así poder darle diversas utilidades cuando trabajemos
+ * con cualquier API, el motivo de declararla es automatizar procesos como la creación de cards de manera dinámica
+ * en base a la API que consumamos.
+ */
 class Card
 {
+    /**Declaración de ATRIBUTOS privados */
     #imagen="";
     #nombre="";
     #descripcion="";
     #etiqueta="";
 
-
+    /**
+     * Constructor, nos permite inicializar los valores de nuestro objeto en base a la información brindada por la API
+     * @param {*} imagen Hace referencia al valor SRC que asignaremos a la etiqueta img posteriormente
+     * @param {*} nombre Hace referencia al nombre del articulo
+     * @param {*} descripcion Hace referencia a la breve descripción obtenida del articulo
+     * @param {*} etiqueta Hace referencia a la etiqueta o categoria a la que pertenece el articulo
+     */
     constructor(imagen,nombre,descripcion,etiqueta)
     {
         this.#imagen=imagen;
@@ -18,22 +32,28 @@ class Card
         this.#etiqueta=etiqueta;
     }
 
-    //Siver para poner los valores a los atributos principales del objeto
+    /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
     set imagen(value){this.#imagen=value;}
     set nombre(value){this.#nombre=value;}
         set descripcion(value){this.#descripcion=value;}
     set etiqueta(value){this.#etiqueta=value;}
 
-    //Obtenemos los valores
+    /**Metodos Get's permiten obtener información de los atributos del objeto */
     get imagen(){return this.#imagen;}
     get nombre(){return this.#nombre;}
     get descripcion(){return this.#descripcion;}
     get etiqueta(){return this.#etiqueta;}
 
+    /**
+     * Permite la creación de etiquetas necesarias para poder construir una Card basada en las clases de BootStrap 4.6
+     * Además de permitir la automatización de las etiquetas, también permite automatizar la información en base a
+     * los valores que tiene el objeto
+     * @returns div Retorna una etiqueta div con todo el contenido basado en el objeto, incluidas las demás
+     * etiquetas que contienen toda la información necesaria para describir el articulo.
+     */
     crearCard()
     {
         /* Este método crea el codigo HTML de la card */
-
         let div= document.createElement("div"); //Contenedor de la card.
         div.classList="card p-3  border-0";
         div.style = "width: 18rem;";
@@ -74,12 +94,16 @@ class Card
     }
 }
 
+/**
+ * Agrega un hijo al id Card-group- correspondiente, esto lo hará de 3 columas
+ * @param {*} cards 
+ */
 function insertCards(cards){
 
     /* Esta funcion inserta las Cards en la columna correspondente */
-    
     let j = 0;
-    let i = item;
+    let i = item; 
+    //Nosé para que era este if pero favor de retirarlo si no se usa
     if (i == 0){
 
     }
@@ -95,31 +119,40 @@ function insertCards(cards){
     });
 }
 
-
+/* Esta funcion carga las imagenes del api en el HTML */
 function loadCards(categoria){
 
-    /* Esta funcion carga las imagenes del api en el HTML */
-
+    //Realizamos la consulta
     fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
     .then(resp => resp.json())
     .then(data => {
         let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
-        // console.log(cards); Si quieren ver el resultado, descomenten este consol
         insertCards(cards); // Inserta las cards en el HTML
     });
 }
 
+/**
+ * Convierte todo el contenido del consumo de la API en una card, se auxilia de la creación de un objeto
+ * el cual inicializa mediante su constructor y genera un arreglo de objetos Card para poder saber cuantas Cards
+ * se crearán de forma dinámica.
+ * @param {*} data Hace referencia a la información que obtenemos al consumo de la API
+ * @returns cards Hace referencia a un arreglo de objetos con información unica.
+ */
 function jsonToCard(data){
 
     /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
     let cards = [];
-    data.forEach(d => {
-        let card = new Card(d.img,d.name,d.species,d.evolution);
-        cards.push(card);
+    data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
+        let card = new Card(d.img,d.name,d.species,d.evolution); //Crea objeto con valores unicos
+        cards.push(card); //Almacena en un arreglo de objetos
     });
-    return cards;
+    return cards; //Retorna el arreglo de cards
 }
 
+/**
+ * Relaciona la acción de presionar el botón de las categorias con remover las cartas existentes en la columna derecha
+ * y se encarga de crear nuevas en función del valor que el usuario quiere de categoria
+ */
 let button=document.querySelector('#btn-categorias-lat'); //Relacionando con el botón.
 button.addEventListener('click', event => {
     removeCards();
@@ -133,14 +166,20 @@ button.addEventListener('click', event => {
 
 })
 
+/**
+ * Funciona como prueba para objetos por carga default
+ */
 function init(){
     loadCards('water');
 }
 
+/**
+ * Permite vaciar las cards contenidas en el grupo dinámico establecido
+ * Esto genera una limpieza en la página y deja la columa derecha en blanco
+ */
 function removeCards(){
 
     /* Esta función elimina a todos los hijos de cada columna */
-
     for(let i = 0; i < 3; i++){
         let element = document.querySelector(`#card-group-${i}`);   // Referencia a la columna
         while (element.firstChild){ // Solo si hay un primer hijo
@@ -150,6 +189,3 @@ function removeCards(){
 }
 
 document.body.onload = init; // Funcion que inicial cuando la pagina carga
-
-
-
