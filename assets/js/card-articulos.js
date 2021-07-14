@@ -189,3 +189,4 @@ function removeCards(){
 }
 
 document.body.onload = init; // Funcion que inicial cuando la pagina carga
+//
