@@ -1,12 +1,21 @@
-//alert("Hola mundo");
+/**
+ * Clase Card, como su nombre lo dice, está destinada a ser la que represente lo mejor posible una card
+ * contiene atributos como:
+ * Imagen, nombre, descripción y etiqueta
+ * Permitiendonos abstraer lo máximo posible el objeto y así poder darle diversas utilidades cuando trabajemos
+ * con cualquier API, el motivo de declararla es automatizar procesos como la creación de cards de manera dinámica
+ * en base a la API que consumamos.
+ */
 class Card{
+
+     /**Declaración de ATRIBUTOS  */
     name = "";
     sticker = "";
     description = "";
     img = "";
     
     /**
-     * 
+     * Se encarga de inicializar al objeto
      * @param {*} etiqueta Hace referencia a la categoria del elemento.
      */
     constructor(etiqueta){
@@ -18,20 +27,20 @@ class Card{
         fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${this.sticker}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
         .then(data => data.json())
         .then(data => {
-            //console.log(data[0]); Sólo para comprobar que si nos devuelve la info
+            
             /* Cuando son nombres significa que son atributos y se usa el .
             Cuando son numeros significa que son arreglos y van entre [] */
-           
-            var aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
+            var aleatoria = Math.floor(Math.random() * (data.length - 0) + 0); //Obtenemos un número aleatorio de 0 hasta el número de elementos que retornó la API
             
 
             this.name = data[aleatoria].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
             this.description = data[aleatoria].abilities[1]; //Asignamos una habilidad a nuestra descripción
             this.img = data[aleatoria].img; //Almancenamos el url en nuestro atributo img
-            this.modifTitle("#titulo");
-            this.modifDescription("#descripcion");
-            this.modifImg("#imagen");
+            this.modifTitle("#titulo"); //Modificando el titulo
+            this.modifDescription("#descripcion"); //Modificando la descripción
+            this.modifImg("#imagen"); //Modificando el id imagen
 
+            //Los siguientes 2 casos son una reutirlización de código:
             aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
 
             this.name = data[aleatoria].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
@@ -84,12 +93,16 @@ class Card{
 
 }
 
-const Fuego = new Card("electric"); 
-Fuego.getInfo()
+const Fuego = new Card("electric");  //Creación de objeto tipo electrico
+Fuego.getInfo() //Obtención de card arbitraria
 
 /* Probando */    
 /*const Pikachu = new Card("pikachu"); //Declaramos un objeto tipo card y le mandamos como etiqueta "pikachu", esto de forma más profesional puede ser la categoria general como "hombre, mujer, etc".
 Pikachu.getInfo();*/
+
+/**
+ * Relación de botones de de categorias destacadas con contenido dinámico acorde a la etiqueta
+ */
 
 let button=document.querySelector('#Agua'); //Relacionando con el botón.
 button.addEventListener('click', event => {
