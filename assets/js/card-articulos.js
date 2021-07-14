@@ -198,7 +198,12 @@ button.addEventListener('click', event => {
  */
  function init(){
     let inicio = getGET();
-    loadCards(inicio["categoria"]);
+    if (typeof(inicio) == 'undefined'){
+        loadCards("water");
+    }
+    else{
+        loadCards(inicio["categoria"]);
+    }
 }
 
 
