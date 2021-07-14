@@ -39,6 +39,7 @@ class Card{
             this.modifTitle("#titulo"); //Modificando el titulo
             this.modifDescription("#descripcion"); //Modificando la descripción
             this.modifImg("#imagen"); //Modificando el id imagen
+            this.modifButton("#popular1");
 
             //Los siguientes 2 casos son una reutirlización de código:
             aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
@@ -49,6 +50,7 @@ class Card{
             this.modifTitle("#titulo2");
             this.modifDescription("#descripcion2");
             this.modifImg("#imagen2");
+            this.modifButton("#popular2");
 
             aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
             
@@ -58,6 +60,7 @@ class Card{
             this.modifTitle("#titulo3");
             this.modifDescription("#descripcion3");
             this.modifImg("#imagen3");
+            this.modifButton("#popular3");
         }).catch(e => console.log(e));
         
             
@@ -89,6 +92,15 @@ class Card{
     modifImg(id){
         let image = document.querySelector(id); //Enlazamos una variable con el id deseado
         image.src = this.img; //Actualizamos el contenido de nuestra propiedad SRC de la imagen
+    }
+
+    /**
+     * Declaración del método que permite actualizar el enlace del botón
+     * @param {*} id Hace refencia al id de la etiqueta en este caso será el botón
+     */
+    modifButton(id){
+        let enlace = document.querySelector(id); //Enlazamos una variable con el id deseado
+        enlace.href = `descripcionArticulo.html?nombre=${this.name}`;
     }
 
 }
