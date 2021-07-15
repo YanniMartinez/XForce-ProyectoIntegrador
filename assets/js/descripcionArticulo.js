@@ -68,9 +68,10 @@ class Card
         p.classList="card-text"; //Asigna clases
         p.textContent=this.#descripcion; //Asigna valor al texto del parrafo
 
-        let button=document.createElement("button"); //Genera un botón
+        let button=document.createElement("a"); //Genera un botón
         button.classList="btn btn-outline-primary"; //Asigna clases
         button.textContent="Ver más..."; //Asigna un texto
+        button.href = "pago.html"
 
         //Agregamos hijos en el Div2
         div2.appendChild(h5); 
