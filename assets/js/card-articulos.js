@@ -169,9 +169,16 @@ button.addEventListener('click', event => {
 /**
  * Funciona como prueba para objetos por carga default
  */
-function init(){
-    loadCards('water');
+ function init(){
+    let inicio = getGET();
+    if (typeof(inicio) == 'undefined'){
+        loadCards("water");
+    }
+    else{
+        loadCards(inicio["categoria"]);
+    }
 }
+
 
 /**
  * Permite vaciar las cards contenidas en el grupo dinámico establecido

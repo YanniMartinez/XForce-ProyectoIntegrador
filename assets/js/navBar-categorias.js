@@ -1,4 +1,4 @@
-let categorias = ['niños','niñas','mujer','hombre']; // Simulamos obtener la información en un arreglo
+let categorias = ["water", "fire","grass","electric"]; // Simulamos obtener la información en un arreglo
 
 /**
  * Permite rellenar de forma dinámica el menú desplegable, con las categorias que reciba, esto permite
@@ -17,7 +17,7 @@ function actualizarCategoriasNavBar(categorias){
         let item = document.createElement('a'); //Creamos un elemento 'a'
         item.textContent = categoria; // Agregamos el contendo de la etiqueta en forma de texto
         item.classList.add('dropdown-item'); // Agregamos una clase dropdown-item a la etiqueta "a"
-        item.href = '#' // Agregamos la referencia a otro enlace o página
+        item.href = `articulos.html?categoria=${categoria}`; // Agregamos la referencia a otro enlace o página
         item.id = `dropdown-item-${index}`;   //  Agregamos un id dinámico mediante la variable index
         dropmenu.appendChild(item); //Se lo agregamos al dropmenu como un hijo
     });

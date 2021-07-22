@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">E-Commerce</a>
+            <a class="navbar-brand" href="#">X-Commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,12 +40,20 @@
                         <a class="nav-link" href="articulos.html" tabindex="-1" aria-disabled="true">Articulos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Carrito</a>
+                        <a class="nav-link" href="pago.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro.html">Registro</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+
+    <!-- Inicia el carrusel que muestra 3 diferentes tipos de opciones en la pagina de inicio-->
     <main role="main">
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -56,6 +64,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active carousel-item-left">
+                   
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                         role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title> </title>
@@ -64,10 +73,15 @@
                     </svg>
 
                     <div class="container">
+                                               
                         <div class="carousel-caption text-left">
-                            <h1>Example headline.</h1>
-                            <p>Elige a tu tipo Agua.</p>
+                                                                                
+                            <div class="flex-column align-self-center">
+                                <img src="https://cdn.pixabay.com/photo/2018/05/21/13/06/pokemon-3418257_1280.png" alt="" height="35px" class="m-1">
+                            </div>
+
                             <p><a class="btn btn-lg btn-primary" href="#" id="Agua">Pokemon tipo Agua</a></p>
+
                         </div>
                     </div>
                 </div>
@@ -77,13 +91,17 @@
                         <title> </title>
                         <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">
                         </text>
+                        
                     </svg>
 
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Elige tu tipo Fuego</p>
-                            <p><button class="btn btn-lg btn-primary" href="#" id="Fuego">Pokemon tipo Fuego</button></p>
+                    <div class="container m-auto">
+                        
+                        <div class="carousel-caption"> <!--se inserta la imagen y el btn del carrucel-->
+                            <div class="flex-column">
+                                <img src="https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414807_960_720.png" alt="" height="35px" class="m-1">
+                            </div>
+                            
+                            <p><button class="btn btn-lg btn-danger" href="#" id="Fuego">Pokemon tipo Fuego</button></p>
                         </div>
                     </div>
                 </div>
@@ -97,9 +115,10 @@
 
                     <div class="container">
                         <div class="carousel-caption text-right">
-                            <h1>One more for good measure.</h1>
-                            <p>Pokemon tipo Hierva</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" id="Hierva">Pokemon tipo Hierva</a></p>
+                            <div class="flex-column align-self-center">
+                                <img src="https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_960_720.png" alt="" height="35px" class="m-1">
+                            </div>
+                            <p><a class="btn btn-lg btn-success" href="#" id="Hierva">Pokemon tipo Hierva</a></p>
                         </div>
                     </div>
                 </div>
@@ -118,53 +137,57 @@
 
 
 
-        <!-- START THE FEATURETTES -->
+        <!-- Implementando -->
+        <div class="m-5">
+            <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <!-- En este caso quitamos las Span para probar el código -->
-                <h2 class="featurette-heading" id="titulo">First featurette heading. </h2>
-                <p class="lead" id="descripcion">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <!-- En este caso quitamos las Span para probar el código -->
+                    <h2 class="featurette-heading" id="titulo">First featurette heading. </h2>
+                    <p class="lead" id="descripcion">Some great placeholder content for the first featurette here. Imagine some exciting
+                        prose here.</p>
+                    <a class="btn btn-outline-info" href="" id="popular1">Acerca de</a>
+                </div>
+                <div class="col-md-5">
+                    <!-- Eliminamos los SVG para trabajar de forma convencional con una etiqueta img -->
+                    <img src="" alt="" id="imagen" height="300">
+                </div>
             </div>
-            <div class="col-md-5">
-                <!-- Eliminamos los SVG para trabajar de forma convencional con una etiqueta img -->
-                <img src="" alt="" id="imagen">
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2 text-right pr-5">
+                    <h2 class="featurette-heading" id="titulo2">Oh yeah, it’s that good. <span class="text-muted">See for
+                            yourself.</span></h2>
+                    <p class="lead" id="descripcion2">Another featurette? Of course. More placeholder content here to give you an idea of how
+                        this layout would work with some actual real-world content in place.</p>
+                    <a class="btn btn-outline-info" href="" id="popular2">Acerca de</a>
+                </div>
+                <div class="col-md-5 order-md-1 m">
+                    <img src="" alt="" id="imagen2" height="300">
+
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading" id="titulo3">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                    <p class="lead" id="descripcion3">And yes, this is the last block of representative placeholder content. Again, not really
+                        intended to be actually read, simply here to give you a better view of what this would look like
+                        with some actual content. Your content.</p>
+                    <a class="btn btn-outline-info" href="" id="popular3">Acerca de</a>
+                </div>
+                <div class="col-md-5">
+                    <img src="" alt="" id="imagen3" height="300">
+
+                </div>
             </div>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading" id="titulo2">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h2>
-                <p class="lead" id="descripcion2">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img src="" alt="" id="imagen2">
-
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading" id="titulo3">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead" id="descripcion3">And yes, this is the last block of representative placeholder content. Again, not really
-                    intended to be actually read, simply here to give you a better view of what this would look like
-                    with some actual content. Your content.</p>
-            </div>
-            <div class="col-md-5">
-                <img src="" alt="" id="imagen3">
-
-            </div>
-        </div>
-
         <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->
@@ -175,7 +198,7 @@
         <!-- FOOTER -->
         <footer class="container">
             <p class="float-right"><a href="#">Back to top</a></p>
-            <p>© 2017-2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+            <p>© 2021 X-Force, Inc. <a href="privacy.html">Privacy & Terms</a> 
         </footer>
     </main>
 
@@ -189,14 +212,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
-    
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    -->
     <script src="assets/js/Card.js"></script>
     <script src="assets/js/navBar-categorias.js"></script>
     
