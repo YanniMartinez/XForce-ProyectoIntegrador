@@ -123,12 +123,12 @@ function insertCards(cards){
 function loadCards(categoria){
 
     //Realizamos la consulta
-    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    /*fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
     .then(resp => resp.json())
-    .then(data => {
+    .then(data => {*/
         let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
         insertCards(cards); // Inserta las cards en el HTML
-    });
+    //});
 }
 
 /**
