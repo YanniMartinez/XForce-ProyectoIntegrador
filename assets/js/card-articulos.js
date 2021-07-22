@@ -9,115 +9,88 @@ let item = 0;
  * con cualquier API, el motivo de declararla es automatizar procesos como la creación de cards de manera dinámica
  * en base a la API que consumamos.
  */
- class Card
- {
-     /**Declaración de ATRIBUTOS privados */
-     #imagen="";
-     #nombre="";
-     #descripcion="";
-     #etiqueta="";
- 
-     /**
-      * Constructor, nos permite inicializar los valores de nuestro objeto en base a la información brindada por la API
-      * @param {*} imagen Hace referencia al valor SRC que asignaremos a la etiqueta img posteriormente
-      * @param {*} nombre Hace referencia al nombre del articulo
-      * @param {*} descripcion Hace referencia a la breve descripción obtenida del articulo
-      * @param {*} etiqueta Hace referencia a la etiqueta o categoria a la que pertenece el articulo
-      */
-     constructor(imagen,nombre,descripcion,etiqueta)
-     {
-         this.#imagen=imagen;
-         this.#nombre=nombre;
-         this.#descripcion=descripcion;
-         this.#etiqueta=etiqueta;
-     }
- 
-     /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
-     set imagen(value){this.#imagen=value;}
-     set nombre(value){this.#nombre=value;}
-         set descripcion(value){this.#descripcion=value;}
-     set etiqueta(value){this.#etiqueta=value;}
- 
-     /**Metodos Get's permiten obtener información de los atributos del objeto */
-     get imagen(){return this.#imagen;}
-     get nombre(){return this.#nombre;}
-     get descripcion(){return this.#descripcion;}
-     get etiqueta(){return this.#etiqueta;}
- 
-     /**
-      * Permite la creación de etiquetas necesarias para poder construir una Card basada en las clases de BootStrap 4.6
-      * Además de permitir la automatización de las etiquetas, también permite automatizar la información en base a
-      * los valores que tiene el objeto
-      * @returns div Retorna una etiqueta div con todo el contenido basado en el objeto, incluidas las demás
-      * etiquetas que contienen toda la información necesaria para describir el articulo.
-      */
-     crearCard()
-     {
-         /* Este método crea el codigo HTML de la card */
-         let div= document.createElement("div"); //Contenedor de la card.
-         div.classList="card p-3  border-0";
-         div.style = "width: 18rem;";
- 
-         let div3 = document.createElement('div'); //Contenedor de la imagen.
-         div3.style.height = '285px';
- 
-         let figure = document.createElement("figure")
- 
-         let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-         img.classList="card-img-top rounded d-block m-l-none";   
-         img.src=this.#imagen;
-         img.style.margin = "10% 0px";
-         img.height = "265";
- 
-         let div2=document.createElement("div"); //Contenedor del Cuerpo de la card.
-         div2.classList="card-body ";
- 
-         let h5=document.createElement("h5"); //Titulo de la card, se asigna el nombre del objeto.
-         h5.classList="card-title";
-         h5.textContent=this.#nombre;
- 
-         let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
-         p.classList="card-text";
-         p.textContent=this.#descripcion;
- 
-         let button=document.createElement("a"); // Botón con etiqueta a
-         button.classList="btn btn-outline-primary";
-         button.textContent="Ver más...";
-         button.href=`descripcionArticulo.html?nombre=${this.#nombre}`;
- 
-         /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
-         div2.appendChild(h5); // h5 -> div2
-         div2.appendChild(p);  // p -> div2
-         div2.appendChild(button); // boton -> div2
-         div3.appendChild(figure); // img -> div3
-         figure.appendChild(img)
-         div.appendChild(div3); //div3 -> div
-         div.appendChild(div2); //div3 -> div
- 
-         return div; //regresamos el elemento.
-     }
- }
+class Card
+{
+    /**Declaración de ATRIBUTOS privados */
+    #imagen="";
+    #nombre="";
+    #descripcion="";
+    #etiqueta="";
 
- /**
- * Con esta funcion obtenemos el contenido del get dentro de la URL y lo agregamos a un diccionario para  
- * @returns regresa un diccionario con las variables del get 
- */
-function getGET() {
-    // capturamos la url
-    var loc = document.location.href;
-    // si existe el interrogante
-    if(loc.indexOf('?')>0) {
-        // cogemos la parte de la url que hay despues del interrogante
-        var getString = loc.split('?')[1]; // divide la cadena por cada '?' y toma sola la peticion del get
-        // obtenemos un array con cada clave=valor
-        var GET = getString.split('&'); // divide la cadena por cada '&'
-        var get = {}; // Crea un array que contendra el diccionario
-        // recorremos todo el array de valores
-        for(var i = 0, l = GET.length; i < l; i++){
-            var tmp = GET[i].split('='); // divide la cadena por cada '='
-            get[tmp[0]] = unescape(decodeURI(tmp[1])); // Lo agrda a un diccionario
-        }
-        return get; // retorna el diccionario
+    /**
+     * Constructor, nos permite inicializar los valores de nuestro objeto en base a la información brindada por la API
+     * @param {*} imagen Hace referencia al valor SRC que asignaremos a la etiqueta img posteriormente
+     * @param {*} nombre Hace referencia al nombre del articulo
+     * @param {*} descripcion Hace referencia a la breve descripción obtenida del articulo
+     * @param {*} etiqueta Hace referencia a la etiqueta o categoria a la que pertenece el articulo
+     */
+    constructor(imagen,nombre,descripcion,etiqueta)
+    {
+        this.#imagen=imagen;
+        this.#nombre=nombre;
+        this.#descripcion=descripcion;
+        this.#etiqueta=etiqueta;
+    }
+
+    /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
+    set imagen(value){this.#imagen=value;}
+    set nombre(value){this.#nombre=value;}
+        set descripcion(value){this.#descripcion=value;}
+    set etiqueta(value){this.#etiqueta=value;}
+
+    /**Metodos Get's permiten obtener información de los atributos del objeto */
+    get imagen(){return this.#imagen;}
+    get nombre(){return this.#nombre;}
+    get descripcion(){return this.#descripcion;}
+    get etiqueta(){return this.#etiqueta;}
+
+    /**
+     * Permite la creación de etiquetas necesarias para poder construir una Card basada en las clases de BootStrap 4.6
+     * Además de permitir la automatización de las etiquetas, también permite automatizar la información en base a
+     * los valores que tiene el objeto
+     * @returns div Retorna una etiqueta div con todo el contenido basado en el objeto, incluidas las demás
+     * etiquetas que contienen toda la información necesaria para describir el articulo.
+     */
+    crearCard()
+    {
+        /* Este método crea el codigo HTML de la card */
+        let div= document.createElement("div"); //Contenedor de la card.
+        div.classList="card p-3  border-0 shadow p-3 mb-5 bg-white rounded" ;
+        div.style = "width: 18rem;";
+
+        let div3 = document.createElement('div'); //Contenedor de la imagen.
+        div3.style.height = '285px';
+
+        let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
+        img.classList="card-img-top";   
+        img.src=this.#imagen;
+        img.style.margin = "10% 0px";
+
+        let div2=document.createElement("div"); //Contenedor del Cuerpo de la card.
+        div2.classList="card-body ";
+
+        let h5=document.createElement("h5"); //Titulo de la card, se asigna el nombre del objeto.
+        h5.classList="card-title";
+        h5.textContent=this.#nombre;
+
+        let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
+        p.classList="card-text";
+        p.textContent=this.#descripcion;
+
+        let button=document.createElement("a"); // Botón con etiqueta a
+        button.classList="btn btn-outline-primary";
+        button.textContent="Ver más...";
+        button.href=`descripcionArticulo.html?nombre=${this.#nombre}`;
+
+        /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
+        div2.appendChild(h5); // h5 -> div2
+        div2.appendChild(p);  // p -> div2
+        div2.appendChild(button); // boton -> div2
+        div3.appendChild(img); // img -> div3
+        div.appendChild(div3); //div3 -> div
+        div.appendChild(div2); //div3 -> div
+
+        return div; //regresamos el elemento.
     }
 }
 
