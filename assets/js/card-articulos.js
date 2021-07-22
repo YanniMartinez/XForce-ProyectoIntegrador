@@ -123,12 +123,33 @@ function insertCards(cards){
 function loadCards(categoria){
 
     //Realizamos la consulta
-    fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    /*fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
     .then(resp => resp.json())
-    .then(data => {
+    .then(data => {*/
+        let data;
+        switch (categoria) {
+            case 'gamer':
+                data = gamer;
+                break;
+            case 'celulares':
+                data = celulares;
+                break;
+            case 'impresoras':
+                data = impresoras;
+                break;
+            case 'laptops':
+                data = laptops;
+                break;
+            case 'monitores':
+                data = monitores;
+                break;
+            default:
+                data = gamer;
+                break;
+        }
         let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
         insertCards(cards); // Inserta las cards en el HTML
-    });
+    //});
 }
 
 /**
@@ -143,7 +164,7 @@ function jsonToCard(data){
     /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
     let cards = [];
     data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
-        let card = new Card(d.img,d.name,d.species,d.evolution); //Crea objeto con valores unicos
+        let card = new Card(d.imagen, d.nombre, d.descripcion, d.categoria); //Crea objeto con valores unicos
         cards.push(card); //Almacena en un arreglo de objetos
     });
     return cards; //Retorna el arreglo de cards
@@ -165,6 +186,26 @@ button.addEventListener('click', event => {
 
 
 })
+
+function getGET() {
+    // capturamos la url
+    var loc = document.location.href;
+    // si existe el interrogante
+    if(loc.indexOf('?')>0) {
+        // cogemos la parte de la url que hay despues del interrogante
+        var getString = loc.split('?')[1]; // divide la cadena por cada '?' y toma sola la peticion del get
+        // obtenemos un array con cada clave=valor
+        var GET = getString.split('&'); // divide la cadena por cada '&'
+        var get = {}; // Crea un array que contendra el diccionario
+        // recorremos todo el array de valores
+        for(var i = 0, l = GET.length; i < l; i++){
+            var tmp = GET[i].split('='); // divide la cadena por cada '='
+            get[tmp[0]] = unescape(decodeURI(tmp[1])); // Lo agrda a un diccionario
+        }
+        return get; // retorna el diccionario
+    }
+}
+
 
 /**
  * Funciona como prueba para objetos por carga default

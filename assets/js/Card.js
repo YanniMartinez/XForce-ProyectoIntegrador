@@ -24,22 +24,25 @@ class Card{
 
     /*  Consumimos el API  y guardamos los valores en nuestros atributos*/
     getInfo(){
-        fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${this.sticker}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
+        /* fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${this.sticker}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
         .then(data => data.json())
-        .then(data => {
+        .then(data => { */
             
             /* Cuando son nombres significa que son atributos y se usa el .
             Cuando son numeros significa que son arreglos y van entre [] */
-            var aleatoria = Math.floor(Math.random() * (data.length - 0) + 0); //Obtenemos un número aleatorio de 0 hasta el número de elementos que retornó la API
-            
 
-            this.name = data[aleatoria].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
-            this.description = data[aleatoria].abilities[1]; //Asignamos una habilidad a nuestra descripción
-            this.img = data[aleatoria].img; //Almancenamos el url en nuestro atributo img
-            this.modifTitle("#titulo"); //Modificando el titulo
-            this.modifDescription("#descripcion"); //Modificando la descripción
-            this.modifImg("#imagen"); //Modificando el id imagen
-            this.modifButton("#popular1");
+           /*  var aleatoria = Math.floor(Math.random() * (data.length - 0) + 0); //Obtenemos un número aleatorio de 0 hasta el número de elementos que retornó la API */
+            celulares.forEach(data =>{
+                this.name = data.nombre; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
+                this.description = data.descripcion; //Asignamos una habilidad a nuestra descripción
+                this.img = data.imagen; //Almancenamos el url en nuestro atributo img
+                this.modifTitle("#titulo"); //Modificando el titulo
+                this.modifDescription("#descripcion"); //Modificando la descripción
+                this.modifImg("#imagen"); //Modificando el id imagen
+                this.modifButton("#popular1");
+            })
+
+          /*   
 
             //Los siguientes 2 casos son una reutirlización de código:
             aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
@@ -60,9 +63,9 @@ class Card{
             this.modifTitle("#titulo3");
             this.modifDescription("#descripcion3");
             this.modifImg("#imagen3");
-            this.modifButton("#popular3");
-        }).catch(e => console.log(e));
-        
+            this.modifButton("#popular3"); */
+        /* }).catch(e => console.log(e));
+         */
             
     }
     
