@@ -14,10 +14,28 @@
         }
     ],
     "monitores":[
-        
+
+
     ],
     "gamer": [
-
+        {
+            "nombre": "Control PlayStation 5 DualSense",
+            "descripcion": "$1,599.99",
+            "categoria": "gamer",
+            "imagen": "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/d/u/dualsense_4_1.jpg"
+        },
+        {
+            "nombre": "Control XBOX Inalámbrico Robot White para XBOX Series S",
+            "descripcion": "$1,699.99",
+            "categoria": "gamer",
+            "imagen": "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/o/robot_white_1.jpg"
+        },
+        {
+            "nombre": "HeadSet Nintendo Switch Dreamgear GRX 440 Black",
+            "descripcion": "$919.99",
+            "categoria": "gamer",
+            "imagen": "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/h/e/headset_chuis_dreamgear_1.jpg"
+        }
     ],
     "celulares":[
         {
@@ -45,7 +63,26 @@
             "imagen": "https://m.media-amazon.com/images/I/61XM1qbUPUL._AC_SX522_.jpg"
         }
     ],
+
     "impresoras":[
 
+        {
+            "nombre": "Canon Pixma iX6850",
+            "descripcion": "$3,799.20",
+            "categoria": "impresoras",
+            "imagen": "https://www.canon.es/media/iX6850_Angle3_tcm86-1108752.jpg"
+        },
+        {
+            "nombre": "Canon Selphy CP1300",
+            "descripcion": "$3,156.47",
+            "categoria": "impresoras",
+            "imagen": "https://ss627.liverpool.com.mx/xl/1069676941.jpg"
+        },
+        {
+            "nombre": "HP Officejet Pro 6230 ePrint",
+            "descripcion": "$1,493.99",
+            "categoria": "impresoras",
+            "imagen": "https://quecartucho.es/img/cms/Impresoras/Impresora%20HP%20Officejet%206230.jpg"
+        }
     ]
 }
