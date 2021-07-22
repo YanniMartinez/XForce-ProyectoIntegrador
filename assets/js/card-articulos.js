@@ -160,7 +160,7 @@ function loadCards(categoria){
  * @returns cards Hace referencia a un arreglo de objetos con información unica.
  */
 function jsonToCard(data){
-
+console.log(data);
     /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
     let cards = [];
     data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
