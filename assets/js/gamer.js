@@ -76,5 +76,18 @@ let gamer = [
         "descripcion": "$349.99",
         "categoria": "gamer",
         "imagen": "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/j/h/jhon_walker_cap_1.jpg"
+    },
+    {
+        "nombre": "Silla para gaming primus thronos 100T azul",
+        "descripcion": "$6,999.99",
+        "categoria": "gamer",
+        "imagen": "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/p/r/primus_azul_3.jpg"
+    },
+    {
+        "nombre": "Silla para gaming primus thronos 100T negra",
+        "descripcion": "$6,999.99",
+        "categoria": "gamer",
+        "imagen": "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/p/r/primus_negra_3.jpg"
     }
+
 ]

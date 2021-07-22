@@ -40,7 +40,7 @@ let impresoras = [
         "nombre": "Epson Workforce WF-2860DWF",
         "descripcion": "$7,599.99",
         "categoria": "impresoras",
-        "imagen": "https://www.epson.es/files/assets/converted/1500m-1500m/w/f/2/8/wf2860-2865-25-.jpg."
+        "imagen": "https://www.epson.es/files/assets/converted/510m-310m/2/2/6/2/22629-productpicture-lores-en-wf-2860_hero.png.png."
     },
     {
         "nombre": "HP Envy Photo 6234",
@@ -73,11 +73,18 @@ let impresoras = [
         "imagen": "https://www.mastoner.com/images/productos/IMPRESORA-MULTIFUNCION-HP-PAGEWIDE-PRO-377DW.jpg"
     },
     {
-        "nombre": "HP INK TANK 115",
-        "descripcion": "$2,742.70",
+        "nombre": "Multifuncional B205 Xerox B205 / NI Laser Monocromatica imprime escanea y copia hasta 31 ppm Wifi",
+        "descripcion": "$2,799.00",
         "categoria": "impresoras",
-        "imagen": "https://neoxcorp.com/storage/media/large_arXTv5VnA5lof2FAHgJiiJwod5F9hxqQXORBvxuu.jpg"
+        "imagen": "https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/XEIIMPAG236_zoom.jpg"
+    },
+    {
+        "nombre": "Impresora HP Laser Pro M255DW Blanca",
+        "descripcion": "$4,978.00",
+        "categoria": "impresoras",
+        "imagen": "https://valdes.com.sv/wp-content/uploads/2020/07/HP-LJ-M255dw-600x600.png"
     }
+
 
     
 ]
