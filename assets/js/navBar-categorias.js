@@ -1,4 +1,4 @@
-let categorias = ["water", "fire","grass","electric"]; // Simulamos obtener la información en un arreglo
+let categorias = ["celulares", "gamers","laptops","impresoras"]; // Simulamos obtener la información en un arreglo
 
 /**
  * Permite rellenar de forma dinámica el menú desplegable, con las categorias que reciba, esto permite
@@ -26,4 +26,4 @@ function actualizarCategoriasNavBar(categorias){
 //Mandamos a llamar a la función que permite llenar el menú desplegable.
 actualizarCategoriasNavBar(categorias);
 
-// <3 Me agradan amigos
+// <3 Me agradan amigos, tambien a mi.
