@@ -58,23 +58,8 @@
 
 
 
-        <!--Contenedor principal-->
-        <div class="container-fluid">
 
-                
-            <div class="row">
-                
-                <div class="col-sm-2 align-center">
-                    <a href="index.html">
-                        <img  src="https://www.pequeocio.com/wp-content/uploads/2016/05/acertijos-para-ninos-1-.jpg" alt="" width="65px">
-                    </a>
-                    
-                </div>
-            </div>
-
-
-
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-3" >
 
                     <div>
@@ -92,93 +77,50 @@
 
             
                 
-            </div>
+            </div> -->
 
             <!--Unicio segunda fila-->
             <div class="row">
 
-                <div class="col-sm-3" >
+                <div class="col-xl-3" id="scroll">
 
-                    <div>
-                        <br>
-                    </div>
-
-                    <div>
-                        <h6>Categories</h6>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Art & Design
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Business
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Community & Non-Profit
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Education
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Events
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Fashion & Beauty
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Foof & Drink
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Health & Fitness
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Online Store
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="Arts">
-                        <label class="form-check-label" for="blankCheckbox">
-                            Services
-                        </label>
-                    </div>
                     
-                    
+        
+                    <!--  <div>
+                         <input type="text" class="form-control " id="busqueda" placeholder="Pikachu">
+                     </div>
+                     <div class="input-group mt-2 justify-content-lg-end">
+                         <span class="input-group-btn">
+                             <button class="btn btn btn-info" type="button" id="botonBusqueda"><h6>Search by name</h6> </button>
+                         </span> -->
+                     
+ 
+                <br/>
 
-                </div>
+             <div>
+                 <section id="search">
+                     
+                     <div style="width: 10px;"></div>
+                     <div>
+                         <input type="text" class="form-control " id="busqueda" placeholder="Pikachu">  
+                     </div>
+                     <div class="input-group mt-2 justify-content-lg-end">
+                         <span class="input-group-btn"></span>
+                             <button class="btn btn btn-info" type="button" id="botonBusqueda"><h6>Search by name</h6> </button>
+                         </span>
+                     </div>
+                 </section>   
+
+                 <hr/>
+                     <h6>Categories</h6>
+                 <br/>
+                 <form id="categoriaslat">    
+                 </form>
+                 <br/>
+                 <button type="button" class="btn btn-outline-primary" id="btn-categorias-lat">Buscar</button>
+             </div>
+
+         </div>
 
                 
                 
@@ -187,7 +129,7 @@
                 <div class="col-sm-5" class="card-group" id='card-group-1'>
 
 
-                </div>
+                </div>  
                 
 
                 <!--Fin segunda fila-->
@@ -210,7 +152,8 @@
                 crossorigin="anonymous"></script>
             <script src="assets/js/navBar-categorias.js"></script>
             <!-- Vinculando el JS especifico para él -->
-            <script src="assets/js/descripcionArticulo.js"></script>
+            <script src="assets/js/cards-descripcion-articulos.js"></script>
+            <script src="assets/js/check-articulos.js"></script>
 
     </body>
 
