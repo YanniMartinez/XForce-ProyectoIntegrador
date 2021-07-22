@@ -55,7 +55,7 @@ class Card
     {
         /* Este método crea el codigo HTML de la card */
         let div= document.createElement("div"); //Contenedor de la card.
-        div.classList="card p-3  border-0";
+        div.classList="card p-3  border-0 shadow p-3 mb-5 bg-white rounded" ;
         div.style = "width: 18rem;";
 
         let div3 = document.createElement('div'); //Contenedor de la imagen.
