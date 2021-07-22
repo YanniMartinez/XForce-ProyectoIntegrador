@@ -14,15 +14,41 @@
         <!-- Proporciona un botón que permite retornar a la zona de articulos-->
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <!-- A donde retornará si se presiona -->
-                <a class="navbar-brand" href="articulos.html">
-                    <!-- Icono de la flecha -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-                    </svg>
-                </a>
+                <a class="navbar-brand" href="#">X-Commerce</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
+                                <!-- Se rellena dinamicamente mediante el JS -->
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="articulos.html" tabindex="-1" aria-disabled="true">Articulos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pago.html">Carrito</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Iniciar Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registro.html">Registro</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
-
         </header>
 
         <div class="container">
@@ -248,6 +274,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
+        <script src="assets/js/navBar-categorias.js"></script>
     </body>
 
 </html>

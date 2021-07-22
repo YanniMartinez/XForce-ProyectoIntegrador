@@ -79,7 +79,7 @@ let checks=[]; //Declaración de un arreglo vacio, donde almacenaremos todos los
  * Declaración de lista de categorias.
  * Para cada uno de los elementos se crea un objeto check y este es almacenado en el arreglo vacio de la parte superior
  */
-let array = ["water", "fire","grass","electric"];
+let array = ["gamer", "celulares","monitores","laptops","impresoras"];
 array.forEach(element => {
     let checkbox=new Check(element);
     checks.push(checkbox);
