@@ -14,7 +14,25 @@
         }
     ],
     "monitores":[
-
+        {
+        "nombre": "Accer Gaming Monitor",
+        "descripcion": "$4,500.00",
+        "categoria": "Monitores",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/I/81GG2z3Vr8L._AC_SL1500_.jpg"
+    },
+        {
+        "nombre": "Asus Curved Gaming Monitor",
+        "descripcion": "$5,400.00",
+        "categoria": "Monitores",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/I/91qjBWJEKaL._AC_SL1500_.jpg"
+    },
+        {
+        "nombre": "Samsung Gaming Super UltraWide Monitor",
+        "descripcion": "$23,400.00",
+        "categoria": "Monitores",
+        "imagen": "https://images-na.ssl-images-amazon.com/images/I/81jiUqRKBcL._AC_SL1500_.jpg"
+    }
+    
 
     ],
     "gamer": [
