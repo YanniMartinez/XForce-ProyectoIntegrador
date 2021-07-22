@@ -1,27 +1,27 @@
 let celulares = [
     {
-        "nombre": "Huawei Y9 2019 Prime",
-        "descripcion": "Celular con camara de 28 Mpx precio $4,300.00",
+        "nombre": "Motorola Moto G60 128GB Desbloqueado - Dorado",
+        "descripcion": "Almacena tus apps favoritas en la memoria interna de 128GB",
         "categoria": "celulares",
-        "imagen": "https://i.blogs.es/1008d5/huawei-y-9-prime-5/450_1000.jpg"
+        "imagen": "https://elektra.vtexassets.com/arquivos/ids/2989546-800-auto?width=800&height=auto&aspect=true"
     },
     {
-        "nombre": "iPhone 7",
-        "descripcion": "Dispositivo desbloqueado para que elijas la compañía telefónica que prefieras",
+        "nombre": "Samsung galaxy a12 64gb negro",
+        "descripcion": "Procesador: Octa-core 2.3GHz",
         "categoria": "celulares",
-        "imagen": "https://i.blogs.es/1008d5/huawei-y-9-prime-5/450_1000.jpg"
+        "imagen": "https://elektra.vtexassets.com/arquivos/ids/2896208-800-auto?width=800&height=auto&aspect=true"
     },
     {
-        "nombre": "Motorola Moto G30",
-        "descripcion": "Pantalla: 6.5 Pulgadas y Resolución 720 x 1600 pixels",
+        "nombre": "Xiaomi Poco M3 Pro 5G 64GB 4GB Ram Azul",
+        "descripcion": "Pantalla de 6.5 pulgadas",
         "categoria": "celulares",
-        "imagen": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/mg/gm/3pp/asr/6b12c7b3-7ba2-46f5-b7d1-5ba60343d93f.6063e90677376fb573aad027b1138860.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff"
+        "imagen": "https://elektra.vtexassets.com/arquivos/ids/3114635-800-auto?width=800&height=auto&aspect=true"
     },
     {
-        "nombre": "Huawei P30 Lite",
-        "descripcion": "procesador Kirin 710 Octa-core",
+        "nombre": "Realme 8 Pro 128GB 8GB Ram Azul",
+        "descripcion": "Cámara de 108 + 8 + 2 + 2 Mp",
         "categoria": "celulares",
-        "imagen": "https://m.media-amazon.com/images/I/61XM1qbUPUL._AC_SX522_.jpg"
+        "imagen": "https://elektra.vtexassets.com/arquivos/ids/3155589-800-auto?width=800&height=auto&aspect=true"
     },
 
 
