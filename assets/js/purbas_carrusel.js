@@ -65,3 +65,7 @@ let elemnt = new Carrusel('https://store.storeimages.cdn-apple.com/4982/as-image
 elemnt.insertar_elemento(document.querySelector('#carrusel'),document.querySelector('#indicador-carrusel'));
 let elemnt2 = new Carrusel('https://i.blogs.es/958640/logitech-raton/1366_2000.jpg','Prueba 2','Esta es una prueba 2');
 elemnt2.insertar_elemento(document.querySelector('#carrusel'),document.querySelector('#indicador-carrusel'));
+let elemnt3 = new Carrusel('https://i.blogs.es/958640/logitech-raton/1366_2000.jpg','Prueba 2','Esta es una prueba 2');
+elemnt3.insertar_elemento(document.querySelector('#carrusel'),document.querySelector('#indicador-carrusel'));
+let elemnt4 = new Carrusel('https://i.blogs.es/958640/logitech-raton/1366_2000.jpg','Prueba 2','Esta es una prueba 2');
+elemnt4.insertar_elemento(document.querySelector('#carrusel'),document.querySelector('#indicador-carrusel'));
