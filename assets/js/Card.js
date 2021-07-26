@@ -32,7 +32,7 @@ class Card{
      /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
      set imagen(value){this.#imagen=value;}
      set nombre(value){this.#nombre=value;}
-         set descripcion(value){this.#descripcion=value;}
+     set descripcion(value){this.#descripcion=value;}
      set etiqueta(value){this.#etiqueta=value;}
  
      /**Metodos Get's permiten obtener información de los atributos del objeto */
