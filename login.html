@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
             integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="Assets/css/style-login.css">
+        <link rel="stylesheet" href="Assets/css/login.css">
         <link rel="stylesheet" href="assets/css/fontStyle.css">
         <title>Inicia sesión</title>
     </head>
@@ -53,56 +53,68 @@
                 </div>
             </nav>
         </header>
-        
-
-            <div>
-                <form action="" method="POST">   
-
-                <div class="container-fluid">
-                    <img src="https://image.flaticon.com/icons/png/512/1060/1060387.png" alt="" width="150px" id="img">
-
-                            <div class="row">
-                                <div class="col-md-4"></div>
+        <!-- Form -->
+        <section class="login-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 login-sec">
+                        <h2 class="text-center">Inicia sesión</h2>
+                        <form class="login-form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="text-uppercase">Nombre de Usuario</label>
+                                <input type="text" class="form-control" placeholder="">
                                 
-                                <div class="col-md-4">
-                                    <h1>Inicia Sesión</h1>
-                                    <label for="inputEmail" class="sr-only">Dirección de correo electrónico</label>
-                                    <input type="email" id="email"  class="form-control" placeholder="Dirección de correo electrónico" required="" autofocus="" >        
-                                </div>
-                                <div class="col-md-4"></div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4">
-                                    <label for="password" class="sr-only">Contraseña</label>
-                                    <input type="password" id="password" class="form-control" placeholder="Contraseña" required="" >
-                                </div>
-                                <div class="col-md-4"></div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="text-uppercase">Contraseña</label>
+                                <input type="password" class="form-control" placeholder="">
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <div class="col-md-4"></div>
+          
+          
+                             <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                    <small>Recuerdame</small>
+                                </label>
+                                <button type="submit" class="btn btn-login float-right">Aceptar</button>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Login</button>
+          
+                        </form>
+                        <div class="copy-text">Creado<i class="fa fa-heart"></i> por X-Force</div>
+                    </div>
+                    <!-- Carrucel en login -->
+                    <div class="col-md-8 banner-sec">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>Unete y disfruta de los beneficios</h2>
+                                        <p>Adquiere esos productos que siempre has querido con nosotros.</p>
+                                    </div>	
                                 </div>
-                                <div class="col-md-4"></div>
                             </div>
-
-
-                            
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1543269664-7eef42226a21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>Sonriele a la vida</h2>
+                                        <p>Adquiere artículos de sensación y sacale el mejor provecho a todos y cada uno de ellos.</p>
+                                    </div>	
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>	   
+                    
                 </div>
-                </form>
             </div>
+        </section>
 
         
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
