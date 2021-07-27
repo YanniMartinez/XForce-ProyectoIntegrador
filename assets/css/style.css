@@ -1,0 +1,47 @@
+
+
+/*Esta clase nos permite agregar el scrol de la barra de articulos*/
+#scroll { 
+	height: max-content;
+	width: auto;
+	/* border: 1px solid #ddd; */
+	background: white;
+	overflow: auto;/*nos crea el scroll*/
+    position:fixed;/*Nos mueve el scroll con el contenido d ela pagina*/
+    word-wrap: break-word;/*El conenido no sale del contenedor*/
+
+    
+}
+
+/*Esta clase nos permite dar un margen a las cards para que no queden encima del scrol*/
+#card-group-0{
+margin-left: 25%; /*Agregamos un margen izquierdo*/
+
+}
+
+#search{
+	display: flex;
+    flex-wrap: initial;
+}
+
+/* @media (min-width: 992px){
+	.scroll {
+		-ms-flex-flow: row nowrap;
+		flex-flow: row nowrap;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	}
+} */
+
+/* .navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+} */

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <title>Checkout</title>
+    </head>
+
+    <body class="bg-light">
+        <!-- Proporciona un botón que permite retornar a la zona de articulos-->
+        <header>
+            <nav class="navbar navbar-expand-lg"  style = "background-color: #1785a7;">
+        
+                <a class="navbar-brand text-light" href="#">X-Commerce</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link  text-light" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
+                                <!-- Se rellena dinamicamente mediante el JS -->
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="articulos.html" tabindex="-1" aria-disabled="true">Articulos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="pago.html">Carrito</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="login.html">Iniciar Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="registro.html">Registro</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="Assets/img/debit-card.svg" alt="" width="100" height="100">
+                <h2>Finalizar Compra</h2>
+                <p class="lead">Rellena los campos necesarios para finalizar tu la compra.</p>
+            </div>
+            <!-- Nueva fila -->
+            <div class="row">
+                <!-- Nueva columa donde irá el contenido del carrito -->
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Tus articulos</span>
+                        <span class="badge badge-secondary badge-pill">3</span>
+                    </h4>
+                    <!-- Listado de articulos contenidos en una lista desordenada, pretendo que esto sea dinámico -->
+                    <ul class="list-group mb-3">
+                        <!-- Articulos -->
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Product name</h6>
+                                <small class="text-muted">Brief description</small>
+                            </div>
+                            <span class="text-muted">$12</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Second product</h6>
+                                <small class="text-muted">Brief description</small>
+                            </div>
+                            <span class="text-muted">$8</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Third item</h6>
+                                <small class="text-muted">Brief description</small>
+                            </div>
+                            <span class="text-muted">$5</span>
+                        </li>
+                        <!-- Sección de cupones, solo la dejaré por si en un futuro se aplica. Sino podemos borrarla -->
+                        <!-- <li class="list-group-item d-flex justify-content-between bg-light">
+                            <div class="text-success">
+                                <h6 class="my-0">Promo code</h6>
+                                <small>EXAMPLECODE</small>
+                            </div>
+                            <span class="text-success">-$5</span>
+                        </li> -->
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong>$25</strong>
+                        </li>
+                    </ul>
+                    <!-- Apartado de cupón opcional -->
+                    <!-- <form class="card p-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Promo code">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-secondary">Redeem</button>
+                            </div>
+                        </div>
+                    </form> -->
+                </div>
+                <!-- Campos de direccion y datos de usuario -->
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Confirmar dirección de entrega</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">Nombre de quien recibe el producto</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" value="Nombre Usuario que inicio sesion" required>
+                                <div class="invalid-feedback">
+                                    Por favor verifique los datos.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Apellido</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="Apellido del usuario" required>
+                                <div class="invalid-feedback">
+                                    Por favor verifique los datos.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="username">Nombre de usuario</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <!-- Se le pone read only porque obtendrá el valor del usuario desde el inicio de sesión -->
+                                <input type="text" class="form-control" id="username" placeholder="Username" value="nombreUsuario" required readonly>
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    Porfavor verifique sus datos
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Se le pone read only porque obtendrá el valor del email desde el inicio de sesión -->
+                        <div class="mb-3">
+                            <label for="email">Email </label>
+                            <input type="email" class="form-control" id="email" value="useremail@ejemplo.com" readonly>
+                            <div class="invalid-feedback">
+                                Porfavor ingrese un email correctos
+                            </div>
+                        </div>
+                        <!-- Dirección del usuario -->
+                        <div class="mb-3">
+                            <label for="address">Dirección completa</label>
+                            <input type="text" class="form-control" id="address" placeholder="Copilco 123 Coyoacan" required>
+                            <div class="invalid-feedback">
+                                Porfavor ingrese la dirección a donde le será enviado el articulo.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address2">Más referencias <span class="text-muted">(Optional)</span></label>
+                            <input type="text" class="form-control" id="address2" placeholder="Frente a una farmacia y a lado de una tienda">
+                        </div>
+                        <!-- Region del usuario -->
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                                <label for="country">Pais</label>
+                                <select class="custom-select d-block w-100" id="country" required >
+                                    <option value="México" >México</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Porfavor seleccione una opción.
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="state">Estado</label>
+                                <select class="custom-select d-block w-100" id="state" required>
+                                    <option value="">Ciudad de México</option>
+                                    <option>Aguascalientes</option>
+                                    <option>Baja California</option>
+                                    <option>Baja California Sur </option>
+                                    <option>Campeche</option>
+                                    <option>Chiapas </option>
+                                    <option>Chihuahua </option>
+                                    <option>Coahuila </option>
+                                    <option>Colima </option>
+                                    <option>Durango </option>
+                                    <option>Guanajuato </option>
+                                    <option>Guerrero </option>
+                                    <option>Hidalgo </option>
+                                    <option>Guadalajara </option>
+                                    <option>Michoacan </option>
+                                    <option>Morelos </option>
+                                    <option>Nayarit </option>
+                                    <option>Nuevo León </option>
+                                    <option>Oaxaca </option>
+                                    <option>Puebla </option>
+                                    <option>Queretaro </option>
+                                    <option>Quintana Roo </option>
+                                    <option>San Luis Potosí </option>
+                                    <option>Sinaloa </option>
+                                    <option>Tabasco </option>
+                                    <option>Tamaulipas </option>
+                                    <option>Tlaxcala </option>
+                                    <option>Veracruz </option>
+                                    <option>Yucatán </option>
+                                    <option>Zacatecas </option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Porfavor seleccione una opción.
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="zip">Código postal</label>
+                                <input type="text" class="form-control" id="zip" placeholder="10001" required>
+                                <div class="invalid-feedback">
+                                    Ingrese su código postal
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="save-info">
+                            <label class="custom-control-label" for="save-info">Guardar esta información para proximas compras</label>
+                        </div>
+                        <!-- <hr class="mb-4">
+                        
+                         Apartado de su método de pago -
+                        <h4 class="mb-3">Método de pago</h4>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="cc-name">Titular de la tarjeta</label>
+                                <input type="text" class="form-control" id="cc-name" value="Usuario guapo poderoso" placeholder="" required readonly>
+                                <small class="text-muted">Nombre completo del titular</small>
+                                <div class="invalid-feedback">
+                                   El nombre de la tarjeta es necesario
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cc-number">Número de tarjeta</label>
+                                <input type="text" class="form-control" id="cc-number" value="5204123456789012" placeholder="" required readonly>
+                                <div class="invalid-feedback">
+                                    El número de tarjeta es necesaria
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar para finalizar compra</button>
+                    </form>
+                </div>
+            </div>
+
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">&copy; 2021 X-Force</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Privacidad</a></li>
+                    <li class="list-inline-item"><a href="#">Terminos</a></li>
+                    <li class="list-inline-item"><a href="#">Soporte</a></li>
+                </ul>
+            </footer>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+        <script src="assets/js/navBar-categorias.js"></script>
+    </body>
+
+</html>
+
+<!-- Modelo para documentar el avance (ejemplo bitacoras)
+    Modelo metodológico para el trabajo
+    Ser capaces de reflexionar hasta donde hemos avanzado, porque hemos avanzado y porque no
+    Anotar lo que queremos y requeremos 
+-->

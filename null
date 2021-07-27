@@ -1,0 +1,443 @@
+[33mcommit 28f0ad02b630f170ab9365caed67c05100f57703[m[33m ([m[1;36mHEAD -> [m[1;32mramaAlexis[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 447da63 767d26f
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Wed Jul 7 10:52:47 2021 -0500
+
+    Merge pull request #23 from YanniMartinez/Yann
+    
+    Permite una busqueda dinámica del search en función del input
+
+[33mcommit 767d26fb9bc7aceecc65d973bfec4983b49c03fb[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Wed Jul 7 10:52:06 2021 -0500
+
+    Permite una busqueda dinámica del search en función del input
+
+[33mcommit 447da63afd6dc098c5ee58a0ca04338504707d9c[m
+Merge: bddcfd5 7b99717
+Author: generaliru <85249287+generaliru@users.noreply.github.com>
+Date:   Tue Jul 6 23:22:44 2021 -0500
+
+    Merge pull request #22 from YanniMartinez/uriel
+    
+    Mi contribución Final, mañana no estaré así que les dejo lo del botón…
+
+[33mcommit 7b99717396ac536d262a2645cedafb3fb0b94727[m[33m ([m[1;31morigin/uriel[m[33m)[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jul 6 23:21:31 2021 -0500
+
+    Mi contribución Final, mañana no estaré asi que les dejo lo del boton y categorias resulto, comentado y utilizando la API
+
+[33mcommit bddcfd52ef402468591a5ec89f56ccd63be93c98[m
+Merge: 32d6396 ca1c2ac
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Tue Jul 6 18:25:18 2021 -0500
+
+    Merge pull request #21 from YanniMartinez/Yann
+    
+    Implementamos la conexión del boton de busqueda en función del nombre del pokemon
+
+[33mcommit ca1c2ac139cdd52baad787fe292e9344de58fdbe[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Tue Jul 6 18:22:57 2021 -0500
+
+    Implementamos la conexión del boton de busqueda en función del nombre que reciba(en este caso es arbitrario)
+
+[33mcommit 32d63963834620313ffab9f71b425e33b4600d59[m
+Merge: ee757ff c3ebae1
+Author: generaliru <85249287+generaliru@users.noreply.github.com>
+Date:   Tue Jul 6 17:48:06 2021 -0500
+
+    Merge pull request #20 from YanniMartinez/uriel
+    
+    Uriel Ya con api, dinamica
+
+[33mcommit c3ebae16206f8cd5bb3ffffe3684d06198eb7323[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jul 6 17:46:41 2021 -0500
+
+    CheckBox ya con API poquemon
+
+[33mcommit 50c7cf2912b7b11b262086793b875ddbbc45d831[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jul 6 17:37:26 2021 -0500
+
+    CheckBox dinamico con función de botón
+
+[33mcommit fe87d88cbfa284ad19479ef241f6fb5a123903ee[m
+Merge: d9f01b5 ee757ff
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jul 6 17:08:13 2021 -0500
+
+    Cambios
+
+[33mcommit d9f01b5a5c535cbf0159d481fdf4c72f538ad31f[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jul 6 17:04:21 2021 -0500
+
+    cheack
+
+[33mcommit ee757ffce08175dd9969d7aefca307ae9adb76f2[m
+Merge: 823c9d9 ae27cc5
+Author: jaquelin-AP18 <85247076+jaquelin-AP18@users.noreply.github.com>
+Date:   Tue Jul 6 17:01:46 2021 -0500
+
+    Merge pull request #19 from YanniMartinez/jaquelin
+    
+    Se agregaron las categorias laterales de forma dinamica
+
+[33mcommit ae27cc5955b66cf9f6d5fab04b8b6cce7fcd9b87[m[33m ([m[1;31morigin/jaquelin[m[33m)[m
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Tue Jul 6 16:58:06 2021 -0500
+
+    Se agregaron las categorias laterales de forma dinamica
+
+[33mcommit 823c9d948cf6d58fe50c669dd230cfab5b9de650[m
+Merge: d656e8d 2eddf2e
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Tue Jul 6 16:37:17 2021 -0500
+
+    Merge pull request #18 from YanniMartinez/Yann
+    
+    Yann
+
+[33mcommit 2eddf2ed08f104da34bb6a8a484ac55e663ce1c4[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Tue Jul 6 16:36:26 2021 -0500
+
+    Se implemento la pagina de descripción de producto
+
+[33mcommit d656e8d041d076293e4c5b322b12016654f39b4a[m
+Merge: 7cfb51f b04ee4a
+Author: jaquelin-AP18 <85247076+jaquelin-AP18@users.noreply.github.com>
+Date:   Tue Jul 6 16:24:32 2021 -0500
+
+    Merge pull request #17 from YanniMartinez/jaquelin
+    
+    elimine archivo joel
+
+[33mcommit b04ee4abd8004fcfdbb2de3d1695491fa5c3d1ab[m
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Tue Jul 6 16:21:13 2021 -0500
+
+    elimine archivo joel
+
+[33mcommit c1239cc89d1f89a3dca1af944d2081b5bf22abcd[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Tue Jul 6 15:58:29 2021 -0500
+
+    Agregamos pagina de descripción
+
+[33mcommit 7cfb51f117fc7f9a8a9c0124e202db2e42697930[m
+Merge: 6a7e21d 7278724
+Author: generaliru <85249287+generaliru@users.noreply.github.com>
+Date:   Tue Jul 6 15:41:45 2021 -0500
+
+    Merge pull request #16 from YanniMartinez/uriel
+    
+    Prueba con API POKEMON
+
+[33mcommit 7278724529fd573cd885f50928572fb54d3c3bbd[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jul 6 15:39:24 2021 -0500
+
+    Prueba con API POKEMON
+
+[33mcommit 6a7e21d9197db898b3833a6b5d04ab3d027970e3[m
+Merge: 2d2da57 1c56f78
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Tue Jul 6 15:06:55 2021 -0500
+
+    Merge pull request #15 from YanniMartinez/Yann
+    
+    Agregué un archivo de cards dinámicas mediante API Pokemon
+
+[33mcommit 1c56f786c23040767eb5f90d98970cebfe4dbd1d[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Tue Jul 6 15:06:09 2021 -0500
+
+    Agregué un archivo de cards dinámicas mediante API
+
+[33mcommit 2d2da575010c27dd06457264acadc4e093a3bcf9[m
+Merge: 17e25b5 e6ede8d
+Author: generaliru <85249287+generaliru@users.noreply.github.com>
+Date:   Fri Jul 2 15:24:39 2021 -0500
+
+    Merge pull request #14 from YanniMartinez/uriel
+    
+    Actualización de cards Production
+
+[33mcommit e6ede8d831e73acb8d1f0ba2754b1dbcb5b88d1b[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Fri Jul 2 15:00:42 2021 -0500
+
+    Actualización de cards Production
+
+[33mcommit 17e25b580871da9c66d1f8b32debee6bb3b418fc[m
+Merge: 226fba4 251e551
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Fri Jul 2 13:38:19 2021 -0500
+
+    Merge pull request #13 from YanniMartinez/ramaAlexis
+    
+    Se acualiza por defecto pag principal
+
+[33mcommit 251e551bfa9c3219bb4922dc2987edd5fcdbe105[m[33m ([m[1;31morigin/ramaAlexis[m[33m)[m
+Author: proivited <miguel.alexis.gomez.a@gmail.com>
+Date:   Fri Jul 2 13:35:02 2021 -0500
+
+    se volvieron aleatorios los pokemones de pag principal
+
+[33mcommit cdc2d503ebc370b1afe1b2f29a6f7fbae711882e[m
+Author: proivited <miguel.alexis.gomez.a@gmail.com>
+Date:   Fri Jul 2 13:03:06 2021 -0500
+
+    Se acualiza por defecto pag principal
+
+[33mcommit 226fba4e16f715a69a6225eef7b83a1f9963db34[m
+Merge: 02de281 770ff1b
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Fri Jul 2 12:49:38 2021 -0500
+
+    Merge pull request #12 from YanniMartinez/JaquelinRama
+    
+    Creacion js card-articulos
+
+[33mcommit 02de2818b58c7fcf7e0d6630c402bd421d007ad5[m
+Merge: aa82ddc a71ac9b
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Fri Jul 2 12:46:10 2021 -0500
+
+    Merge pull request #11 from YanniMartinez/ramaAlexis
+    
+    El carrusel llena de manera automatica las etiquetas
+
+[33mcommit a71ac9b0770aee9a0ca7c0c90ec811fc45b002c5[m
+Author: proivited <miguel.alexis.gomez.a@gmail.com>
+Date:   Fri Jul 2 12:44:49 2021 -0500
+
+    El carrusel llena de manera automatica las etiquetas
+
+[33mcommit 770ff1bb830a1694ca990489e66742b02d64c7c2[m
+Merge: c2058d0 aa82ddc
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Fri Jul 2 12:41:35 2021 -0500
+
+    Merge branch 'main' of https://github.com/YanniMartinez/XForce-ProyectoIntegrador into JaquelinRama
+
+[33mcommit c2058d065cc0fdb46d389f6f6be95c6820f111eb[m
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Fri Jul 2 12:37:47 2021 -0500
+
+    Creacion js card-articulos
+
+[33mcommit aa82ddc6f9ce799940584f698ffc8820996d3100[m
+Merge: cc1e11c 99fa466
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Fri Jul 2 11:29:53 2021 -0500
+
+    Merge pull request #10 from YanniMartinez/ramaAlexis
+    
+    Cambios en nombres de botones y id de los mismos (en carrusel)
+
+[33mcommit 99fa466bffb91aecbd76427c7f4222d64985fb67[m
+Author: proivited <miguel.alexis.gomez.a@gmail.com>
+Date:   Fri Jul 2 11:28:22 2021 -0500
+
+    Cambios en nombres de botones y id de los mismos (en carrusel)
+
+[33mcommit 99ddc9d1d9c77c88e20a39a284a3efedea878b6f[m
+Merge: f1b412d cc1e11c
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Fri Jul 2 10:35:38 2021 -0500
+
+    Merge branch 'main' of https://github.com/YanniMartinez/XForce-ProyectoIntegrador into JaquelinRama
+
+[33mcommit f1b412dc346c90914251aa65aad12fc6b9ae39f9[m
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Fri Jul 2 10:35:06 2021 -0500
+
+    Modificacion pag. articulos
+
+[33mcommit cc1e11c514f4d0f2c52495c85540f63884767417[m
+Merge: b715dbd 2e493f4
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Fri Jul 2 09:54:33 2021 -0500
+
+    Merge pull request #9 from YanniMartinez/Yann
+    
+    Pequeño programa que permite una asignación aleatoria de lider
+
+[33mcommit 2e493f4916882778bdd1325110375b80cebd23ea[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Fri Jul 2 09:53:51 2021 -0500
+
+    Pequeño programa que permite una asignación aleatoria de lider
+
+[33mcommit b715dbd0b83dae56128647c7dbebff7730b9e2c8[m
+Merge: 130143b e9df270
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Thu Jul 1 17:59:46 2021 -0500
+
+    Merge pull request #8 from YanniMartinez/Yann
+    
+    Yann
+
+[33mcommit e9df27012e6a74f67c678ebb9f0db3f2e0d3daac[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Thu Jul 1 17:42:13 2021 -0500
+
+    Corrigiendo bug que impide presionar Articulos en el nav estando en la página articulos
+
+[33mcommit 130143b3c650f00284dbbf7da66b41afe9f8736a[m
+Merge: ed07261 46b8348
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Thu Jul 1 17:27:52 2021 -0500
+
+    Merge pull request #7 from YanniMartinez/joel
+    
+    boton busqueda sidebar
+
+[33mcommit 46b83489efc749bce6650162e0b420ec1fa1771c[m[33m ([m[1;31morigin/joel[m[33m)[m
+Author: joelv9000 <joelvelazquezvargasmm@gmail.com>
+Date:   Thu Jul 1 17:25:36 2021 -0500
+
+    boton busqueda sidebar
+
+[33mcommit 0ae467c93b1bdfdf977f8a7b20754499a878646c[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Thu Jul 1 17:13:10 2021 -0500
+
+    Corrigiendo Bugs de objeto Card
+
+[33mcommit 87d1801ef38dc16bdd91e06bd40780e57aeca62e[m
+Merge: 4bcac88 ed07261
+Author: Yann <metalyanni@gmail.com>
+Date:   Thu Jul 1 17:05:16 2021 -0500
+
+    Actualizando el repo
+
+[33mcommit ed07261b14a95b2f00b3b78095b914d438ff3cfc[m
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Thu Jul 1 16:56:21 2021 -0500
+
+    Se agregó el objeto Card
+    
+    Permite actualizar contenido de forma dinámica en el sitio, en este caso se usó una API ya conocida.
+
+[33mcommit 4bcac8824f1f6baa32196bb498292a372a837e0d[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Thu Jul 1 09:38:43 2021 -0500
+
+    Empleando objeto Card que permita actualizar de forma dinámica el contenido de las cards. Actualmente está en fase preeliminar
+
+[33mcommit dfe395e5bde428c12b9e11b2f8af35ecad38906e[m
+Author: generaliru <85249287+generaliru@users.noreply.github.com>
+Date:   Wed Jun 30 16:42:27 2021 -0500
+
+    Cambie a tema oscuro.
+
+[33mcommit cb8c0ba274cd53054d4246df72293893b2fdc3b1[m
+Merge: bde2ba6 fe541fc
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Wed Jun 30 13:01:54 2021 -0500
+
+    Merge pull request #5 from generaliru/main
+    
+    Intentando corregir errores
+
+[33mcommit fe541fc28cd2c33594deda49293b778afcd26a2b[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Wed Jun 30 12:57:28 2021 -0500
+
+    Intentando corregir errores
+
+[33mcommit bde2ba6c0d70cb4ac1d929a398ae76efe12f017b[m
+Author: joelv9000 <joelvelazquezvargasmm@gmail.com>
+Date:   Wed Jun 30 12:26:15 2021 -0500
+
+    .
+
+[33mcommit dc497c634945e0ea3a730373ca108ebc9d7c2ec6[m
+Merge: 667ccd3 da34c72
+Author: joelv9000 <85259925+joelv9000@users.noreply.github.com>
+Date:   Wed Jun 30 12:06:23 2021 -0500
+
+    Merge pull request #4 from generaliru/main
+    
+    Se agregaron cambios a la navBar de la pagina de categorias,
+
+[33mcommit da34c724d382e57bf9064690ee1f9c7c6d9fbf83[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Wed Jun 30 12:01:32 2021 -0500
+
+    Se agregaron cambios a la navBar de la pagina de categorias, en esta pagina no ira buscador debido a que en la barra izquierda ya esta incorporada
+
+[33mcommit 667ccd339d4ea8d79223dee192ded384527311a9[m
+Merge: af9abd2 ae10131
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Wed Jun 30 10:55:27 2021 -0500
+
+    Merge pull request #3 from jaquelin-AP18/JaquiRama
+    
+    Modificacion pagina articulos
+
+[33mcommit ae10131cadf133752d4782aa369d0f89a324aea4[m
+Author: jaquelin <a.jaquelinperez@gmail.com>
+Date:   Wed Jun 30 10:53:20 2021 -0500
+
+    Modificacion pagina articulos
+
+[33mcommit af9abd2752b5e6c21864a740fade8784568729b9[m
+Author: joelv9000 <85259925+joelv9000@users.noreply.github.com>
+Date:   Tue Jun 29 17:15:29 2021 -0500
+
+    Add files via upload
+
+[33mcommit fed3916703075dd98e6bd885b3052b5daad2b9f7[m
+Author: joelv9000 <85259925+joelv9000@users.noreply.github.com>
+Date:   Tue Jun 29 17:10:11 2021 -0500
+
+    Update readme.txt
+
+[33mcommit 3d93ba35d648f7aae946d55012ef345d402ea931[m
+Merge: 9fa6431 583a50f
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Tue Jun 29 17:09:37 2021 -0500
+
+    Merge pull request #2 from generaliru/uriel
+    
+    Uriel ya se sincronizó
+
+[33mcommit 583a50f8bfb61f9458123ebb0dd1c8014958da18[m
+Author: generaliru <ucamcahoa1600@alumno.ipn.mx>
+Date:   Tue Jun 29 17:08:25 2021 -0500
+
+    Uriel ya se sincronizó
+
+[33mcommit 9fa643156c3d3c33e3990d09b3d45bd610abfeb1[m
+Merge: 78d7531 af2ba61
+Author: YanniMartinez <83842779+YanniMartinez@users.noreply.github.com>
+Date:   Tue Jun 29 17:07:49 2021 -0500
+
+    Merge pull request #1 from proivited/ramaAlexis
+    
+    un readme para saber si ya logran subir cambios
+
+[33mcommit af2ba61a4075c569c044d132e717e1d9c7536384[m
+Author: proivited <miguel.alexis.gomez.a@gmail.com>
+Date:   Tue Jun 29 17:06:37 2021 -0500
+
+    un readme para saber si ya logran subir cambios
+
+[33mcommit 78d753181a5778a02818d3e42ec2fab17923bf1e[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Tue Jun 29 16:51:21 2021 -0500
+
+    Agregando estuctura de carpetas
+
+[33mcommit dbdab6a67b39c8067aed682f3fd83ea0d68df19a[m
+Author: Yann <metalyanni@gmail.com>
+Date:   Tue Jun 29 16:32:00 2021 -0500
+
+    Prototipado de páginas principales del proyecto
