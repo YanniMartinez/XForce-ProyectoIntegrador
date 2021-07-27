@@ -1,0 +1,29 @@
+@font-face {
+    font-family:Moon-Bold ;
+    src: url("fonts/Moon-Bold.otf");
+} 
+
+@font-face {
+    font-family:Moon-Light ;
+    src: url("fonts/Moon-Light.otf");
+}
+
+@font-face {
+    font-family:Moon-Regular ;
+    src: url("fonts/Moon-Regular.otf");
+}
+
+a{
+    font-family: Moon-Regular;
+    letter-spacing: 1px;
+}
+
+h5{
+    font-family: Moon-bold;
+    letter-spacing: 1px;
+}
+
+p{
+    font-family:Moon-Light ;
+    letter-spacing: 1px;
+}

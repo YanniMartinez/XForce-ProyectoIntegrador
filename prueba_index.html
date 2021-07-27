@@ -9,14 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/fontStyle.css">
+
     <title>Pagina principal</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg"  style = "background-color: #032E42;"> <!--Color del NavBar-->
-    
+        <nav class="navbar navbar-expand-lg" style="background-color: #032E42;"> <!--Color del navBar-->
+
             <a class="navbar-brand text-light" href="#">X-Commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link  text-light" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                        <a class="nav-link  text-light" href="index.html">Inicio<span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
@@ -38,7 +39,8 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  text-light" href="articulos.html" tabindex="-1" aria-disabled="true">Articulos</a>
+                        <a class="nav-link  text-light" href="articulos.html" tabindex="-1"
+                            aria-disabled="true">Articulos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  text-light" href="pago.html">Carrito</a>
@@ -58,37 +60,11 @@
     <main role="main">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <ol class="carousel-indicators" id="indicador-carrusel">
             </ol>
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-xr-og-201809?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1535560276044"
-                        class="d-block w-100" alt="..." height="600">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Expresa lo mejor de ti con asombrosas fotografias</h5>
-                        <p>Expresa lo que llevas dentro con el nuevo Iphone</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.blogs.es/958640/logitech-raton/1366_2000.jpg"
-                        class="d-block w-100" alt="..." height="600">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 >Encuentra todo el equipo de computo que necesitas</h5>
-                        <p >Siente la comodidad con los nuevos equipos de Logitech</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://cdn.mos.cms.futurecdn.net/uFicTu3Ti56psJpsTGQ64C.jpg" class="d-block w-100"
-                        alt="..." height="600">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Siente la experiencia de la nueva generación </h5>
-                        <p>Olvidate de esperar años para poder vivir experiencias asombrosas con el nuevo XBOX series S</p>
-                    </div>
-                </div>
+            <div class="carousel-inner" id="carrusel">
+               
             </div>
         </div>
 
@@ -106,20 +82,23 @@
                 </div>
                 <div class="col-md-5">
                     <!-- Eliminamos los SVG para trabajar de forma convencional con una etiqueta img -->
-                    <img src="https://elektra.vtexassets.com/arquivos/ids/2965100-800-auto?width=800&height=auto&aspect=true" alt="" id="imagen1" height="300">
+                    <img src="https://elektra.vtexassets.com/arquivos/ids/2965100-800-auto?width=800&height=auto&aspect=true"
+                        alt="" id="imagen1" height="300">
                 </div>
             </div>
 
             <hr class="featurette-divider">
 
-            <div class="row featurette" id="Fuego">
+            <div class="row featurette">
                 <div class="col-md-7 order-md-2 text-right pr-5">
-                    <h2 class="featurette-heading" id="titulo2">Xiaomi Redmi Note 8 2021 64GB 4GB Ram Negro <span class="text-muted"></span></h2>
+                    <h2 class="featurette-heading" id="titulo2">Xiaomi Redmi Note 8 2021 64GB 4GB Ram Negro <span
+                            class="text-muted"></span></h2>
                     <p class="lead" id="descripcion2">Cámara de 48 + 8 + 2 + 2 Mp</p>
                     <a class="btn btn-outline-info" href="" id="popular2">Ver mas...</a>
                 </div>
                 <div class="col-md-5 order-md-1 m">
-                    <img src="https://elektra.vtexassets.com/arquivos/ids/3131264-800-auto?width=800&height=auto&aspect=true" alt="" id="imagen2" height="300">
+                    <img src="https://elektra.vtexassets.com/arquivos/ids/3131264-800-auto?width=800&height=auto&aspect=true"
+                        alt="" id="imagen2" height="300">
 
                 </div>
             </div>
@@ -128,13 +107,14 @@
 
             <div class="row featurette">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading" id="titulo3">Motorola Moto One Fusion Plus 128GB Desbloqueado - Azul Blackout<span
-                            class="text-muted"></span></h2>
+                    <h2 class="featurette-heading" id="titulo3">Motorola Moto One Fusion Plus 128GB Desbloqueado - Azul
+                        Blackout<span class="text-muted"></span></h2>
                     <p class="lead" id="descripcion3">Almacena tus apps favoritas en la memoria interna de 128 GB</p>
                     <a class="btn btn-outline-info" href="" id="popular3">Ver mas...</a>
                 </div>
                 <div class="col-md-5">
-                    <img src="https://elektra.vtexassets.com/arquivos/ids/2301808-800-auto?width=800&height=auto&aspect=true" alt="" id="imagen3" height="300">
+                    <img src="https://elektra.vtexassets.com/arquivos/ids/2301808-800-auto?width=800&height=auto&aspect=true"
+                        alt="" id="imagen3" height="300">
 
                 </div>
             </div>
@@ -163,8 +143,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    <script src="assets/js/Card.js"></script>
+    <!-- <script src="assets/js/Card.js"></script> -->
     <script src="assets/js/navBar-categorias.js"></script>
+    <script src="assets/js/purbas_carrusel.js"></script>
 
 </body>
 

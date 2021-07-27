@@ -9,64 +9,71 @@
 class Card{
 
      /**Declaración de ATRIBUTOS  */
-    name = "";
-    sticker = "";
-    description = "";
-    img = "";
+     #imagen="";
+     #nombre="";
+     #descripcion="";
+     #etiqueta="";
     
     /**
-     * Se encarga de inicializar al objeto
-     * @param {*} etiqueta Hace referencia a la categoria del elemento.
+     * Constructor, nos permite inicializar los valores de nuestro objeto en base a la información brindada por la API
+     * @param {*} imagen Hace referencia al valor SRC que asignaremos a la etiqueta img posteriormente
+     * @param {*} nombre Hace referencia al nombre del articulo
+     * @param {*} descripcion Hace referencia a la breve descripción obtenida del articulo
+     * @param {*} etiqueta Hace referencia a la etiqueta o categoria a la que pertenece el articulo
      */
-    constructor(etiqueta){
-        this.sticker = etiqueta;
-    }
-
+     constructor(imagen,nombre,descripcion,etiqueta)
+     {
+         this.#imagen=imagen;
+         this.#nombre=nombre;
+         this.#descripcion=descripcion;
+         this.#etiqueta=etiqueta;
+     }
+ 
+     /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
+     set imagen(value){this.#imagen=value;}
+     set nombre(value){this.#nombre=value;}
+     set descripcion(value){this.#descripcion=value;}
+     set etiqueta(value){this.#etiqueta=value;}
+ 
+     /**Metodos Get's permiten obtener información de los atributos del objeto */
+     get imagen(){return this.#imagen;}
+     get nombre(){return this.#nombre;}
+     get descripcion(){return this.#descripcion;}
+     get etiqueta(){return this.#etiqueta;}
+ 
+     /**
+      * Permite la creación de etiquetas necesarias para poder construir una Card basada en las clases de BootStrap 4.6
+      * Además de permitir la automatización de las etiquetas, también permite automatizar la información en base a
+      * los valores que tiene el objeto
+      * @returns div Retorna una etiqueta div con todo el contenido basado en el objeto, incluidas las demás
+      * etiquetas que contienen toda la información necesaria para describir el articulo.
+      */
     /*  Consumimos el API  y guardamos los valores en nuestros atributos*/
-    getInfo(){
-        /* fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${this.sticker}`) //Justo usamos el BackStick para poder hacer un fetch personalizado en función del nombre del pokemon
-        .then(data => data.json())
-        .then(data => { */
-            
-            /* Cuando son nombres significa que son atributos y se usa el .
-            Cuando son numeros significa que son arreglos y van entre [] */
+    getInfo(categoria){
+        let data;
+        switch (categoria) {
+            case 'gamer':
+                data = gamer;
+                break;
+            case 'celulares':
+                data = celulares;
+                break;
+            case 'impresoras':
+                data = impresoras;
+                break;
+            case 'laptops':
+                data = laptops;
+                break;
+            case 'monitores':
+                data = monitores;
+                break;
+            default:
+                data = gamer;
+                break;
+        }
+        console.log(data);
 
-           /*  var aleatoria = Math.floor(Math.random() * (data.length - 0) + 0); //Obtenemos un número aleatorio de 0 hasta el número de elementos que retornó la API */
-            celulares.forEach(data =>{
-                this.name = data.nombre; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
-                this.description = data.descripcion; //Asignamos una habilidad a nuestra descripción
-                this.img = data.imagen; //Almancenamos el url en nuestro atributo img
-                this.modifTitle("#titulo"); //Modificando el titulo
-                this.modifDescription("#descripcion"); //Modificando la descripción
-                this.modifImg("#imagen"); //Modificando el id imagen
-                this.modifButton("#popular1");
-            })
 
-          /*   
-
-            //Los siguientes 2 casos son una reutirlización de código:
-            aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
-
-            this.name = data[aleatoria].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
-            this.description = data[aleatoria].abilities[1]; //Asignamos una habilidad a nuestra descripción
-            this.img = data[aleatoria].img; //Almancenamos el url en nuestro atributo img
-            this.modifTitle("#titulo2");
-            this.modifDescription("#descripcion2");
-            this.modifImg("#imagen2");
-            this.modifButton("#popular2");
-
-            aleatoria = Math.floor(Math.random() * (data.length - 0) + 0);
-            
-            this.name = data[aleatoria].name; //En este paso agregamos el valor del nombre del pokemon en nuestro atributo nombre
-            this.description = data[aleatoria].abilities[1]; //Asignamos una habilidad a nuestra descripción
-            this.img = data[aleatoria].img; //Almancenamos el url en nuestro atributo img
-            this.modifTitle("#titulo3");
-            this.modifDescription("#descripcion3");
-            this.modifImg("#imagen3");
-            this.modifButton("#popular3"); */
-        /* }).catch(e => console.log(e));
-         */
-            
     }
     
 
@@ -76,7 +83,7 @@ class Card{
      */
     modifTitle(id){
         let title = document.querySelector(id); //Enlazamos una variable con el id deseado
-        title.textContent = this.name; //Actualizamos el contenido de nuestro h2.
+        title.textContent = this.#nombre; //Actualizamos el contenido de nuestro h2.
     }
 
     /**
@@ -85,7 +92,7 @@ class Card{
      */
     modifDescription(id){
         let description = document.querySelector(id); //Enlazamos una variable con el id deseado
-        description.textContent = this.description; //Actualizamos el contenido de nuestro P
+        description.textContent = this.#descripcion; //Actualizamos el contenido de nuestro P
     }
 
     /**
@@ -94,7 +101,7 @@ class Card{
      */
     modifImg(id){
         let image = document.querySelector(id); //Enlazamos una variable con el id deseado
-        image.src = this.img; //Actualizamos el contenido de nuestra propiedad SRC de la imagen
+        image.src = this.#imagen; //Actualizamos el contenido de nuestra propiedad SRC de la imagen
     }
 
     /**
@@ -103,13 +110,13 @@ class Card{
      */
     modifButton(id){
         let enlace = document.querySelector(id); //Enlazamos una variable con el id deseado
-        enlace.href = `descripcionArticulo.html?nombre=${this.name}`;
+        enlace.href = `descripcionArticulo.html?nombre=${this.#nombre}`;
     }
 
 }
 
-const Fuego = new Card("electric");  //Creación de objeto tipo electrico
-Fuego.getInfo() //Obtención de card arbitraria
+const Fuego = new Card("gamer");  //Creación de objeto tipo electrico
+Fuego.getInfo("gamer") //Obtención de card arbitraria
 
 /* Probando */    
 /*const Pikachu = new Card("pikachu"); //Declaramos un objeto tipo card y le mandamos como etiqueta "pikachu", esto de forma más profesional puede ser la categoria general como "hombre, mujer, etc".

@@ -80,7 +80,7 @@ class Card
         let button=document.createElement("a"); // Botón con etiqueta a
         button.classList="btn btn-outline-primary";
         button.textContent="Ver más...";
-        button.href=`descripcionArticulo.html?nombre=${this.#nombre}&categoria=${this.#etiqueta}`;
+        button.href=`descripcionArticulo.html?nombre=${this.#nombre}`;
 
         /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
         div2.appendChild(h5); // h5 -> div2
@@ -160,7 +160,7 @@ function loadCards(categoria){
  * @returns cards Hace referencia a un arreglo de objetos con información unica.
  */
 function jsonToCard(data){
-console.log(data);
+
     /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
     let cards = [];
     data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
@@ -212,12 +212,23 @@ function getGET() {
  */
  function init(){
     let inicio = getGET();
+    console.log(inicio)
     if (typeof(inicio) == 'undefined'){
         loadCards("water");
     }
     else{
-        loadCards(inicio["categoria"]);
+        if (typeof(inicio["categoria"]) == 'undefined'){
+            loadCards(inicio["categoria"]);
+        }
+        else{
+            loadCards(inicio["nombre"]);
+
+        }
     }
+}
+
+function loadCardname(name){
+    
 }
 
 
