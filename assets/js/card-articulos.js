@@ -53,25 +53,30 @@ class Card
      */
     crearCard()
     {
+        // <div class="container m-4">
+        //         <div class="card">
+        //             <img src="https://telmov.mx/pub/media/catalog/product/cache/b16575678386db1ef77c8f34ab4968cf/p/o/poco_x3_pro_negro_1_.jpg" alt="" id="imagen2" height="">
+        //             <h4>Motorola Moto One Fusion Plus 128GB Desbloqueado - Azul Blackout</h4>
+        //             <p>Procesador Snapdragon 860 2.96GHz</p>
+        //             <a href="#">Ver mas</a>
+        //     </div> 
         /* Este método crea el codigo HTML de la card */
-        let div= document.createElement("div"); //Contenedor de la card.
-        div.classList="card p-3  border-0 shadow p-3 mb-5 bg-white rounded" ;
+        let div1 = document.createElement("div");
+        div1.classList = 'container';
 
-        let div3 = document.createElement('div'); //Contenedor de la imagen.
-        div3.style.height = '285px';
+        let div2 = document.createElement("div"); //Contenedor de la card.
+        div2.classList="card p-2 mt-3" ;
 
         let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-        img.classList="card-img-top";   
+        // img.classList="card-img-top";   
         img.src=this.#imagen;
-        img.style.margin = "10% 0px";
-        img.height = 255;
+        // img.style.margin = "10% 0px";
+        // img.height = 255;
 
-        let div2=document.createElement("div"); //Contenedor del Cuerpo de la card.
-        div2.classList="card-body ";
 
-        let h5=document.createElement("h5"); //Titulo de la card, se asigna el nombre del objeto.
-        h5.classList="card-title";
-        h5.textContent=this.#nombre;
+        let h4=document.createElement("h4"); //Titulo de la card, se asigna el nombre del objeto.
+        h4.classList="card-title";
+        h4.textContent=this.#nombre;
 
         let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
         p.classList="card-text";
@@ -83,14 +88,13 @@ class Card
         button.href=`descripcionArticulo.html?nombre=${this.#nombre}&categoria=${this.#etiqueta}`;
 
         /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
-        div2.appendChild(h5); // h5 -> div2
+        div2.appendChild(img); // img -> div3
+        div2.appendChild(h4); // h5 -> div2
         div2.appendChild(p);  // p -> div2
         div2.appendChild(button); // boton -> div2
-        div3.appendChild(img); // img -> div3
-        div.appendChild(div3); //div3 -> div
-        div.appendChild(div2); //div3 -> div
+        div1.appendChild(div2); //div3 -> div
 
-        return div; //regresamos el elemento.
+        return div1; //regresamos el elemento.
     }
 }
 
@@ -110,7 +114,7 @@ function insertCards(cards){
             console.log(`${i}-(i+1)`);
             console.log(`${i}-else-${f}`);
             let columna = document.createElement('div');
-            columna.classList = 'col-xl-4';
+            columna.classList = 'col-xl-4 p-0';
             columna.appendChild(card.crearCard());
             document.querySelector(`#fila${f}`).appendChild(columna);
         }
@@ -121,7 +125,7 @@ function insertCards(cards){
             fila.id = `fila${i}`;
             f = i;
             let columna = document.createElement('div');
-            columna.classList = 'col-xl-4';
+            columna.classList = 'col-xl-4 p-0';
             columna.appendChild(card.crearCard());
             fila.appendChild(columna);
             console.log(fila);
@@ -130,7 +134,7 @@ function insertCards(cards){
         else{
             console.log(`${i}-else-${f}`);
             let columna = document.createElement('div');
-            columna.classList = 'col-xl-4';
+            columna.classList = 'col-xl-4 p-0';
             columna.appendChild(card.crearCard());
             document.querySelector(`#fila${f}`).appendChild(columna);
         }
@@ -250,7 +254,7 @@ function removeCards(){
 
     /* Esta función elimina a todos los hijos de cada columna */
     for(let i = 0; i < 3; i++){
-        let element = document.querySelector(`#card-group-${i}`);   // Referencia a la columna
+        let element = document.querySelector(`#cards`);   // Referencia a la columna
         while (element.firstChild){ // Solo si hay un primer hijo
             element.removeChild(element.firstChild); // Remueve el susodicho hijo
           };
