@@ -56,7 +56,6 @@ class Card
         /* Este método crea el codigo HTML de la card */
         let div= document.createElement("div"); //Contenedor de la card.
         div.classList="card p-3  border-0 shadow p-3 mb-5 bg-white rounded" ;
-        div.style = "width: 18rem;";
 
         let div3 = document.createElement('div'); //Contenedor de la imagen.
         div3.style.height = '285px';
@@ -65,6 +64,7 @@ class Card
         img.classList="card-img-top";   
         img.src=this.#imagen;
         img.style.margin = "10% 0px";
+        img.height = 255;
 
         let div2=document.createElement("div"); //Contenedor del Cuerpo de la card.
         div2.classList="card-body ";
@@ -100,22 +100,43 @@ class Card
  */
 function insertCards(cards){
 
-    /* Esta funcion inserta las Cards en la columna correspondente */
-    let j = 0;
-    let i = item; 
-    //Nosé para que era este if pero favor de retirarlo si no se usa
-    if (i == 0){
-
-    }
+    let seccion_cards = document.querySelector(`#cards`);
+    let f;
     // Recorremos las cards para asignarlas a una columna.
-    cards.forEach((card) => {
-        document.querySelector(`#card-group-${i-j}`).appendChild(card.crearCard());
-        // console.log(i,j,i-j); Si quieren ver como se asignan, pueden descomentar este console.
-        if((i-j+1)%3 == 0){
-            j = j + 3
+    cards.forEach((card,i) => {
+        let columna = document.createElement('div');
+        columna.classList = 'col-md-3';
+        if((i+1) % 3 == 0){
+            console.log(`${i}-(i+1)`);
+            console.log(`${i}-else-${f}`);
+            let columna = document.createElement('div');
+            columna.classList = 'col-xl-4';
+            columna.appendChild(card.crearCard());
+            document.querySelector(`#fila${f}`).appendChild(columna);
         }
-        item = (i - j + 1);
-        i++;
+        else if((i % 3) == 0){
+            console.log(`${i}-(i)`);
+            let fila = document.createElement('div');
+            fila.classList = 'row';
+            fila.id = `fila${i}`;
+            f = i;
+            let columna = document.createElement('div');
+            columna.classList = 'col-xl-4';
+            columna.appendChild(card.crearCard());
+            fila.appendChild(columna);
+            console.log(fila);
+            seccion_cards.appendChild(fila);
+        }
+        else{
+            console.log(`${i}-else-${f}`);
+            let columna = document.createElement('div');
+            columna.classList = 'col-xl-4';
+            columna.appendChild(card.crearCard());
+            document.querySelector(`#fila${f}`).appendChild(columna);
+        }
+        // columna.appendChild(card.crearCard());
+        // fila.appendChild(columna);
+        // seccion_cards.appendChild(fila);
     });
 }
 
