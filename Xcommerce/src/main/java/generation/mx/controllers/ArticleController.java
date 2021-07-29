@@ -74,7 +74,7 @@ public class ArticleController {
 	 * @param id is the param to search with the query
 	 * @return Articles all articles obtains in the query
 	 * */
-	@GetMapping(path="/query")
+	@GetMapping(path="/name")
 	public ArrayList<ArticleModel> getArticlesByName( @RequestParam(value = "name" , defaultValue="") String name){
 		return articleService.getArticlesByName(name);
 	}
@@ -84,7 +84,7 @@ public class ArticleController {
 	 * @param tag is the param to search with the query
 	 * @return Articles all articles obtains in the query
 	 * */
-	@GetMapping(path="/query")
+	@GetMapping(path="/tag")
 	public ArrayList<ArticleModel> getArticlesByTag( @RequestParam(value = "tag" , defaultValue="") String tag){
 		return articleService.getArticlesByTag(tag);
 	}
@@ -94,7 +94,7 @@ public class ArticleController {
 	 * @param category is the param to search with the query
 	 * @return Articles all articles obtains in the query
 	 * */
-	@GetMapping(path="/query")
+	@GetMapping(path="/category")
 	public ArrayList<ArticleModel> getArticlesByCategory( @RequestParam(value = "tag" , defaultValue="") String Category){
 		return articleService.getArticlesByCategory(Category);
 	}
