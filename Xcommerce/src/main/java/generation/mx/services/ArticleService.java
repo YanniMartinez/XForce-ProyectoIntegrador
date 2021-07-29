@@ -76,7 +76,7 @@ public class ArticleService {
 	 * @return ArrayList<ArticleModel> Is all of Articles obtains in the query
 	 * */
 	public ArrayList<ArticleModel> getArticlesByName(String name) {
-		return articleRepository.findArticleByName(name);
+		return articleRepository.findByNameContaining(name);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class ArticleService {
 	 * @return ArrayList<ArticleModel> Is all of Articles obtains in the query
 	 * */
 	public ArrayList<ArticleModel> getArticlesByTag(String tag) {
-		return articleRepository.findArticleByTag(tag);
+		return articleRepository.findByTag(tag);
 	}
 	
 	/**
@@ -94,6 +94,6 @@ public class ArticleService {
 	 * @return ArrayList<ArticleModel> Is all of Articles obtains in the query
 	 * */
 	public ArrayList<ArticleModel> getArticlesByCategory(String category) {
-		return articleRepository.findArticleByCategory(category);
+		return articleRepository.findByCategory(category);
 	}
 }
