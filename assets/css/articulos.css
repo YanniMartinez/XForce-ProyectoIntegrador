@@ -22,7 +22,11 @@
 }
 
 .container .card img{
-    height: 220px;
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
+    margin: 0 auto;;
 }
 
 .container .card h4{
