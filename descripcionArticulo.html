@@ -11,11 +11,12 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/fontStyle.css">
     <title>Descripción articulo</title>
+    
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #032E42;">
+        <nav class="navbar navbar-expand" style="background-color: #032E42;">
 
             <a class="navbar-brand text-light" href="#">X-Commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -57,62 +58,84 @@
     </header>
 
 
-    <div class="container-fluid">
-        <br />
+    <div class="container">
+       
         <div class="row">
-            <div class="col-m-3 " id="scroll">
-
-                <div style="background-color: #2B6684;">
-                    <section id="search">
-
-                        <div style="width: 10px;"></div>
-                        <div>
-                            <input type="text" class="form-control " id="busqueda" placeholder="Artículo">
+           
+            <!-- Primera sección de cartas verticales -->
+            <div class="col-lg-12 " class="card-group" id='card-group-0'>
+                <div class="card p-4  border-0 shadow p-4 mb-5 m-4 rounded"  style="background-color: #9CACBF;">
+                    <div class="row justify-content-md-start ">
+                        <div class="col col-lg-6 rounded">
+                            <div class="card p-4  border-0 shadow p-4 mb-5 m-4 rounded">
+                            <img src="https://www.cyberpuerta.mx/img/product/XL/CP-ASUS-90NR02D2-M09770-1.jpg" alt="asus laptop" srcset="">
                         </div>
-                        <div class="input-group mt-2 justify-content-lg-end"><div class="p-3 border bg-light">
-                            <span class="input-group-btn"></span>
-                            <button class="btn btn-outline-primary" type="button" id="botonBusqueda">
-                                <h6>Buscar por nombre</h6>
-                            </button>
-                            </span>
+                    </div>
+                            <div class="col-lg-6">
+                                <h2>ASUS TUF FX505DT-BQ017T Laptop Gamer</h2> 
+                                <span></span>
+                                <ul>
+                                    <li>Familia de procesador: <span>AMD Ryzen 7</span></li>
+                                    <li>Diagonal de la pantalla: <span>39,6 cm (15.6")</span></li>
+                                    <li>Memoria interna: <span>8 GB</span></li>
+                                    <li>Tipo de memoria interna: <span>DDR4-SDRAM</span></li>
+                                    <li>Capacidad total de almacenaje: <span>512 GB</span></li>
+                                    <li>Tarjeta de Video: <span>NVIDIA® GeForce® GTX 1650</span></li>
+                                    <li>Sistema operativo instalado: <span>Windows 10 Home</span></li>
+                                    <li>Idioma del teclado: <span>Español</span></li>
+                                    </ul>
+
+                                <div class="row">
+
+                                        <div class="inner rounded">
+                                             <div class="card p-4  border-0 shadow p-4 m-2 rounded">
+                                                <img style="width: 95px; " src="https://www.cyberpuerta.mx/img/product/S/CP-ASUS-90NR02D2-M09770-4.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="inner rounded">
+                                            <div class="card p-4  border-0 shadow p-4 m-2 rounded">
+                                               <img style="width: 100px;" src="https://www.cyberpuerta.mx/img/product/XL/CP-ASUS-90NR02D2-M09770-12.jpg">
+                                           </div>
+                                       </div>
+                                       <div class="inner rounded">
+                                        <div class="card p-4  border-0 shadow p-4 m-2 rounded">
+                                           <img style="width: 100px;" src="https://www.cyberpuerta.mx/img/product/XL/CP-ASUS-90NR02D2-M09770-11.jpg">
+                                       </div>
+                                   </div>
+                                </div>
+
+                                        
+                               
+                            </div>
+                          
+                            </div>
+                            <div class="col col-lg-2">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 m-2">
+                                <h5>Vendido por  X-Commerce Copyright.</h5>
+                        </div>
+                        <div class="col-md-auto">
+                            
+                        </div>
+                        <div class="row-cols-lg-auto">
+                            <div class="btn-group cart">
+                                <button type="button" class="btn btn-success">
+                                    Agregar a carrito 
+                                </button>
+                            </div>
+                            <div class="btn-group wishlist">
+                                <button type="button" class="btn btn-outline-info ">
+                                    Agregar a lista de compra
+                                </button>
                             </div>
                         </div>
-                    </section>
-
-                    <hr />
-                    <h6>Categories</h6>
-                    <br />
-                    <form id="categoriaslat">
-                    </form>
-                    <br />
-                    <button type="button" class="btn btn-outline-light " id="btn-categorias-lat">Buscar</button>
-                </div>
-
-            </div>
-            <!-- Primera sección de cartas verticales -->
-            <div class="col-lg-7" class="card-group" id='card-group-0'>
-                <div class="card p-3  border-0 shadow p-3 mb-5  rounded"  style="background-color: #9CACBF;">
-                    <img class="card-img-top" style="width: 25rem;"
-                        src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/d/u/dualsense_4_1.jpg"
-                        style="margin: 10% 0px;">
-                    <div class="card-body ">
-                             <h5 class="card-title">Control PlayStation 5 DualSense</h5>
-                        <p class="card-text">$1,599.99</p><a class="btn btn-outline-primary"
-                            href="descripcionArticulo.html?nombre=Control PlayStation 5 DualSense&amp;categoria=gamer">Ver
-                            más...</a>
+                      </div>
                     </div>
+                   
+                   
                 </div>
-                <div class="card p-3  border-0 shadow p-3 mb-5 bg-white rounded" style="width: 25rem;">
-                    <img class="card-img-top"
-                        src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/d/u/dualsense_4_1.jpg"
-                        style="margin: 10% 0px;">
-                    <div class="card-body ">
-                             <h5 class="card-title">Control PlayStation 5 DualSense</h5>
-                        <p class="card-text">$1,599.99</p><a class="btn btn-outline-primary"
-                            href="descripcionArticulo.html?nombre=Control PlayStation 5 DualSense&amp;categoria=gamer">Ver
-                            más...</a>
-                    </div>
-                </div>
+                
 
             </div>
 
