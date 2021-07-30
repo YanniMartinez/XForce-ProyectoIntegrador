@@ -1,7 +1,167 @@
 //Clase para el objeto tarjeta
 let item = 0;
+/**
+ * TODO: FUNCON QUE CAPTURA LOS GET EN VIADOS POR URL
+ * @returns La respuesta Get como una clase con atributos que contienen los mensajes Get
+ */
+function getGET() {
+    // capturamos la url
+    var loc = document.location.href;
+    // si existe el interrogante
+    if(loc.indexOf('?')>0) {
+        // cogemos la parte de la url que hay despues del interrogante
+        var getString = loc.split('?')[1]; // divide la cadena por cada '?' y toma sola la peticion del get
+        // obtenemos un array con cada clave=valor
+        var GET = getString.split('&'); // divide la cadena por cada '&'
+        var get = {}; // Crea un array que contendra el diccionario
+        // recorremos todo el array de valores
+        for(var i = 0, l = GET.length; i < l; i++){
+            var tmp = GET[i].split('='); // divide la cadena por cada '='
+            get[tmp[0]] = unescape(decodeURI(tmp[1])); // Lo agrda a un diccionario
+        }
+        return get; // retorna el diccionario
+    }
+}
 
 /**
+ * TODO: FUNCION QUE INICIALIZA LAS CARDS AL CARGAR LA PAGINA
+ * Funciona como prueba para objetos por carga default
+ */
+ function init(){
+    let inicio = getGET();
+    if (typeof(inicio) == 'undefined'){
+        loadCards("water");
+    }
+    else{
+        loadCards(inicio["categoria"]);
+    }
+}
+
+/**
+ * TODO: FUNCION QUE REMUEVE LAS CARDS DEL HTML
+ * Permite vaciar las cards contenidas en el grupo dinámico establecido
+ * Esto genera una limpieza en la página y deja la columa derecha en blanco
+ */
+ function removeCards(){
+
+    /* Esta función elimina a todos los hijos de cada columna */
+    for(let i = 0; i < 3; i++){
+        let element = document.querySelector(`#cards`);   // Referencia a la columna
+        while (element.firstChild){ // Solo si hay un primer hijo
+            element.removeChild(element.firstChild); // Remueve el susodicho hijo
+          };
+    }
+}
+
+/**
+ * TODO: CREA LOS OBJETOS DE LAS CARDS
+ * Convierte todo el contenido del consumo de la API en una card, se auxilia de la creación de un objeto
+ * el cual inicializa mediante su constructor y genera un arreglo de objetos Card para poder saber cuantas Cards
+ * se crearán de forma dinámica.
+ * @param {*} data Hace referencia a la información que obtenemos al consumo de la API
+ * @returns cards Hace referencia a un arreglo de objetos con información unica.
+ */
+ function jsonToCard(data){
+    console.log(data);
+        /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
+        let cards = [];
+        data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
+            let card = new Card(d.imagen, d.nombre, d.descripcion, d.categoria); //Crea objeto con valores unicos
+            cards.push(card); //Almacena en un arreglo de objetos
+        });
+        return cards; //Retorna el arreglo de cards
+}
+
+
+/**
+ * TODO: INSERTA LAS CARDS EL EL SEGMENTO QUE LAS VA A CONTENER
+ * Agrega un hijo al id Card-group- correspondiente, esto lo hará de 3 columas
+ * @param {*} cards 
+ */
+ function insertCards(cards){
+    
+    let seccion_cards = document.querySelector(`#cards`); // Selecciona seccion cards
+    let f; // Guarda la fila
+    // Recorremos las cards para asignarlas a una columna.
+    cards.forEach((card,i) => {
+        /**
+         * Recorremos el arreglo de cards para insertarlas
+         */
+        let columna = document.createElement('div'); // Creamos la columna que contendra cada card
+        columna.classList = 'col-md-3'; // Agregamos sus clases
+        if((i+1) % 3 == 0){ // Si la card es multiplo de 3
+            // console.log(`${i}-(i+1)`);
+            // console.log(`${i}-else-${f}`);
+            let columna = document.createElement('div'); // Creamos la columna que contendra cada card
+            columna.classList = 'col-xl-4 p-0'; // Agregamos sus clases
+            columna.appendChild(card.crearCard()); // Anidamos la card en la columna
+            document.querySelector(`#fila${f}`).appendChild(columna); // Anidamos la columna en su correspondiente fila
+        }
+        else if((i % 3) == 0){ // Si la card es la tercera
+            // console.log(`${i}-(i)`);
+            let fila = document.createElement('div'); // Creamos una nueva fila
+            fila.classList = 'row'; // Agregamos sus clase
+            fila.id = `fila${i}`; // Agregamos su id
+            f = i;  // Guardamos el indice de la nueva fila
+            let columna = document.createElement('div'); // Creamos la columna que contendra cada card
+            columna.classList = 'col-xl-4 p-0'; // Agregamos sus clases
+            columna.appendChild(card.crearCard()); // La card en la columna
+            fila.appendChild(columna); // Anidamos la columna en su correspondiente fila
+            // console.log(fila);
+            seccion_cards.appendChild(fila); // Agregamos la card en su seccion
+        }
+        else{ // Si es la card es la segunda
+            // console.log(`${i}-else-${f}`);
+            let columna = document.createElement('div'); // Creamos la columna
+            columna.classList = 'col-xl-4 p-0'; // Agregamos su clase
+            columna.appendChild(card.crearCard()); // Anidamos la card en la columna
+            document.querySelector(`#fila${f}`).appendChild(columna); // Anidamos la colummna en la fila
+        }
+    });
+}
+
+/**
+ * TODO: EN ESTA FUNCION SE OBTIENEN LOS DATOS DE CADA CATEGORIA PARA GENERAL LAS CARDS
+ * Esta funcion carga las imagenes del api en el HTML
+ * @param {*} categoria que se van a insertar el HTML
+ */
+function loadCards(categoria){
+
+    //Realizamos la consulta
+    /*fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
+    .then(resp => resp.json())
+    .then(data => {*/
+        let data; // Contendra la categorìa que se va a cargar
+        switch (categoria) {
+            /**
+             * Selecciona la categoria que se desa cargar
+             */
+            case 'gamer':
+                data = gamer;
+                break;
+            case 'celulares':
+                data = celulares;
+                break;
+            case 'impresoras':
+                data = impresoras;
+                break;
+            case 'laptops':
+                data = laptops;
+                break;
+            case 'monitores':
+                data = monitores;
+                break;
+            default:
+                data = gamer;
+                break;
+        }
+        let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
+        insertCards(cards); // Inserta las cards en el HTML
+    //});
+}
+
+/**
+ * TODO: CLASE CARD
  * Clase Card, como su nombre lo dice, está destinada a ser la que represente lo mejor posible una card
  * contiene atributos como:
  * Imagen, nombre, descripción y etiqueta
@@ -99,103 +259,7 @@ class Card
 }
 
 /**
- * Agrega un hijo al id Card-group- correspondiente, esto lo hará de 3 columas
- * @param {*} cards 
- */
-function insertCards(cards){
-
-    let seccion_cards = document.querySelector(`#cards`);
-    let f;
-    // Recorremos las cards para asignarlas a una columna.
-    cards.forEach((card,i) => {
-        let columna = document.createElement('div');
-        columna.classList = 'col-md-3';
-        if((i+1) % 3 == 0){
-            console.log(`${i}-(i+1)`);
-            console.log(`${i}-else-${f}`);
-            let columna = document.createElement('div');
-            columna.classList = 'col-xl-4 p-0';
-            columna.appendChild(card.crearCard());
-            document.querySelector(`#fila${f}`).appendChild(columna);
-        }
-        else if((i % 3) == 0){
-            console.log(`${i}-(i)`);
-            let fila = document.createElement('div');
-            fila.classList = 'row';
-            fila.id = `fila${i}`;
-            f = i;
-            let columna = document.createElement('div');
-            columna.classList = 'col-xl-4 p-0';
-            columna.appendChild(card.crearCard());
-            fila.appendChild(columna);
-            console.log(fila);
-            seccion_cards.appendChild(fila);
-        }
-        else{
-            console.log(`${i}-else-${f}`);
-            let columna = document.createElement('div');
-            columna.classList = 'col-xl-4 p-0';
-            columna.appendChild(card.crearCard());
-            document.querySelector(`#fila${f}`).appendChild(columna);
-        }
-        // columna.appendChild(card.crearCard());
-        // fila.appendChild(columna);
-        // seccion_cards.appendChild(fila);
-    });
-}
-
-/* Esta funcion carga las imagenes del api en el HTML */
-function loadCards(categoria){
-
-    //Realizamos la consulta
-    /*fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
-    .then(resp => resp.json())
-    .then(data => {*/
-        let data;
-        switch (categoria) {
-            case 'gamer':
-                data = gamer;
-                break;
-            case 'celulares':
-                data = celulares;
-                break;
-            case 'impresoras':
-                data = impresoras;
-                break;
-            case 'laptops':
-                data = laptops;
-                break;
-            case 'monitores':
-                data = monitores;
-                break;
-            default:
-                data = gamer;
-                break;
-        }
-        let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
-        insertCards(cards); // Inserta las cards en el HTML
-    //});
-}
-
-/**
- * Convierte todo el contenido del consumo de la API en una card, se auxilia de la creación de un objeto
- * el cual inicializa mediante su constructor y genera un arreglo de objetos Card para poder saber cuantas Cards
- * se crearán de forma dinámica.
- * @param {*} data Hace referencia a la información que obtenemos al consumo de la API
- * @returns cards Hace referencia a un arreglo de objetos con información unica.
- */
-function jsonToCard(data){
-console.log(data);
-    /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
-    let cards = [];
-    data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
-        let card = new Card(d.imagen, d.nombre, d.descripcion, d.categoria); //Crea objeto con valores unicos
-        cards.push(card); //Almacena en un arreglo de objetos
-    });
-    return cards; //Retorna el arreglo de cards
-}
-
-/**
+ * TODO: BOTON DE AGREGAR CATEGORIAS
  * Relaciona la acción de presionar el botón de las categorias con remover las cartas existentes en la columna derecha
  * y se encarga de crear nuevas en función del valor que el usuario quiere de categoria
  */
@@ -212,54 +276,8 @@ button.addEventListener('click', event => {
 
 })
 
-function getGET() {
-    // capturamos la url
-    var loc = document.location.href;
-    // si existe el interrogante
-    if(loc.indexOf('?')>0) {
-        // cogemos la parte de la url que hay despues del interrogante
-        var getString = loc.split('?')[1]; // divide la cadena por cada '?' y toma sola la peticion del get
-        // obtenemos un array con cada clave=valor
-        var GET = getString.split('&'); // divide la cadena por cada '&'
-        var get = {}; // Crea un array que contendra el diccionario
-        // recorremos todo el array de valores
-        for(var i = 0, l = GET.length; i < l; i++){
-            var tmp = GET[i].split('='); // divide la cadena por cada '='
-            get[tmp[0]] = unescape(decodeURI(tmp[1])); // Lo agrda a un diccionario
-        }
-        return get; // retorna el diccionario
-    }
-}
-
-
 /**
- * Funciona como prueba para objetos por carga default
+ * TODO: INICIALIZA EL HTML CUANDO CARGA
  */
- function init(){
-    let inicio = getGET();
-    if (typeof(inicio) == 'undefined'){
-        loadCards("water");
-    }
-    else{
-        loadCards(inicio["categoria"]);
-    }
-}
-
-
-/**
- * Permite vaciar las cards contenidas en el grupo dinámico establecido
- * Esto genera una limpieza en la página y deja la columa derecha en blanco
- */
-function removeCards(){
-
-    /* Esta función elimina a todos los hijos de cada columna */
-    for(let i = 0; i < 3; i++){
-        let element = document.querySelector(`#cards`);   // Referencia a la columna
-        while (element.firstChild){ // Solo si hay un primer hijo
-            element.removeChild(element.firstChild); // Remueve el susodicho hijo
-          };
-    }
-}
-
 document.body.onload = init; // Funcion que inicial cuando la pagina carga
 //
