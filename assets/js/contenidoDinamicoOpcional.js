@@ -1,7 +1,7 @@
 document.body.onload = addElement; //Hace una ejecución en cuanto carga el documento
 
 /** ELEMENTOS DINÁMICOS
- * Es un esboso de como podemos crear cards de forma dinámica en función del consumo de la API
+* Es un esboso de como podemos crear cards de forma dinámica en función del consumo de la API
 */
 function addElement (categoria) {
   //Realizando el consumo de la API
