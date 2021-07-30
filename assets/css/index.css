@@ -70,6 +70,11 @@ body{
     color: #3498;
 }
 
+.container .card button{
+    border-radius: 8px;
+    background-color: #032E42;
+    }
+
 .wrapper {
     min-height: calc(100% - 4rem);
   }
