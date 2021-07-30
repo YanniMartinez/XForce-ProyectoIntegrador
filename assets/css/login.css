@@ -82,7 +82,26 @@
     color:#fff;
 }
 
- .container{
+.container{
     font-family: 'DM Sans', sans-serif;
 } 
+
+.navbar {
+    font-family: 'DM Sans', sans-serif;
+}
+
+a{
+    font-family: 'DM Sans', sans-serif;
+}
+
+h5{
+    font-family: 'DM Sans', sans-serif;
+}
+
+p{
+    font-family: 'DM Sans', sans-serif;
+}
+div{
+    font-family: 'DM Sans', sans-serif;
+}
 
