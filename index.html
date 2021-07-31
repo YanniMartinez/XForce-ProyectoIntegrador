@@ -24,7 +24,13 @@
             <a class="navbar-brand text-light" href="#">X-Commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <a class="navbar-toggler-icon" style="color: white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </a>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -47,9 +53,16 @@
                             aria-disabled="true">Articulos</a>
                     </li>
                     <!-- TODO Carrito -->
-                    <li class="nav-item dropdown ">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carrito</a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-cart2" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                            </svg>
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <!-- Se rellena dinamicamente mediante el JS -->
 
@@ -67,7 +80,7 @@
                                         <button class="btn btn-xs btn-danger pull-right">x</button>
                                     </span>
                                 </span>
-                                
+
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">
@@ -77,7 +90,7 @@
                                             width="50px" height="50px" alt="" />
                                         <span class="item-info">
                                             <span>Dreamgear GRX 440 Black </span>
-                                            <span>$919.99  </span>
+                                            <span>$919.99 </span>
                                         </span>
                                     </span>
                                     <span class="item-right" style="margin-left: 20px;">
@@ -93,7 +106,7 @@
                                             width="50px" height="50px" alt="" />
                                         <span class="item-info">
                                             <span>Resident Evil 3 remake</span>
-                                            <span>$549.00  </span>
+                                            <span>$549.00 </span>
                                         </span>
                                     </span>
                                     <span class="item-right" style="margin-left: 40px;">
@@ -172,54 +185,57 @@
 
         <div class="row"></div>
 
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="https://elektra.vtexassets.com/arquivos/ids/3136322-1600-auto?width=1600&height=auto&aspect=true" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Xiaomi Redmi Note 10S 128GB 6GB Ram Blanco</h5>
-                            <p class="card-text">$8000.99</p>
-                            <button class="card-text m-2"><small class="text-white">Ver mas.</small></button>
-                        </div>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="https://elektra.vtexassets.com/arquivos/ids/3136322-1600-auto?width=1600&height=auto&aspect=true"
+                        alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Xiaomi Redmi Note 10S 128GB 6GB Ram Blanco</h5>
+                        <p class="card-text">$8000.99</p>
+                        <button class="card-text m-2"><small class="text-white">Ver mas.</small></button>
                     </div>
                 </div>
             </div>
-
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/d/u/dualsense_4_1.jpg" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Control PlayStation 5 DualSense</h5>
-                            <p class="card-text">$1,599.99</p>
-                            <button class="card-text"><small class="text-white">Ver mas.</small></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Resident Evil 3 remake</h5>
-                            <p class="card-text">$549.00</p>
-                            <button class="card-text"><small class="text-white">Ver mas.</small></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-           
         </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/d/u/dualsense_4_1.jpg"
+                        alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Control PlayStation 5 DualSense</h5>
+                        <p class="card-text">$1,599.99</p>
+                        <button class="card-text"><small class="text-white">Ver mas.</small></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg"
+                        alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Resident Evil 3 remake</h5>
+                        <p class="card-text">$549.00</p>
+                        <button class="card-text"><small class="text-white">Ver mas.</small></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

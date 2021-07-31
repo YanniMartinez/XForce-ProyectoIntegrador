@@ -12,7 +12,7 @@ let laptops = [
         "imagen": "https://www.cyberpuerta.mx/img/product/XL/CP-HP-3Y594LA-1.png" 
     },
     {
-        "nombre": "Laptop Gamer ASUS TUF FX505DT-BQ017T 15.6 Full HD, AMD Ryzen 7 3750H 2.30GHz, 8GB, 512GB SSD, NVIDIA GeForce GTX 1650, Windows 10 Home",
+        "nombre": "Laptop Gamer ASUS TUF",
         "descripcion": "$23,800.00",
         "categoria": "Laptop",
         "imagen": "https://www.cyberpuerta.mx/img/product/XL/CP-ASUS-90NR02D2-M09770-1.jpg" 
