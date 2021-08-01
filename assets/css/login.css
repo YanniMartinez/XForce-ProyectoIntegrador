@@ -15,6 +15,7 @@
     background:#FFF; 
     border-radius: 10px; 
     box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+    font-family: 'DM Sans', sans-serif;
 }
 .carousel-inner{
     border-radius:0 10px 10px 0;
@@ -82,9 +83,7 @@
     color:#fff;
 }
 
-.container{
-    font-family: 'DM Sans', sans-serif;
-} 
+
 
 .navbar {
     font-family: 'DM Sans', sans-serif;
