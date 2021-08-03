@@ -20,6 +20,11 @@
 .carousel-inner{
     border-radius:0 10px 10px 0;
 }
+
+.img-fluid-2{
+    height: auto;
+}
+
 .carousel-caption{
     text-align:left; left:5%;
 }
