@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
             integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <title>Privacy</title>
+
+            <link rel="stylesheet" href="Assets/css/login.css">
+            
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+        <title>Inicia sesión</title>
     </head>
     <body>
         <header>
@@ -118,26 +125,101 @@
                             <a class="nav-link  text-light" href="login.html">Iniciar Sesion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  text-light" href="registration.html">Registro</a>
+                            <a class="nav-link  text-light" href="registro.html">Registro</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
-       
-        <h1>Terminos y usos de datos por parte de X-Force</h1>
-        <p>Proximamente</p>
+       <!-- Form -->
+    <section class="login-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 login-sec">
+                    <h2 class="text-center">Registrate</h2>
+                    <form class="login-form">
 
+                        <div class="form-group">
+                            <label for="nombre" class="sr-only">Nombre</label>
+                            <input type="text" id="name" class="form-control" placeholder="Nombre" required="" autofocus="" > 
 
+                        </div>
 
+                        <div class="form-group">
+                            <label for="apellidos" class="sr-only">Apellidos</label>
+                            <input type="text" id="lastname" class="form-control"  placeholder="Apellidos" required="" autofocus="" > 
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Nombre de usuario</label>
+                            <input type="text" id="username" class="form-control"  placeholder="Nombre de usuario" required="" autofocus="" >  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail"class="sr-only">Dirección de correo electrónico</label>
+                            <input type="email" id="email"  class="form-control" placeholder="Direccion de correo electrónico" required="" autofocus="" >  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Contraseña</label>
+                                <input type="password" id="password" class="form-control" placeholder="Contraseña" required="" >
+                        </div>
+                        
+                        
+    
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                <small>Recuerdame</small>
+                            </label>
+                            <button type="submit" class="btn btn-login float-right">Aceptar</button>
+                        </div>
+    
+                    </form>
+                    <div class="copy-text">Creado<i class="fa fa-heart"></i> por X-Force</div>
+                </div>
+                    <!-- Carrucel en login -->
+                    <div class="col-md-8 banner-sec">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>Unete y disfruta de los beneficios</h2>
+                                        <p>Adquiere esos productos que siempre has querido con nosotros.</p>
+                                    </div>	
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1543269664-7eef42226a21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>Sonriele a la vida</h2>
+                                        <p>Adquiere artículos de sensación y sacale el mejor provecho a todos y cada uno de ellos.</p>
+                                    </div>	
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>	   
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
-        <script src="assets/js/Card.js"></script>
-    <script src="assets/js/navBar-categorias.js"></script>
+        <script src="assets/js/navBar-categorias.js"></script>
     </body>
 </html>
