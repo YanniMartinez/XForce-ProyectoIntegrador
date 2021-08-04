@@ -236,7 +236,12 @@ class Card
 
         let h4=document.createElement("h4"); //Titulo de la card, se asigna el nombre del objeto.
         h4.classList="card-title";
-        h4.textContent=this.#nombre;
+        if(this.#nombre.length > 25){
+            h4.textContent=this.#nombre.substr(0,45) + '... ';
+        }
+        else{
+            h4.textContent=this.#nombre;
+        }
 
         let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
         p.classList="card-text";
