@@ -23,8 +23,20 @@ loginForm.addEventListener('submit', (e) => {
             'content-type': 'application/json'
         }
     })
-    .then(resp => console.log(resp.status, typeof(resp.status)))
-    .then(data => console.log(data));
+    .then(resp => {
+        if (resp.status == 200){
+            alert('Usuario Registrado.Ahora Inicia sesión');
+
+            let url = window.location;
+            let path = url.pathname.substring(0, url.pathname.lastIndexOf('/') + 1);
+            location.href = path + 'login.html';
+        }
+        else{
+            alert('Datos invalidos intenta de nuevo');
+        }
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 
 
 
