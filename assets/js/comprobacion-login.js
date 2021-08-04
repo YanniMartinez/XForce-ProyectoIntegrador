@@ -20,7 +20,7 @@ formLogin.addEventListener("submit", (e) =>{
     console.log(e);
 
     /* Le estará pidiendo que verifique sus datos hasta que ingrese un email correcto*/
-    do{
+  
         //Referenciando a elementos mediante su ID.
         const email = document.querySelector("#email");
         const password = document.querySelector("#password");
@@ -36,7 +36,7 @@ formLogin.addEventListener("submit", (e) =>{
         if(password.value == ''){
             passwordError.textContent = "Este campo es necesario";
         }
-    } while(validarEmail(email.value)!=true); //Verifica si cumple con la estructura
+  
     
     //Si el Email es correcto entonces 
 
@@ -44,7 +44,7 @@ formLogin.addEventListener("submit", (e) =>{
     if( email.value != "" && password.value!="" ){
         //Como debemos hacer una peticion post debemos poner cosas despues del URL
         let req = fetch("http://localhost:8080/login",{
-            method = 'POST',
+            method : 'POST',
             //Aquí iría todo lo referente al contenido como en el POST-Man
             //El JSON.stringify convierte el JSON a cadena para mandarlo
             body: JSON.stringify({
@@ -52,7 +52,30 @@ formLogin.addEventListener("submit", (e) =>{
                 username: email.value,
                 password: password.value
             })
-        }).then((response ) => response.json) //El response lo pasamos a JSON
-        .then((data) => console.log(data));
+        }).then((resp ) => resp.text()).then(token =>{
+            //Si la respuesta contiene el Bearear entonces si es un token valido
+            if(token.includes('Bearer')){
+                console.log(token);
+                //Almacena en el local storage
+                localStorage.setItem('token',token);
+                //Obteniendo url en donde estamos situados
+                url = window.location;
+                console.log(url); //imprime la localizacion en la que estamos ubicados
+
+                //Construyendo nuestro path, es decir la ruta en donde estamos
+                const path = url.pathname.substring(0, url.pathname.lastIndexOf('/') + 1);
+                //El substring hace un recorte del texto, va del inicio hasta el ultimo "/" y devolverá ese indice
+
+                //Lo redireccionamos a la otra pagina
+                location.href= path + "profile.html";
+            }
+            else{
+                //Indica que los datos son incorrectos
+                emailError.textContent = "Usuario o contraseña incorrecta";
+
+                //Removiendo del local storage
+                localStorage.removeItem('token');
+            }
+        })
     }
 })
