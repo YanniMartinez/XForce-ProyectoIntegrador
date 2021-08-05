@@ -51,10 +51,15 @@ formLogin.addEventListener("submit", (e) =>{
                 //Valoresque enviará
                 username: email.value,
                 password: password.value
-            })
-        }).then((resp ) => resp.text()).then(token =>{
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then( resp => {
+            token = resp.headers.get('Authorization');
+            console.log(token);
             //Si la respuesta contiene el Bearear entonces si es un token valido
-            if(token.includes('Bearer')){
+            if(token && token.includes('Bearer')){
                 console.log(token);
                 //Almacena en el local storage
                 localStorage.setItem('token',token);
