@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="assets/css/login.css">
+            
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+        <title>Inicia sesión</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg" style="background-color: #032E42;">
+                <!--Color del NavBar-->
+    
+                <a class="navbar-brand text-light" href="#">X-Commerce</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-toggler-icon" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </a>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link  text-light" href="index.html">Inicio<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
+                                <!-- Se rellena dinamicamente mediante el JS -->
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="articulos.html" tabindex="-1"
+                                aria-disabled="true">Articulos</a>
+                        </li>
+                        <!-- TODO Carrito -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+    
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-cart2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- Se rellena dinamicamente mediante el JS -->
+    
+                                <a class="dropdown-item" href="#">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/o/robot_white_1.jpg"
+                                                width="50px" height="50px" alt="" />
+                                            <span class="item-info">
+                                                <span>Control XBOX Inalámbrico</span>
+                                                <span>$1,699.99</span>
+                                            </span>
+                                        </span>
+                                        <span class="item-right" style="margin-left: 15px;">
+                                            <button class="btn btn-xs btn-danger pull-right">x</button>
+                                        </span>
+                                    </span>
+    
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/h/e/headset_chuis_dreamgear_1.jpg"
+                                                width="50px" height="50px" alt="" />
+                                            <span class="item-info">
+                                                <span>Dreamgear GRX 440 Black </span>
+                                                <span>$919.99 </span>
+                                            </span>
+                                        </span>
+                                        <span class="item-right" style="margin-left: 20px;">
+                                            <button class="btn btn-xs btn-danger pull-right">x</button>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <span class="item">
+                                        <span class="item-left">
+                                            <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg"
+                                                width="50px" height="50px" alt="" />
+                                            <span class="item-info">
+                                                <span>Resident Evil 3 remake</span>
+                                                <span>$549.00 </span>
+                                            </span>
+                                        </span>
+                                        <span class="item-right" style="margin-left: 40px;">
+                                            <button class="btn btn-xs btn-danger pull-right">x</button>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-center" href="pago.html">Ver detalles</a>
+    
+                            </div>
+                        </li>
+    
+                        <!-- TODO: Fin carrito -->
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="login.html">Iniciar Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="registro.html">Registro</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+       <!-- Form -->
+    <section class="login-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 login-sec">
+                    <h2 class="text-center">Registrate</h2>
+                    <form class="login-form">
+
+                        <div class="form-group" id="article-form">
+                            <label for="nombre" class="">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required autofocus maxlength="30"> 
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion</label>
+                            <textarea class="form-control" id="descripcion" rows="3" placeholder="Aquí va la Descripción"></textarea>
+                          </div>
+
+                        <div class="form-group">
+                            <label for="username" class="">Precio</label>
+                            <input type="number" id="price" class="form-control"  placeholder="1.00" required autofocus >  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate" class="sr-only">Categoria</label>
+                            <input type="text" id="category" class="form-control"  placeholder="Categoria" required autofocus maxlength="15">  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail"class="sr-only">Imagen 1</label>
+                            <input type="text" id="image-1"  class="form-control" placeholder="https://image-1" required="" maxlength="200" >  
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inputEmail"class="sr-only">Imagen 2</label>
+                            <input type="text" id="image-2"  class="form-control" placeholder="https://image-2" required="" maxlength="200" >  
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inputEmail"class="sr-only">Imagen 3</label>
+                            <input type="text" id="image-3"  class="form-control" placeholder="https://image-3" required="" maxlength="200" >  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail"class="sr-only">Imagen 4</label>
+                            <input type="text" id="image-4"  class="form-control" placeholder="https://image-4" required="" maxlength="200" >  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="">Stock</label>
+                            <input type="number" id="stock" class="form-control"  placeholder="1" required autofocus >  
+                        </div>
+                        
+                        <!-- <div class="form-group">
+                            <label for="inputEmail"class="sr-only">Imagen 4</label>
+                            <input type="text" id="image-4"  class="form-control" placeholder="https://image-4" required="" maxlength="200" >  
+                        </div> -->
+    
+                        <div class="form-check">
+                            <button type="submit" class="btn btn-login float-right">Aceptar</button>
+                        </div>
+    
+                    </form>
+                    <div class="copy-text">Creado<i class="fa fa-heart"></i> por X-Force</div>
+                </div>
+                    <!-- Carrucel en login -->
+                    <div class="col-md-8 banner-sec">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid-2" src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>Unete y disfruta de los beneficios</h2>
+                                        <p>Adquiere esos productos que siempre has querido con nosotros.</p>
+                                    </div>	
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid-2" src="https://images.unsplash.com/photo-1543269664-7eef42226a21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="banner-text">
+                                        <h2>Sonriele a la vida</h2>
+                                        <p>Adquiere artículos de sensación y sacale el mejor provecho a todos y cada uno de ellos.</p>
+                                    </div>	
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>	   
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/navBar-categorias.js"></script>
+        <script src="assets/js/registration-articles.js"></script>
+    </body>
+</html>
