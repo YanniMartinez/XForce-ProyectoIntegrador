@@ -59,7 +59,7 @@ body{
   position: relativate;
   display: inline-block;
   border: 2px solid var(--white);
-  padding: 20px 80px;
+  padding: 18px 100px;
   color: var(--black);
   font-weight: 700;
   text-transform: uppercase;
