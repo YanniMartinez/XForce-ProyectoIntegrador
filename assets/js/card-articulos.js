@@ -30,7 +30,7 @@ function getGET() {
  function init(){
     let inicio = getGET();
     if (typeof(inicio) == 'undefined'){
-        loadCards("water");
+        loadCards("celulares");
     }
     else{
         loadCards(inicio["categoria"]);
@@ -62,11 +62,10 @@ function getGET() {
  * @returns cards Hace referencia a un arreglo de objetos con información unica.
  */
  function jsonToCard(data){
-    console.log(data);
         /* Esta función transforma el array de objetos JSON a un array de ojetos CARD */
         let cards = [];
         data.forEach(d => { //Para cada elemento crea un objeto tipo card de informació unica
-            let card = new Card(d.imagen, d.nombre, d.descripcion, d.categoria); //Crea objeto con valores unicos
+            let card = new Card(d.img1, d.name, d.description, d.category, d.price, d.id); //Crea objeto con valores unicos
             cards.push(card); //Almacena en un arreglo de objetos
         });
         return cards; //Retorna el arreglo de cards
@@ -127,36 +126,18 @@ function getGET() {
  */
 function loadCards(categoria){
 
-    //Realizamos la consulta
-    /*fetch(`https://workshop-mongo.herokuapp.com/pokemon/types/${categoria}`)
-    .then(resp => resp.json())
-    .then(data => {*/
-        let data; // Contendra la categorìa que se va a cargar
-        switch (categoria) {
-            /**
-             * Selecciona la categoria que se desa cargar
-             */
-            case 'gamer':
-                data = gamer;
-                break;
-            case 'celulares':
-                data = celulares;
-                break;
-            case 'impresoras':
-                data = impresoras;
-                break;
-            case 'laptops':
-                data = laptops;
-                break;
-            case 'monitores':
-                data = monitores;
-                break;
-            default:
-                data = gamer;
-                break;
-        }
-        let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
-        insertCards(cards); // Inserta las cards en el HTML
+        fetch(`http://localhost:8080/article/category?tag=${categoria}`,{
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(resp => resp.json())
+        .then(data => {
+            //console.log(data);
+            let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
+            //console.log(cards[0].crearCard());
+            insertCards(cards); // Inserta las cards en el HTML
+        })
+        
     //});
 }
 
@@ -172,10 +153,12 @@ function loadCards(categoria){
 class Card
 {
     /**Declaración de ATRIBUTOS privados */
-    #imagen="";
-    #nombre="";
-    #descripcion="";
-    #etiqueta="";
+    _imagen="";
+    _nombre="";
+    _descripcion="";
+    _etiqueta="";
+    _precio="";
+    _id="";
 
     /**
      * Constructor, nos permite inicializar los valores de nuestro objeto en base a la información brindada por la API
@@ -184,25 +167,27 @@ class Card
      * @param {*} descripcion Hace referencia a la breve descripción obtenida del articulo
      * @param {*} etiqueta Hace referencia a la etiqueta o categoria a la que pertenece el articulo
      */
-    constructor(imagen,nombre,descripcion,etiqueta)
+    constructor(imagen,nombre,descripcion,etiqueta,precio,id)
     {
-        this.#imagen=imagen;
-        this.#nombre=nombre;
-        this.#descripcion=descripcion;
-        this.#etiqueta=etiqueta;
+        this._imagen=imagen;
+        this._nombre=nombre;
+        this._descripcion=descripcion;
+        this._etiqueta=etiqueta;
+        this._precio= precio;
+        this._id=id;
     }
 
     /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
-    set imagen(value){this.#imagen=value;}
-    set nombre(value){this.#nombre=value;}
-        set descripcion(value){this.#descripcion=value;}
-    set etiqueta(value){this.#etiqueta=value;}
+    set imagen(value){this._imagen=value;}
+    set nombre(value){this._nombre=value;}
+        set descripcion(value){this._descripcion=value;}
+    set etiqueta(value){this._etiqueta=value;}
 
     /**Metodos Get's permiten obtener información de los atributos del objeto */
-    get imagen(){return this.#imagen;}
-    get nombre(){return this.#nombre;}
-    get descripcion(){return this.#descripcion;}
-    get etiqueta(){return this.#etiqueta;}
+    get imagen(){return this._imagen;}
+    get nombre(){return this._nombre;}
+    get descripcion(){return this._descripcion;}
+    get etiqueta(){return this._etiqueta;}
 
     /**
      * Permite la creación de etiquetas necesarias para poder construir una Card basada en las clases de BootStrap 4.6
@@ -227,30 +212,51 @@ class Card
         let div2 = document.createElement("div"); //Contenedor de la card.
         div2.classList="card p-2 mt-3" ;
 
-        let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-        // img.classList="card-img-top";   
-        img.src=this.#imagen;
-        // img.style.margin = "10% 0px";
-        // img.height = 255;
+        let divImg = document.createElement("div"); // Contenedor de la imagen
+        divImg.style.height = '200px';
+        divImg.style.padding = "auto";
 
+        let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
+        img.src=this._imagen;
 
         let h4=document.createElement("h4"); //Titulo de la card, se asigna el nombre del objeto.
         h4.classList="card-title";
-        h4.textContent=this.#nombre;
+        if(this._nombre.length > 20){ // Si el contenido del nombre supera las 20 caracteres lo recorta y agrega ...
+            h4.textContent=this._nombre.substr(0,20) + '... ';
+        }
+        else{ // Si no, solo agrega el nombre
+            h4.textContent=this._nombre;
+        }
 
         let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
         p.classList="card-text";
-        p.textContent=this.#descripcion;
+        if(this.descripcion.length > 50){ // Si la descripción supera los 50 caracteres se recorta y se agrega ...
+            p.textContent=this._descripcion.substring(0,50) + `... `;
+        }
+        else{ // Si no, solo se agrega la descipción
+            p.textContent=this._descripcion;
+        }
 
+        let pPrecio = document.createElement('p'); // Se crea una etiqueta para el precio
+        /**
+         * Se agrega el precio, para eso se agrega el formato que se va a usar "en-In", 
+         * si va a llevar signo del peso y el peso "currency" = "USD" para tener el signo de '$'
+         * con minimumFractionDigits = 2, elegimos tener sol dos dígitos fraccionales.
+         */
+        pPrecio.textContent = `${new Intl.NumberFormat("en-IN",{style: "currency", currency: "USD", minimumFractionDigits: 2}).format(this._precio)}`;
+        pPrecio.style.fontWeight = 600;
+        
         let button=document.createElement("a"); // Botón con etiqueta a
         button.classList="btn btn-outline-primary";
         button.textContent="Ver más...";
-        button.href=`descripcionArticulo.html?nombre=${this.#nombre}&categoria=${this.#etiqueta}`;
+        button.href=`descripcionArticulo.html?id=${this._id}`;
 
         /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
-        div2.appendChild(img); // img -> div3
+        divImg.appendChild(img); // img -> divImg
+        div2.appendChild(divImg); // divImg -> div3
         div2.appendChild(h4); // h5 -> div2
         div2.appendChild(p);  // p -> div2
+        div2.appendChild(pPrecio);  // pPrecio -> div2
         div2.appendChild(button); // boton -> div2
         div1.appendChild(div2); //div3 -> div
 
@@ -269,7 +275,7 @@ button.addEventListener('click', event => {
     let elements = document.querySelector("#categoriaslat").elements; // Seleccionamos los elementos del formulario.
     for(let i = 0; i < elements.length; i++){ // Recorremos cada elemento
         if (elements[i].checked){   // Verificamos que este marcado
-            loadCards(elements[i].value); // Cargamos las categorias marcadas.
+            loadCards(elements[i].value.split(' ')[0]); // Cargamos las categorias marcadas.
         }    
     }
 

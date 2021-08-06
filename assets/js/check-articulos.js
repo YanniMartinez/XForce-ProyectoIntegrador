@@ -7,7 +7,7 @@ class Check
 {
     //Declaración de ATRIBUTOS privados
     #nombre="";
-    #etiqueta="";
+    _cantidad="";
 
     /**
      * Permite inicializar el objeto con un nombre que recibe
@@ -79,11 +79,27 @@ let checks=[]; //Declaración de un arreglo vacio, donde almacenaremos todos los
  * Declaración de lista de categorias.
  * Para cada uno de los elementos se crea un objeto check y este es almacenado en el arreglo vacio de la parte superior
  */
-let array = ["gamer", "celulares","monitores","laptops","impresoras"];
-array.forEach(element => {
-    let checkbox=new Check(element);
-    checks.push(checkbox);
-});
 
+
+function init(){
+    fetch(`http://localhost:8080/article/categories`,{
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(resp => resp.json())
+    .then(data => {
+        let array = []
+        data.forEach(d => {
+            array.push(d.split(',')[0] + ` (${d.split(',')[1]})`);
+        });
+        array.forEach(element => {
+            let checkbox=new Check(element);
+            checks.push(checkbox);
+        });
+        console.log(array);
+        insertarCategorias(checks); 
+    })
+}
+
+init();
 //Manda a llamar a la automatización de Categorias tipo checkbox
-insertarCategorias(checks); 

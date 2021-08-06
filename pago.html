@@ -44,7 +44,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorias
+                                Categorías
                             </a>
                             <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
                                 <!-- Se rellena dinamicamente mediante el JS -->
@@ -52,7 +52,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  text-light" href="articulos.html" tabindex="-1"
-                                aria-disabled="true">Articulos</a>
+                                aria-disabled="true">Artículos</a>
                         </li>
                         <!-- TODO Carrito -->
                         <li class="nav-item dropdown">
@@ -124,7 +124,7 @@
     
                         <!-- TODO: Fin carrito -->
                         <li class="nav-item">
-                            <a class="nav-link  text-light" href="login.html">Iniciar Sesion</a>
+                            <a class="nav-link  text-light" href="login.html">Iniciar Sesión</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  text-light" href="registration.html">Registro</a>
@@ -137,15 +137,15 @@
         <div class="container">
             <div class="py-5 text-center">
                 <img class="d-block mx-auto mb-4" src="Assets/img/debit-card.svg" alt="" width="100" height="100">
-                <h2>Finalizar Compra</h2>
-                <p class="lead">Rellena los campos necesarios para finalizar tu la compra.</p>
+                <h2>Finalizar compra</h2>
+                <p class="lead">Rellena los campos necesarios para finalizar tu compra.</p>
             </div>
             <!-- Nueva fila -->
             <div class="row">
                 <!-- Nueva columa donde irá el contenido del carrito -->
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Tus articulos</span>
+                        <span class="text-muted">Tus artículos</span>
                         <span class="badge badge-secondary badge-pill">3</span>
                     </h4>
                     <!-- Listado de articulos contenidos en una lista desordenada, pretendo que esto sea dinámico -->
@@ -225,7 +225,7 @@
                                 <!-- Se le pone read only porque obtendrá el valor del usuario desde el inicio de sesión -->
                                 <input type="text" class="form-control" id="username" placeholder="Username" value="nombreUsuario" required readonly>
                                 <div class="invalid-feedback" style="width: 100%;">
-                                    Porfavor verifique sus datos
+                                    Por favor verifique sus datos
                                 </div>
                             </div>
                         </div>
@@ -234,15 +234,15 @@
                             <label for="email">Email </label>
                             <input type="email" class="form-control" id="email" value="useremail@ejemplo.com" readonly>
                             <div class="invalid-feedback">
-                                Porfavor ingrese un email correctos
+                                Por favor ingrese un email correctos
                             </div>
                         </div>
                         <!-- Dirección del usuario -->
                         <div class="mb-3">
                             <label for="address">Dirección completa</label>
-                            <input type="text" class="form-control" id="address" placeholder="Copilco 123 Coyoacan" required>
+                            <input type="text" class="form-control" id="address" placeholder="Copilco 123 Coyoacán" required>
                             <div class="invalid-feedback">
-                                Porfavor ingrese la dirección a donde le será enviado el articulo.
+                                Por favor ingrese la dirección a donde le será enviado el artículo.
                             </div>
                         </div>
 
@@ -253,12 +253,12 @@
                         <!-- Region del usuario -->
                         <div class="row">
                             <div class="col-md-5 mb-3">
-                                <label for="country">Pais</label>
+                                <label for="country">País</label>
                                 <select class="custom-select d-block w-100" id="country" required >
                                     <option value="México" >México</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Porfavor seleccione una opción.
+                                    Por favor seleccione una opción.
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
@@ -296,7 +296,7 @@
                                     <option>Zacatecas </option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Porfavor seleccione una opción.
+                                    Por favor seleccione una opción.
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
@@ -310,7 +310,7 @@
                         <hr class="mb-4">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="save-info">
-                            <label class="custom-control-label" for="save-info">Guardar esta información para proximas compras</label>
+                            <label class="custom-control-label" for="save-info">Guardar esta información para próximas compras</label>
                         </div>
                         <!-- <hr class="mb-4">
                         
@@ -347,7 +347,7 @@
                 <p class="mb-1">&copy; 2021 X-Force</p>
                 <ul class="list-inline">
                     <li class="list-inline-item"><a href="#">Privacidad</a></li>
-                    <li class="list-inline-item"><a href="#">Terminos</a></li>
+                    <li class="list-inline-item"><a href="#">Términos</a></li>
                     <li class="list-inline-item"><a href="#">Soporte</a></li>
                 </ul>
             </footer>
@@ -360,6 +360,7 @@
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
         <script src="assets/js/navBar-categorias.js"></script>
+        <script src="assets/js/isLoged.js"></script>
     </body>
 
 </html>
