@@ -10,6 +10,7 @@ body {
     margin: 0 0 1rem 0;
     padding-bottom: 1rem;
     text-align: center;
+    
 }
 .account-settings .user-profile .user-avatar {
     margin: 0 0 1rem 0;
@@ -37,6 +38,7 @@ body {
 .account-settings .about h5 {
     margin: 0 0 15px 0;
     color: #007ae1;
+    
 }
 .account-settings .about p {
     font-size: 0.825rem;
@@ -58,5 +60,9 @@ body {
     border-radius: 5px;
     border: 0;
     margin-bottom: 1rem;
+    
+}
+#header{
+    font-family: 'DM Sans', sans-serif;
 }
 
