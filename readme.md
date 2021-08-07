@@ -1,8 +1,11 @@
-![X-Force] (media/banner.jpg)
+# X-Commerce
+<center>
+    <img src='assets/media/banner.png'>
+</center>
 ![GitHub ultimo commit](https://img.shields.io/github/last-commit/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
 ![GitHub tamaño de repositorio](https://img.shields.io/github/repo-size/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
 
-# X-Commerce
+# Introducción
 
 Proyecto integrador de Generation. Esta plataforma tiene como proposito ser un ecommerce construido desde cero mediante algunas tecnologías que veremos más adelante.
 
@@ -18,7 +21,8 @@ Mira el apartado de **Deployment** para conocer más sobre como fue desarrollado
 _Tener conocimientos de Programación orientada a objetos, API's, API Rest, Bases de datos y manejo de protocolos HTTP_
 
 ```
-Se consumió una API desarrollada por nosotros mismos que permite alimentar todo el sistema y así no depender de servicios de terceros.
+Se consumió una API desarrollada por nosotros mismos que permite alimentar todo el sistema 
+y así no depender de servicios de terceros.
 ```
 
 ### Instalación 🔧
@@ -40,9 +44,11 @@ _Este proyecto hace 3 tipos de verificaciones del usuario:_
 ```
 Comprobación mediante HTML con el llenado de campos.
 Mediante JS con parámetros como la longitud, la existencia de datos y más.
-A nivel de Base de datos, hace la comprobación de que se está recibiendo valores en los campos requeridos.
+A nivel de Base de datos, hace la comprobación de que se está recibiendo 
+valores en los campos requeridos.
 
-De no cumplirse lo campos anteriores entonces le indicará al usuario que preste mayor atención en ello.
+De no cumplirse lo campos anteriores entonces le indicará al usuario que preste 
+mayor atención en ello.
 ```
 
 ### Prácticas respecto a la codificación ⌨️
@@ -123,9 +129,9 @@ _Referente al Back-End_
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 
 
-## Contribuyendo 🖇️
+## Contribución 🖇️
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos una solicitud de cambio.
+Todo cambio deberá ser solicitado al propietario de este proyecto cumpliendo conductas de respeto bilateral.
 
 ## Versionado 📌
 Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/YanniMartinez/XForce-ProyectoIntegrador).
@@ -134,24 +140,24 @@ Para todas las versiones disponibles, mira los [tags en este repositorio](https:
 
 _Aquí verás a todas las personas que contribuyeron al desarrollo del proyecto:_
 
-* **Camacho Uriel** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Gómez Miguel Alexis** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-* **Martínez Martínez Yanni** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-* **Perez Jaquelin** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-* **Velazquez Fernando Joel** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+* **Camacho Uriel** - *Front-End, Back-End* - [Uriel](https://github.com/generaliru)
+* **Gómez Miguel Alexis** - *Front-End, Back-End* - [Miguel](https://github.com/proivited)
+* **Martínez Martínez Yanni** - *Front-End, Back-End* - [Yanni](https://github.com/YanniMartinez)
+* **Perez Jaquelin** - *Front-End, Back-End* - [Jaquelin](https://github.com/jaquelin-AP18)
+* **Velazquez Fernando Joel** - *Front-End, Back-End* - [Joel](https://github.com/joelv9000)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/YanniMartinez/XForce-ProyectoIntegrador/graphs/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia del equipo X-Force - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia del equipo X-Force - mira el archivo [LICENSE.md](LICENSE.md) para más detalles acerca del uso este proyecto.
 
 ## Expresiones de Gratitud 🎁
 
-* Comenta a otros sobre este proyecto 📢
-* Invita unos taquitos 🌮, una cerveza 🍺 ó un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Haznos saber en que mejorar.
+* Comenta a otros sobre este proyecto. 📢
+* Invita unos taquitos 🌮 ó un café ☕ a alguien del equipo. 
+* Agradecer si este material te sirvió.
+* Retroalimentación para seguir mejorando.
 * Gracias por estar aquí.
 
 
