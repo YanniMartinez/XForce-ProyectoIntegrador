@@ -1,5 +1,5 @@
 /**
- * TODO: FUNCON QUE CAPTURA LOS GET EN VIADOS POR URL
+ * TODO: FUNCION QUE CAPTURA LOS GET EN VIADOS POR URL
  * @returns La respuesta Get como una clase con atributos que contienen los mensajes Get
  */
 function getGET() {
@@ -20,84 +20,32 @@ function getGET() {
         return get; // retorna el diccionario
     }
 }
-
+/**
+ * TODO: FUNCION QUE CAPTURA LOS DATOS JSON    
+ * */
 function init(){
     let get=getGET();
     console.log(get);
-
+    fetch(`http://localhost:8080/article/${get.id}`)
+    .then(data=>data.json())
+    .then(data=>{
+        console.log(data)
+        //Definimos varibles para obtener el tipo de dato que colocaremos en los id(#identificador)
+        let descripcion=document.querySelector("#descripcion")
+        descripcion.textContent=data.description;
+        let imagen1=document.querySelector("#img1")
+        imagen1.src=data.img1;
+        let imagen2=document.querySelector("#img2")
+        imagen2.src=data.img2;
+        let imagen3=document.querySelector("#img3")
+        imagen3.src=data.img3;
+        let imagen4=document.querySelector("#img4")
+        imagen4.src=data.img4;
+        let nombre=document.querySelector("#name")
+        nombre.textContent=data.name;
+        let precio=document.querySelector("#price")
+        price.textContent =data.price;
+    });
 }
+//es el metodo que siempre se llama antes de la primera vez que se llama al método de inicio
 init();
-/*
-contructor(id,category,description, img1,img2,img3,img4,name, price,stock)
-
- get  articles(id){
-      this.id;
-      this.category;
-      this.description,
-      this.img1;
-      this.img2;
-      this.img3;
-      this.img4;
-      this.name;
-      this.price;
-      this.stock;
-
- }
-
-
-var description= document.querySelector('#description')
-    function traer(){
-    fetch(`https://localhost:3306/xcommerce/{id}/`)
-    .then(data=>data.json())
-    .then(data=>{
-        console.log(data.Idarticulo[0].description)
-    });
-var description= document.querySelector('#price')
-    function traer(){
-    fetch(`https://localhost:3306/xcommerce/articles/category/${id}/`)
-    .then(data=>data.json())
-    .then(data=>{
-        console.log(data.Idarticulo[0].price)
-    });
-var description= document.querySelector('#img1')
-    function traer(){
-    fetch(`https://localhost:3306/xcommerce/articles/category/${id}/`)
-    .then(data=>data.json())
-    .then(data=>{
-        console.log(data.Idarticulo['0'].img1)
-        description.innerHTML=
-        <img src="${data.Idarticulo['0'].img1.large}" whith=100px >
-    });
-var description= document.querySelector('#img2')
-    function traer(){
-    fetch(`https://localhost:3306/xcommerce/articles/category/${id}/`)
-    .then(data=>data.json())
-    .then(data=>{
-        console.log(data.Idarticulo[0].img2)
-    });
-var description= document.querySelector('#img3')
-    function traer(){
-    fetch(`https://localhost:3306/xcommerce/articles/category/${id}/`)
-    .then(data=>data.json())
-    .then(data=>{
-        console.log(data.Idarticulo[0].img3)
-    });
-    var description= document.querySelector('#img4')
-        function traer(){
-        fetch(`https://localhost:3306/xcommerce/articles/category/${id}/`)
-        .then(data=>data.json())
-        .then(data=>{
-            console.log(data.Idarticulo[0].img4)
-        });
-   
-    var description= document.querySelector('name')
-        function traer(){
-        fetch(`https://localhost:3306/xcommerce/articles/category/${id}/`)
-        .then(data=>data.json())
-        .then(data=>{
-            console.log(data.Idarticulo[0].name)
-        });
-
-    }
-        
-*/
