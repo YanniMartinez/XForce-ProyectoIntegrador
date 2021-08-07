@@ -1,3 +1,7 @@
+![X-Force] (assets/media/banner.jpg)
+![GitHub ultimo commit](https://img.shields.io/github/last-commit/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
+![GitHub tamaño de repositorio](https://img.shields.io/github/repo-size/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
+
 # X-Commerce
 
 Proyecto integrador de Generation. Esta plataforma tiene como proposito ser un ecommerce construido desde cero mediante algunas tecnologías que veremos más adelante.
