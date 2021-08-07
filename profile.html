@@ -10,11 +10,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/profileStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
   <title>Perfil de usuario</title>
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <nav class="navbar navbar-expand-lg" style="background-color: #032E42;">
       <!--Color del NavBar-->
 
@@ -115,14 +118,28 @@
           </li>
 
           <!-- TODO: Fin carrito -->
-          <li class="nav-item">
-            <a class="nav-link  text-light" href="login.html">Iniciar Sesión</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  text-light" href="registration.html">Registro</a>
-          </li>
+
+          <!--Menu desplegable del perfil de usuario-->
+          <div class="dropdown" id="menuPerfil" >
+            <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://image.flaticon.com/icons/png/512/848/848006.png" width="25">
+            </a>
+            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="login.html">Iniciar sesión</a>
+              <a class="dropdown-item" href="registration.html">Registrate</a>
+              <a class="dropdown-item" href="profile.html">Perfil</a>
+              <a class="dropdown-item" href="#">Cerrar sesión</a>
+            </div>
+          </div>
+          
         </ul>
+        
+
       </div>
+
+      
     </nav>
   </header>
 
@@ -135,7 +152,12 @@
             <div class="account-settings">
               <div class="user-profile">
                 <div class="user-avatar">
+<<<<<<< HEAD
                   <img src="assets/img/rodri.jpg" alt="Maxwell Admin">
+=======
+                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="Maxwell Admin">
+                  
+>>>>>>> f68a12a3453ef763192bc553bf3c3ba6fbd78ec3
                 </div>
                 <h5 class="user-name">Rodrigo_Leyva</h5>
                 <h6 class="user-email">rodri_ley@gmail.com</h6>

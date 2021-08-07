@@ -153,10 +153,10 @@ function loadCards(categoria){
 class Card
 {
     /**Declaración de ATRIBUTOS privados */
-    #imagen="";
-    #nombre="";
-    #descripcion="";
-    #etiqueta="";
+    _imagen="";
+    _nombre="";
+    _descripcion="";
+    _etiqueta="";
     _precio="";
     _id="";
 
@@ -169,25 +169,25 @@ class Card
      */
     constructor(imagen,nombre,descripcion,etiqueta,precio,id)
     {
-        this.#imagen=imagen;
-        this.#nombre=nombre;
-        this.#descripcion=descripcion;
-        this.#etiqueta=etiqueta;
+        this._imagen=imagen;
+        this._nombre=nombre;
+        this._descripcion=descripcion;
+        this._etiqueta=etiqueta;
         this._precio= precio;
         this._id=id;
     }
 
     /**Metodos Set's Permiten modificar los atributos privados del objeto (Les asigna valores)*/
-    set imagen(value){this.#imagen=value;}
-    set nombre(value){this.#nombre=value;}
-        set descripcion(value){this.#descripcion=value;}
-    set etiqueta(value){this.#etiqueta=value;}
+    set imagen(value){this._imagen=value;}
+    set nombre(value){this._nombre=value;}
+        set descripcion(value){this._descripcion=value;}
+    set etiqueta(value){this._etiqueta=value;}
 
     /**Metodos Get's permiten obtener información de los atributos del objeto */
-    get imagen(){return this.#imagen;}
-    get nombre(){return this.#nombre;}
-    get descripcion(){return this.#descripcion;}
-    get etiqueta(){return this.#etiqueta;}
+    get imagen(){return this._imagen;}
+    get nombre(){return this._nombre;}
+    get descripcion(){return this._descripcion;}
+    get etiqueta(){return this._etiqueta;}
 
     /**
      * Permite la creación de etiquetas necesarias para poder construir una Card basada en las clases de BootStrap 4.6
@@ -212,32 +212,37 @@ class Card
         let div2 = document.createElement("div"); //Contenedor de la card.
         div2.classList="card p-2 mt-3" ;
 
-        let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-        // img.classList="card-img-top";   
-        img.src=this.#imagen;
-        // img.style.margin = "10% 0px";
-        // img.height = 255;
+        let divImg = document.createElement("div"); // Contenedor de la imagen
+        divImg.style.height = '200px';
+        divImg.style.padding = "auto";
 
+        let img=document.createElement("img");  //Imagen, se asigna la dirección de la imagen obtenida del API.
+        img.src=this._imagen;
 
         let h4=document.createElement("h4"); //Titulo de la card, se asigna el nombre del objeto.
         h4.classList="card-title";
-        if(this.#nombre.length > 20){
-            h4.textContent=this.#nombre.substr(0,20) + '... ';
+        if(this._nombre.length > 20){ // Si el contenido del nombre supera las 20 caracteres lo recorta y agrega ...
+            h4.textContent=this._nombre.substr(0,20) + '... ';
         }
-        else{
-            h4.textContent=this.#nombre;
+        else{ // Si no, solo agrega el nombre
+            h4.textContent=this._nombre;
         }
 
         let p=document.createElement("p");  //Parrafo de la card, se asigna la descripción del objeto.
         p.classList="card-text";
-        if(this.descripcion.length > 50){
-            p.textContent=this.#descripcion.substring(0,50) + `... `;
+        if(this.descripcion.length > 50){ // Si la descripción supera los 50 caracteres se recorta y se agrega ...
+            p.textContent=this._descripcion.substring(0,50) + `... `;
         }
-        else{
-            p.textContent=this.#descripcion;
+        else{ // Si no, solo se agrega la descipción
+            p.textContent=this._descripcion;
         }
 
-        let pPrecio = document.createElement('p');
+        let pPrecio = document.createElement('p'); // Se crea una etiqueta para el precio
+        /**
+         * Se agrega el precio, para eso se agrega el formato que se va a usar "en-In", 
+         * si va a llevar signo del peso y el peso "currency" = "USD" para tener el signo de '$'
+         * con minimumFractionDigits = 2, elegimos tener sol dos dígitos fraccionales.
+         */
         pPrecio.textContent = `${new Intl.NumberFormat("en-IN",{style: "currency", currency: "USD", minimumFractionDigits: 2}).format(this._precio)}`;
         pPrecio.style.fontWeight = 600;
         
@@ -247,7 +252,8 @@ class Card
         button.href=`descripcionArticulo.html?id=${this._id}`;
 
         /* Aquí se mete cada elemento dentro del que le corresponde para ser insertado en el HTML */
-        div2.appendChild(img); // img -> div3
+        divImg.appendChild(img); // img -> divImg
+        div2.appendChild(divImg); // divImg -> div3
         div2.appendChild(h4); // h5 -> div2
         div2.appendChild(p);  // p -> div2
         div2.appendChild(pPrecio);  // pPrecio -> div2
@@ -269,7 +275,7 @@ button.addEventListener('click', event => {
     let elements = document.querySelector("#categoriaslat").elements; // Seleccionamos los elementos del formulario.
     for(let i = 0; i < elements.length; i++){ // Recorremos cada elemento
         if (elements[i].checked){   // Verificamos que este marcado
-            loadCards(elements[i].value); // Cargamos las categorias marcadas.
+            loadCards(elements[i].value.split(' ')[0]); // Cargamos las categorias marcadas.
         }    
     }
 

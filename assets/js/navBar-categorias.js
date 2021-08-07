@@ -12,6 +12,7 @@ function actualizarCategoriasNavBar(categorias){
     let dropmenu = document.querySelector('#drop-category-menu'); // Conectamos con el menú desplegable
 
     /* Creamos un forEach para recorrer el arreglo de categorias*/
+    
     categorias.forEach((categoria,index) => {
         
         let item = document.createElement('a'); //Creamos un elemento 'a'
@@ -23,7 +24,28 @@ function actualizarCategoriasNavBar(categorias){
     });
 }
 
-//Mandamos a llamar a la función que permite llenar el menú desplegable.
-actualizarCategoriasNavBar(categorias);
+/**
+ * Funcion que inicia el proceso de rellenar las categorias en el nav Bar.
+ */
+function init () {
+    // Consultamos las categorias a la API
+    fetch(`http://localhost:8080/article/categories`,{
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(resp => resp.json())
+    .then(data => {
+        /**
+         * Tomamos los datos de la consulta y los guardamos en un array
+         */
+        let array = []
+        data.forEach(d => {
+            array.push(d.split(',')[0]); // Los separamos de el numero de elementos de cada categoría.
+        });
+        //Mandamos a llamar a la función que permite llenar el menú desplegable.
+        actualizarCategoriasNavBar(array);
+    })
+    
+}
 
-// <3 Me agradan amigos, tambien a mi.
+init(); // Iniciamos el rellenado de las categorías.
