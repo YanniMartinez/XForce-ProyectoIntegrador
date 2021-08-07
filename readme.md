@@ -1,9 +1,11 @@
 # X-Commerce
+![GitHub ultimo commit](https://img.shields.io/github/last-commit/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
+![GitHub tamaño de repositorio](https://img.shields.io/github/repo-size/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
+
 <center>
     <img src='assets/media/banner.png'>
 </center>
-![GitHub ultimo commit](https://img.shields.io/github/last-commit/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
-![GitHub tamaño de repositorio](https://img.shields.io/github/repo-size/YanniMartinez/XForce-ProyectoIntegrador?style=for-the-badge) <br>
+
 
 # Introducción
 
