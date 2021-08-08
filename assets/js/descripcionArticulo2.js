@@ -39,8 +39,8 @@ function init(){
         imagen2.src=data.img2;
         let imagen3=document.querySelector("#img3")
         imagen3.src=data.img3;
-        let imagen4=document.querySelector("#img4")
-        imagen4.src=data.img4;        
+        let imagen4=document.querySelector("#img4")     
+        imagen4.src=data.img4;
         let nombre=document.querySelector("#name")
         nombre.textContent=data.name;
         let precio=document.querySelector("#price")
