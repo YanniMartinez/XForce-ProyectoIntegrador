@@ -40,7 +40,7 @@ function init(){
         let imagen3=document.querySelector("#img3")
         imagen3.src=data.img3;
         let imagen4=document.querySelector("#img4")
-        imagen4.src=data.img4;
+        imagen4.src=data.img4;        
         let nombre=document.querySelector("#name")
         nombre.textContent=data.name;
         let precio=document.querySelector("#price")
@@ -49,3 +49,12 @@ function init(){
 }
 //es el metodo que siempre se llama antes de la primera vez que se llama al método de inicio
 init();
+
+// es la funcion para el funcionamiento del zoom en las cards
+$(document).ready(function(){
+    $('.zoom').hover(function() {
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
+    });
+});
