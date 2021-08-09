@@ -1,134 +1,148 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-      <link rel="stylesheet" href="assets/css/profileStyle.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
-      <title>Perfil de usuario</title>
-    </head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/profileStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Perfil de usuario</title>
+</head>
 
-    <body>
-      <header id="header">
-        <nav class="navbar navbar-expand-lg" style="background-color: #032E42;">
-          <!--Color del NavBar-->
+<body>
+  <header id="header">
+    <nav class="navbar navbar-expand-lg" style="background-color: #032E42;">
+      <!--Color del NavBar-->
 
-          <a class="navbar-brand text-light" href="#">X-Commerce</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
-            <a class="navbar-toggler-icon" style="color: white;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      <a class="navbar-brand text-light" href="#">X-Commerce</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+        <a class="navbar-toggler-icon" style="color: white;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </a>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link  text-light" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categorías
+            </a>
+            <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
+              <!-- Se rellena dinamicamente mediante el JS -->
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-light" href="articulos.html" tabindex="-1" aria-disabled="true">Artículos</a>
+          </li>
+          <!-- TODO Carrito -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="color: white;">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
               </svg>
             </a>
-          </button>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- Se rellena dinamicamente mediante el JS -->
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link  text-light" href="index.html">Inicio<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Categorías
-                </a>
-                <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
-                  <!-- Se rellena dinamicamente mediante el JS -->
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link  text-light" href="articulos.html" tabindex="-1" aria-disabled="true">Artículos</a>
-              </li>
-              <!-- TODO Carrito -->
-              <li class="nav-item dropdown" >
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false" style="color: white;">
-
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
-                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                  </svg>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <!-- Se rellena dinamicamente mediante el JS -->
-
-                  <a class="dropdown-item" href="#">
-                    <span class="item">
-                      <span class="item-left">
-                        <img
-                          src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/o/robot_white_1.jpg"
-                          width="50px" height="50px" alt="" />
-                        <span class="item-info">
-                          <span>Control XBOX Inalámbrico</span>
-                          <span>$1,699.99</span>
-                        </span>
-                      </span>
-                      <span class="item-right" style="margin-left: 15px;">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                      </span>
+              <a class="dropdown-item" href="#">
+                <span class="item">
+                  <span class="item-left">
+                    <img
+                      src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/o/robot_white_1.jpg"
+                      width="50px" height="50px" alt="" />
+                    <span class="item-info">
+                      <span>Control XBOX Inalámbrico</span>
+                      <span>$1,699.99</span>
                     </span>
+                  </span>
+                  <span class="item-right" style="margin-left: 15px;">
+                    <button class="btn btn-xs btn-danger pull-right">x</button>
+                  </span>
+                </span>
 
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
-                    <span class="item">
-                      <span class="item-left">
-                        <img
-                          src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/h/e/headset_chuis_dreamgear_1.jpg"
-                          width="50px" height="50px" alt="" />
-                        <span class="item-info">
-                          <span>Dreamgear GRX 440 Black </span>
-                          <span>$919.99 </span>
-                        </span>
-                      </span>
-                      <span class="item-right" style="margin-left: 20px;">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                      </span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <span class="item">
+                  <span class="item-left">
+                    <img
+                      src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/h/e/headset_chuis_dreamgear_1.jpg"
+                      width="50px" height="50px" alt="" />
+                    <span class="item-info">
+                      <span>Dreamgear GRX 440 Black </span>
+                      <span>$919.99 </span>
                     </span>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
-                    <span class="item">
-                      <span class="item-left">
-                        <img
-                          src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg"
-                          width="50px" height="50px" alt="" />
-                        <span class="item-info">
-                          <span>Resident Evil 3 remake</span>
-                          <span>$549.00 </span>
-                        </span>
-                      </span>
-                      <span class="item-right" style="margin-left: 40px;">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                      </span>
+                  </span>
+                  <span class="item-right" style="margin-left: 20px;">
+                    <button class="btn btn-xs btn-danger pull-right">x</button>
+                  </span>
+                </span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <span class="item">
+                  <span class="item-left">
+                    <img
+                      src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg"
+                      width="50px" height="50px" alt="" />
+                    <span class="item-info">
+                      <span>Resident Evil 3 remake</span>
+                      <span>$549.00 </span>
                     </span>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item text-center" href="pago.html">Ver detalles</a>
+                  </span>
+                  <span class="item-right" style="margin-left: 40px;">
+                    <button class="btn btn-xs btn-danger pull-right">x</button>
+                  </span>
+                </span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-center" href="pago.html">Ver detalles</a>
 
-                </div>
-              </li>
+            </div>
+          </li>
 
-              <!-- TODO: Fin carrito -->
+          <!-- TODO: Fin carrito -->
 
-              
-              
-            </ul>
-
+          <!--Menu desplegable del perfil de usuario-->
+          <div class="dropdown" id="menuPerfil" >
+            <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://image.flaticon.com/icons/png/512/848/848006.png" width="25">
+            </a>
             
-            
-            
-            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="login.html">Iniciar sesión</a>
+              <a class="dropdown-item" href="registration.html">Registrate</a>
+              <a class="dropdown-item" href="profile.html">Perfil</a>
+              <a class="dropdown-item" href="login.html" id="logout">Cerrar sesión</a>
+            </div>
+          </div>
+          
+        </ul>
+        
 
-<<<<<<< HEAD
+      </div>
+
+      
+    </nav>
+  </header>
+
   <!-- Inicio de Perfil -->
   <div class="container mt-3">
     <div class="row gutters">
@@ -138,7 +152,7 @@
             <div class="account-settings">
               <div class="user-profile" id="userProfile">
                 <div class="user-avatar">
-                  <img src="assets/img/rodri.jpg" alt="Maxwell Admin">
+                  <img src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg" alt="Maxwell Admin">
                 </div>
                 
                 <!--Aqui se insertan los Datos de usuario bajo su imagen-->
@@ -156,30 +170,19 @@
                     <a class="list-group-item list-group-item-action" id="list-messages-list"  href="pago.html" role="tab" aria-controls="messages">Carrito</a>
                     
                   </div>
-=======
-
-            <!--Menu desplegable del perfil de usuario-->
-            <div class="dropdown" id="menuPerfil" >
-              <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="https://image.flaticon.com/icons/png/512/848/848006.png" width="25">
-              </a>
-              
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              
-                <a class="dropdown-item" href="profile.html">Perfil</a>
-                <a class="dropdown-item" href="login.html" id="logout">Cerrar sesión</a>
->>>>>>> 87a3f3b11508faf71300ccf1a92112f32b29207a
               </div>
-            </div>
-            
-            <!--Div que nos pinta el nombre del usuario-->
-            <div id="nombre" class="mt-2">
+              <!-- Acciones al presionar cosas del SideBar -->
+              <!-- <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                  <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                  <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                  <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                </div>
+              </div> -->
 
             </div>
-
           </div>
-<<<<<<< HEAD
         </div>
       </div>
       <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
@@ -242,170 +245,71 @@
                 <div class="form-group">
                   <label for="zip">Código postal</label>
                   <input type="text" class="form-control" id="zip" placeholder="01301">
-=======
-
-          
-        </nav>
-      </header>
-
-        <!-- Inicio de Perfil -->
-        <div class="container mt-3">
-          <div class="row gutters">
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="account-settings">
-                    <div class="user-profile">
-                      <div class="user-avatar">
-                        <img src="assets/img/rodri.jpg" alt="Maxwell Admin">
-                      </div>
-                      <h5 class="user-name">Rodrigo_Leyva</h5>
-                      <h6 class="user-email">rodri_ley@gmail.com</h6>
-                    </div>
-
-                    <!-- SideBar https://getbootstrap.com/docs/4.6/components/list-group/#javascript-behavior -->
-                    <div class="row-xl-3 row-lg-3 row-md-12 row-sm-12 row-12" >
-                        <div class="list-group" id="list-tab" role="tablist" >
-                          <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Datos</a>
-                          <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Método de Pago</a>
-                          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Carrito</a>
-                          <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Opciones</a>
-                        </div>
-                    </div>
-                    <!-- Acciones al presionar cosas del SideBar -->
-                    <!-- <div class="col-8">
-                      <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
-                      </div>
-                    </div> -->
-
-                  </div>
->>>>>>> 87a3f3b11508faf71300ccf1a92112f32b29207a
                 </div>
               </div>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row gutters">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                      <h6 class="mb-2 text-primary">Datos personales</h6>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="fullName">Nombre</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Rodrigo Leyva">
-                      </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="eMail">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="eMail" placeholder="rodrigo@ejemplo.com">
-                      </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="text" class="form-control" id="phone" placeholder="55 123456789">
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="row gutters">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                      <h6 class="mt-3 mb-2 text-primary">Dirección</h6>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="Street">Calle</label>
-                        <input type="name" class="form-control" id="Street" placeholder="Coyoacán">
-                      </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="ciTy">País</label>
-                        <input type="name" class="form-control" id="ciTy" placeholder="México">
-                      </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="sTate">Estado</label>
-                        <input type="text" class="form-control" id="sTate" placeholder="CDMX">
-                      </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label for="zIp">Código postal</label>
-                        <input type="text" class="form-control" id="zIp" placeholder="01301">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row gutters">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div class="text-right">
-                        <button type="button" id="submit" name="submit" class="btn btn-secondary" style="background-color: #032E42;">Ver artículos</button>
-                        <button type="button" id="submit" name="submit" class="btn btn-success" style="background-color: #009b5f;">Actualizar datos</button>
-                      </div>
-                    </div>
-                  </div>
+            <div class="row gutters">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="text-right">
+                  <button type="button" id="submit" name="submit" class="btn btn-secondary" style="background-color: #032E42;">Ver artículos</button>
+                  <button type="button" id="submit" name="submit" class="btn btn-success" style="background-color: #009b5f;">Actualizar datos</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Footer -->
-        <footer class="text-center text-white mt-5" style="background-color: #032E42;">
-          <!-- Grid container -->
-          <div class="container p-4 pb-0 ">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-              <!-- Facebook -->
-              <a href="https://github.com/YanniMartinez/XForce-ProyectoIntegrador" type="button" class="btn" style="color: white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                  </svg>
-                </a>
-        
-              <!-- Twitter -->
-              <a href="" type="button" class="btn" style="color: white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                </svg>
-              </a>
-        
-              <!-- Youtube -->
-              <a href="" type="button" class="btn" style="color: white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-                </svg>
-              </a>
-        
-              <!-- Instagram -->
-              <a href="" type="button" class="btn" style="color: white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                </svg>
-              </a>
+  <!-- Footer -->
+  <footer class="text-center text-white mt-5" style="background-color: #032E42;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0 ">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a href="https://github.com/YanniMartinez/XForce-ProyectoIntegrador" type="button" class="btn" style="color: white;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+          </a>
+  
+        <!-- Twitter -->
+        <a href="" type="button" class="btn" style="color: white;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg>
+        </a>
+  
+        <!-- Youtube -->
+        <a href="" type="button" class="btn" style="color: white;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+          </svg>
+        </a>
+  
+        <!-- Instagram -->
+        <a href="" type="button" class="btn" style="color: white;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a>
 
-            </section>
-            <!-- Section: Social media -->
-          </div>
-          <!-- Grid container -->
-        
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2021 Copyright:
-            <a class="text-white" href="https://github.com/YanniMartinez/XForce-ProyectoIntegrador">X-Force</a>
-          </div>
-          <!-- Copyright -->
-        </footer>
-        <!-- Fin footer -->
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white" href="https://github.com/YanniMartinez/XForce-ProyectoIntegrador">X-Force</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Fin footer -->
 
-<<<<<<< HEAD
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -417,18 +321,5 @@
   <!--<script src="assets/js/shopingCart.js"></script>-->
   <script src="assets/js/usuario.js"></script>
 </body>
-=======
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-          crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-          crossorigin="anonymous"></script>
-        <script src="assets/js/isLoged.js"></script>
-        <script src="assets/js/logout.js"></script>
-        <script src="assets/js/navBar-categorias.js"></script>
-        <script src="assets/js/navbarLogin.js"></script>
-  </body>
->>>>>>> 87a3f3b11508faf71300ccf1a92112f32b29207a
 
 </html>
