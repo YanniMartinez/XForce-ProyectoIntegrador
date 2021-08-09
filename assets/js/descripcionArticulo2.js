@@ -20,11 +20,11 @@ function getGET() {
         return get; // retorna el diccionario
     }
 }
+let get=getGET();
 /**
  * TODO: FUNCION QUE CAPTURA LOS DATOS JSON    
  * */
 function init(){
-    let get=getGET();
     console.log(get);
     fetch(`http://localhost:8080/article/${get.id}`)
     .then(data=>data.json())
@@ -57,4 +57,28 @@ $(document).ready(function(){
     }, function() {
         $(this).removeClass('transition');
     });
+});
+
+document.querySelector("#agregar-carrito").addEventListener('click', e =>{
+    token = localStorage.getItem('token');
+    console.log(token);
+    if(token !=  null){
+        fetch('http://localhost:8080/articles-cart/', {
+            method: 'POST',
+            body: JSON.stringify({
+                id: get.id
+            }),
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `${token}`
+            }
+        }).then(resp => resp.text())
+        .then(data => console.log(data));
+    } else{
+        alert("inicia sesión o registrate");    
+    }
+});
+
+document.querySelector("#comprar-ahora").addEventListener('click', e =>{
+    location.href = `pago.html?id=${get.id}`;
 });
