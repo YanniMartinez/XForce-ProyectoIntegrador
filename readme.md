@@ -6,7 +6,6 @@
     <img src='assets/media/banner.png'>
 </center>
 
-
 # Introducción
 
 Proyecto integrador de Generation. Esta plataforma tiene como proposito ser un ecommerce construido desde cero mediante algunas tecnologías que veremos más adelante.
