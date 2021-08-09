@@ -283,3 +283,46 @@ body{
 .btn-ghost.secundary.green:active{
   box-shadow: inset 0 0 20px var(--white);
 }
+
+.zoom img{
+ 
+  width: 350px;
+  height: 200px;
+  transition: ease ;  
+  -webkit-transition: all 1.2s ease-in-out;
+  -ms-transition: all 1.2s ease-in-out;
+
+ 
+}
+
+.transition {
+  -webkit-transform: scale(3.8);   
+  transform: scale(3.8);
+ 
+}
+.container{
+  width: 90%;
+  padding: 20px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.box{
+  width: 350px;
+  margin:0 10px;
+  box-shadow: 0 0 20px 5px;
+  transition: 1s;
+}
+
+.box img{
+  display: block;
+  width: 100%;
+  
+  background-color: ivory;
+}
+.box:hover{
+  transform: scale(3.8);
+  z-index: 2;
+}
