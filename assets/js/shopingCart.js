@@ -1,3 +1,4 @@
+let carga = true;
 let carritoElemento = document.querySelector("#carrito");
 
 carritoElemento.addEventListener('click', event => {
@@ -10,6 +11,9 @@ carritoElemento.addEventListener('click', event => {
     }
     else{
         /** Obtiene los valores del carrito en función del carrito asignado */
+        if(carga==true){
+
+        
         fetch(`http://localhost:8080/cartbytoken`,{
             method: 'GET',
             headers: {
@@ -22,7 +26,8 @@ carritoElemento.addEventListener('click', event => {
             console.log("aqui") */
             loadCards(data.articles);
         })
-        
+        carga=false;
+        }
     }
 });
 
@@ -72,15 +77,11 @@ function loadCards(data){
 }
 
 function botonDetalles(){
-    let div = document.createElement("div");
-    div.classList="dropdown-divider";
     let a = document.createElement("a");
     a.classList="dropdown-item text-center";
     a.href = "pago.html"
     a.textContent="Ver Detalles"
-
-    div.appendChild(a);
-    return div;
+    return a;
 }
 /**
  * TODO: INSERTA LAS CARDS EL EL SEGMENTO QUE LAS VA A CONTENER
@@ -93,6 +94,8 @@ function botonDetalles(){
     cards.forEach(card => {
         carrito.appendChild(card.crearCard());
     });
+    //Agrega el botón de detalles
+    carrito.appendChild(botonDetalles());
  }
 /**
  * TODO: CLASE CARD
@@ -171,7 +174,8 @@ function botonDetalles(){
          span3.classList="item-info";
 
          let span4=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-         span4.textContent=this._nombre;
+         
+         span4.textContent=this._nombre.substring(0,20);
 
          let span5=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
          span5.textContent="$"+this._precio;
@@ -182,7 +186,8 @@ function botonDetalles(){
 
          let boton1=document.createElement("button");
          boton1.textContent="X";
-         boton1.classList="btn btn-xs btn-danger pull-right";
+         boton1.classList="btn btn-xs btn-danger";
+         boton1.style="float: right;";
 
          let divisor = document.createElement("div");
          divisor.classList="dropdown-divider";
