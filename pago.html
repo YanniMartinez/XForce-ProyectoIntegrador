@@ -252,6 +252,13 @@
                         </div>
                         <!-- Region del usuario -->
                         <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="zip">Código postal</label>
+                                <input type="text" class="form-control" id="zip" placeholder="10001" required>
+                                <div class="invalid-feedback">
+                                    Ingrese su código postal
+                                </div>
+                            </div>
                             <div class="col-md-5 mb-3">
                                 <label for="country">País</label>
                                 <select class="custom-select d-block w-100" id="country" required >
@@ -297,13 +304,6 @@
                                 </select>
                                 <div class="invalid-feedback">
                                     Por favor seleccione una opción.
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="zip">Código postal</label>
-                                <input type="text" class="form-control" id="zip" placeholder="10001" required>
-                                <div class="invalid-feedback">
-                                    Ingrese su código postal
                                 </div>
                             </div>
                         </div>
@@ -361,6 +361,7 @@
             crossorigin="anonymous"></script>
         <script src="assets/js/navBar-categorias.js"></script>
         <script src="assets/js/isLoged.js"></script>
+        <script src="assets/js/cuestionario.js"></script>
     </body>
 
 </html>
