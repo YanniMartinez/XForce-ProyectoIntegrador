@@ -40,7 +40,7 @@ const listPerfil = [
         href: "login.html"
     },
     {
-        title: "Resgitrate",
+        title: "Registrate",
         href: "registration.html"
     },
 ];
