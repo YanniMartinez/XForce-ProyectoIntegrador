@@ -19,120 +19,129 @@
     </head>
 
     <body class="bg-light">
-        <header>
+        <header id="header">
             <nav class="navbar navbar-expand-lg" style="background-color: #032E42;">
-                <!--Color del NavBar-->
+              <!--Color del NavBar-->
     
-                <a class="navbar-brand text-light" href="#">X-Commerce</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <a class="navbar-toggler-icon" style="color: white;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                        </svg>
+              <a class="navbar-brand text-light" href="#">X-Commerce</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+                <a class="navbar-toggler-icon" style="color: white;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                </a>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link  text-light" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categorías
                     </a>
-                </button>
+                    <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
+                      <!-- Se rellena dinamicamente mediante el JS -->
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-light" href="articulos.html" tabindex="-1" aria-disabled="true">Artículos</a>
+                  </li>
+                  <!-- TODO Carrito -->
+                  <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false" style="color: white;">
     
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link  text-light" href="index.html">Inicio<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorías
-                            </a>
-                            <div class="dropdown-menu" id="drop-category-menu" aria-labelledby="navbarDropdown">
-                                <!-- Se rellena dinamicamente mediante el JS -->
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-light" href="articulos.html" tabindex="-1"
-                                aria-disabled="true">Artículos</a>
-                        </li>
-                        <!-- TODO Carrito -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                      </svg>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <!-- Se rellena dinamicamente mediante el JS -->
     
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                    class="bi bi-cart2" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                                </svg>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!-- Se rellena dinamicamente mediante el JS -->
+                      <a class="dropdown-item" href="#">
+                        <span class="item">
+                          <span class="item-left">
+                            <img
+                              src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/o/robot_white_1.jpg"
+                              width="50px" height="50px" alt="" />
+                            <span class="item-info">
+                              <span>Control XBOX Inalámbrico</span>
+                              <span>$1,699.99</span>
+                            </span>
+                          </span>
+                          <span class="item-right" style="margin-left: 15px;">
+                            <button class="btn btn-xs btn-danger pull-right">x</button>
+                          </span>
+                        </span>
     
-                                <a class="dropdown-item" href="#">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/o/robot_white_1.jpg"
-                                                width="50px" height="50px" alt="" />
-                                            <span class="item-info">
-                                                <span>Control XBOX Inalámbrico</span>
-                                                <span>$1,699.99</span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right" style="margin-left: 15px;">
-                                            <button class="btn btn-xs btn-danger pull-right">x</button>
-                                        </span>
-                                    </span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        <span class="item">
+                          <span class="item-left">
+                            <img
+                              src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/h/e/headset_chuis_dreamgear_1.jpg"
+                              width="50px" height="50px" alt="" />
+                            <span class="item-info">
+                              <span>Dreamgear GRX 440 Black </span>
+                              <span>$919.99 </span>
+                            </span>
+                          </span>
+                          <span class="item-right" style="margin-left: 20px;">
+                            <button class="btn btn-xs btn-danger pull-right">x</button>
+                          </span>
+                        </span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        <span class="item">
+                          <span class="item-left">
+                            <img
+                              src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg"
+                              width="50px" height="50px" alt="" />
+                            <span class="item-info">
+                              <span>Resident Evil 3 remake</span>
+                              <span>$549.00 </span>
+                            </span>
+                          </span>
+                          <span class="item-right" style="margin-left: 40px;">
+                            <button class="btn btn-xs btn-danger pull-right">x</button>
+                          </span>
+                        </span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item text-center" href="pago.html">Ver detalles</a>
     
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/h/e/headset_chuis_dreamgear_1.jpg"
-                                                width="50px" height="50px" alt="" />
-                                            <span class="item-info">
-                                                <span>Dreamgear GRX 440 Black </span>
-                                                <span>$919.99 </span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right" style="margin-left: 20px;">
-                                            <button class="btn btn-xs btn-danger pull-right">x</button>
-                                        </span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <span class="item">
-                                        <span class="item-left">
-                                            <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/r/e/re3_ps4_1.jpg"
-                                                width="50px" height="50px" alt="" />
-                                            <span class="item-info">
-                                                <span>Resident Evil 3 remake</span>
-                                                <span>$549.00 </span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right" style="margin-left: 40px;">
-                                            <button class="btn btn-xs btn-danger pull-right">x</button>
-                                        </span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-center" href="pago.html">Ver detalles</a>
+                    </div>
+                  </li>
     
-                            </div>
-                        </li>
+                  <!-- TODO: Fin carrito -->
     
-                        <!-- TODO: Fin carrito -->
-                        <li class="nav-item">
-                            <a class="nav-link  text-light" href="login.html">Iniciar Sesión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-light" href="registration.html">Registro</a>
-                        </li>
-                    </ul>
-                </div>
+                </ul>
+    
+                    <!--Menu desplegable del perfil de usuario-->
+                    <div class="dropdown mr-5"  >
+                        <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://image.flaticon.com/icons/png/512/848/848006.png" width="25">
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton" id="menuPerfil">
+                        <!--Se rellena el menú de forma dinámica-->
+                        </div>
+                    </div>
+                    
+                    <!--Div que nos pinta el nombre del usuario-->
+                    <div id="nombre" class="mt-2">
+                        <!--Nos pinta el nombre obtenido del login de manera dinámica-->
+                    </div>
+    
+              </div>
             </nav>
-        </header>
+          </header>
 
         <div class="container">
             <div class="py-5 text-center">
@@ -361,7 +370,12 @@
             crossorigin="anonymous"></script>
         <script src="assets/js/navBar-categorias.js"></script>
         <script src="assets/js/isLoged.js"></script>
+<<<<<<< HEAD
         <script src="assets/js/cuestionario.js"></script>
+=======
+        <script src="assets/js/navbarLogin.js"></script>
+        <script src="assets/js/logout.js"></script>
+>>>>>>> 7131d08828e0be3a4cfd8cd50cb35f6dee804bef
     </body>
 
 </html>

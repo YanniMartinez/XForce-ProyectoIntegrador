@@ -81,4 +81,8 @@ document.querySelector("#agregar-carrito").addEventListener('click', e =>{
 
 document.querySelector("#comprar-ahora").addEventListener('click', e =>{
     location.href = `pago.html?id=${get.id}`;
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> bea7deea6197f623e6e38646563da552273cdae9
