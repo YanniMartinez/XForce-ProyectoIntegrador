@@ -11,7 +11,6 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="assets/css/articulos.css">
-    <link rel="stylesheet" href="assets/css/fontStyle.css">
 
     <title>Artículos</title>
 </head>
@@ -122,12 +121,18 @@
                     </li>
 
                     <!-- TODO: Fin carrito -->
-                    <li class="nav-item">
-                        <a class="nav-link  text-light" href="login.html">Iniciar Sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-light" href="registration.html">Registro</a>
-                    </li>
+                    <!--Menu desplegable del perfil de usuario-->
+                    <div class="dropdown" id="menuPerfil" >
+                        <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://image.flaticon.com/icons/png/512/848/848006.png" width="25">
+                        </a>
+                        
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="login.html">Iniciar sesión</a>
+                        <a class="dropdown-item" href="registration.html">Registrate</a>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </nav>
