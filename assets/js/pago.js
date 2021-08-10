@@ -38,6 +38,10 @@ function jsonToCard(data){
     return cards; //Retorna el arreglo de cards
 }
 
+function loadUser(){
+    
+}
+
 function loadCards(data){
     if(data!= null){
         let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
@@ -83,7 +87,7 @@ function montoTotal(monto){
         contador+=1
     });
     let articulos = document.querySelector("#numArts");
-    articulos.textContent = contador8kujy;
+    articulos.textContent = contador;
     let total = montoTotal(costoTotal);
     carrito.appendChild(total);
  }
