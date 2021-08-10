@@ -2,7 +2,7 @@
  * TODO: FUNCION QUE CAPTURA LOS GET EN VIADOS POR URL
  * @returns La respuesta Get como una clase con atributos que contienen los mensajes Get
  */
-function getGET() {
+ function getGET() {
     // capturamos la url
     var loc = document.location.href;
     // si existe el interrogante
@@ -73,7 +73,9 @@ document.querySelector("#agregar-carrito").addEventListener('click', e =>{
                 'Authorization': `${token}`
             }
         }).then(resp => resp.text())
-        .then(data => console.log(data));
+        .then(data => {
+            alert("Se agregó satisfactoriamente a carrito");
+        });
     } else{
         alert("inicia sesión o registrate");    
     }
@@ -81,8 +83,4 @@ document.querySelector("#agregar-carrito").addEventListener('click', e =>{
 
 document.querySelector("#comprar-ahora").addEventListener('click', e =>{
     location.href = `pago.html?id=${get.id}`;
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> bea7deea6197f623e6e38646563da552273cdae9
