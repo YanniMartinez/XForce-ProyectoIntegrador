@@ -200,17 +200,3 @@ function botonDetalles(){
          return a1; //regresamos el elemento.
      }
  }
-/**
- * TODO: Consulta para obtener info del usuario mediante token
- * 
-    fetch(`http://localhost:8080/user/auth`,{
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json',
-            'Authorization': `${token}`
-        }
-    }).then(resp => resp.json())
-    .then(data => {
-        console.log(data);
-    }) 
- */

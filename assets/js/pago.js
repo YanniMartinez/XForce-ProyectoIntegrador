@@ -83,7 +83,7 @@ function montoTotal(monto){
         contador+=1
     });
     let articulos = document.querySelector("#numArts");
-    articulos.textContent = contador;
+    articulos.textContent = contador8kujy;
     let total = montoTotal(costoTotal);
     carrito.appendChild(total);
  }
