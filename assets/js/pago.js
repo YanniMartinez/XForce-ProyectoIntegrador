@@ -23,6 +23,7 @@ else{
         /* console.log(data.articles)
         console.log("aqui") */
         loadCards(data.articles);
+        loadUser()
     })
     
 }
@@ -39,7 +40,44 @@ function jsonToCard(data){
 }
 
 function loadUser(){
+    fetch(`http://localhost:8080/user/auth`,{
+    method: 'GET',
+    headers: {
+        'content-type': 'application/json',
+        'Authorization': `${token}`
+    }
+    }).then(resp => resp.json())
+    .then(data => {
+        console.log(data);
+        placeUser(data);
+    });
+}
+
+function placeUser(data){
+    let recibe = document.querySelector("#firstName");
+    recibe.value = data.name;
+
+    let username = document.querySelector("#email");
+    username.value = data.username;
     
+    if(data.address!=undefined){
+        let address = document.querySelector("#address");
+        address.value = data.address;
+    }
+
+    if(data.country!=undefined){
+        let country = document.querySelector("#country");
+        country.value = data.country;
+    }
+    if(data.state!=undefined){
+        let state = document.querySelector("#state");
+        state.value = data.state;
+    }
+    if(data.cp!=undefined){
+        let cp = document.querySelector("#cp");
+        cp.value = data.cp;
+    }
+
 }
 
 function loadCards(data){
