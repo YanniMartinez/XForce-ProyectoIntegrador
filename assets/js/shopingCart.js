@@ -16,15 +16,20 @@ carritoElemento.addEventListener('click', event => {
                 'content-type': 'application/json',
                 'Authorization': `${token}`
             }
-        }).then(resp => {console.log(resp.json())})
-    
+        }).then(resp => resp.json())
+        .then(data =>{
+            /* console.log(data.articles)
+            console.log("aqui") */
+            loadCards(data.articles);
+        })
+        
     }
 });
 
 
 /* Crea carrito vacio */
 function carritoVacio(){
-    let carritoVacio = document.querySelector("#carrito");
+    let carritoVacio = document.querySelector("#carrito2");
 
     let boton = document.createElement("a");
     boton.classList="dropdown-item";
@@ -49,6 +54,7 @@ function jsonToCard(data){
         let card = new Card(d.img1, d.name, d.description, d.category, d.price, d.id); //Crea objeto con valores unicos
         cards.push(card); //Almacena en un arreglo de objetos
     });
+
     return cards; //Retorna el arreglo de cards
 }
 
@@ -56,6 +62,7 @@ function loadCards(data){
     if(data!= null){
         let cards = jsonToCard(data); // Convetimos de un objeto tipo JSON a uno tipo CARD.
         //console.log(cards[0].crearCard());
+
         insertCards(cards); // Inserta las cards en el HTML
     }
     else{
@@ -64,16 +71,27 @@ function loadCards(data){
     
 }
 
+function botonDetalles(){
+    let div = document.createElement("div");
+    div.classList="dropdown-divider";
+    let a = document.createElement("a");
+    a.classList="dropdown-item text-center";
+    a.href = "pago.html"
+    a.textContent="Ver Detalles"
+
+    div.appendChild(a);
+    return div;
+}
 /**
  * TODO: INSERTA LAS CARDS EL EL SEGMENTO QUE LAS VA A CONTENER
  * Agrega un hijo al id Card-group- correspondiente, esto lo hará de 3 columas
  * @param {*} cards 
  */
  function insertCards(cards){
-    
-    let carrito = document.querySelector(`#carrito`); 
+    console.log("Entrando a insertarCards")
+    let carrito = document.querySelector("#carrito2");
     cards.forEach(card => {
-        carrito.appendChild(card);
+        carrito.appendChild(card.crearCard());
     });
  }
 /**
@@ -146,8 +164,8 @@ function loadCards(data){
  
          let img = document.createElement("img"); // Contenedor de la imagen
          img.src = this._imagen;
-         img.width="50px";
-         img.height="50px";
+         img.width="50";
+         img.height="50";
  
          let span3=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
          span3.classList="item-info";
@@ -166,14 +184,18 @@ function loadCards(data){
          boton1.textContent="X";
          boton1.classList="btn btn-xs btn-danger pull-right";
 
-         span6.appendChild(boton1);
-         span3.appendChild(span4);
-         span3.appendChild(span5);
-         span2.appendChild(img);
-         span2.appendChild(span3);
-         span1.appendChild(span2);
+         let divisor = document.createElement("div");
+         divisor.classList="dropdown-divider";
 
-         a1.appendChild(span1);
+         span6.appendChild(boton1); /* span6 -> boton1 */
+         span3.appendChild(span4); /* span3 -> span4, span5 */
+         span3.appendChild(span5);
+         span2.appendChild(img);  /* span2 -> img, span3 */
+         span2.appendChild(span3);
+         span1.appendChild(span2); /* span1 -> span2, span6 */
+         span1.appendChild(span6);
+         a1.appendChild(span1);  /* a1->span1 */
+         a1.appendChild(divisor);
 
          return a1; //regresamos el elemento.
      }
