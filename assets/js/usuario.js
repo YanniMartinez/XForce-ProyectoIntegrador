@@ -12,10 +12,10 @@ fetch(`http://localhost:8080/user/auth`,{
     userProfile.textContent = data.username;
     div.appendChild(userProfile);
 
-    let div1 = document.querySelector('#emailP');
+    /* let div1 = document.querySelector('#emailP');
     let emailP = document.createElement('h5');
     emailP.textContent = data.email;
-    div.appendChild(emailP);
+    div.appendChild(emailP); */
 
     let input = document.querySelector('#inputID')
     const placeholder = input.placeholder;
@@ -26,16 +26,22 @@ fetch(`http://localhost:8080/user/auth`,{
     inputEMail.placeholder = data.email;
 
     let inputPhone = document.querySelector('#phone')
-    let placeholderPhone = inputPhone.placeholder;
+    if(data.phone !=null){
+        let placeholderPhone = inputPhone.placeholder;
     inputPhone.placeholder = data.phone;
+    }
+    
     
     let inputAge = document.querySelector('#age')
     let placeholderAge = inputAge.placeholder;
     inputAge.placeholder = data.date;
 
     let inputStreet = document.querySelector('#Street')
-    let placeholderStreet = inputStreet.placeholder;
-    inputStreet.placeholder = data.street;
+    if(data.street !=null){
+        let placeholderStreet = inputStreet.placeholder;
+        inputStreet.placeholder = data.street;
+    }
+   
     
     let inputCity = document.querySelector('#city')
     let placeholderCity = inputCity.placeholder;
