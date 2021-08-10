@@ -1,50 +1,30 @@
 let carritoElemento = document.querySelector("#carrito");
 
-carritoElemento.addEventListener('click', event => {
-    //Obtiene el token en caso de que exista en el localStorage
-    token = localStorage.getItem('token');
+token = localStorage.getItem('token');
 
-    if(!token){//Si no hay token no le permite acceder a funcionalidades del carrito
-        alert('Para acceder a funcionalidades de carrito porfavor inicie sesión');
-        carritoVacio();
-    }
-    else{
-        /** Obtiene los valores del carrito en función del carrito asignado */
-        fetch(`http://localhost:8080/cartbytoken`,{
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': `${token}`
-            }
-        }).then(resp => resp.json())
-        .then(data =>{
-            /* console.log(data.articles)
-            console.log("aqui") */
-            loadCards(data.articles);
-        })
-        
-    }
-});
+if(!token){//Si no hay token no le permite acceder a funcionalidades del carrito
+    alert('Para acceder a funcionalidades de carrito porfavor inicie sesión');
+    url = window.location;
+    console.log(url);
+    const path = url.pathname.substring(0, url.pathname.lastIndexOf('/') + 1)
 
-
-/* Crea carrito vacio */
-function carritoVacio(){
-    let carritoVacio = document.querySelector("#carrito2");
-
-    let boton = document.createElement("a");
-    boton.classList="dropdown-item";
-
-    let item = document.createElement("span")
-    item.classList="item";
-    item.textContent = "Presione aquí para iniciar sesión";
-
-    let login = document.createElement("a");
-    login.classList="btn btn-light";
-    login.href="login.html";
-
-    item.appendChild(login);
-    boton.appendChild(item);
-    carritoVacio.appendChild(boton);
+    location.href = path + 'login.html';
+}
+else{
+    /** Obtiene los valores del carrito en función del carrito asignado */
+    fetch(`http://localhost:8080/cartbytoken`,{
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': `${token}`
+        }
+    }).then(resp => resp.json())
+    .then(data =>{
+        /* console.log(data.articles)
+        console.log("aqui") */
+        loadCards(data.articles);
+    })
+    
 }
 
 function jsonToCard(data){
@@ -56,6 +36,10 @@ function jsonToCard(data){
     });
 
     return cards; //Retorna el arreglo de cards
+}
+
+function loadUser(){
+    
 }
 
 function loadCards(data){
@@ -71,17 +55,22 @@ function loadCards(data){
     
 }
 
-function botonDetalles(){
-    let div = document.createElement("div");
-    div.classList="dropdown-divider";
-    let a = document.createElement("a");
-    a.classList="dropdown-item text-center";
-    a.href = "pago.html"
-    a.textContent="Ver Detalles"
+function montoTotal(monto){
+    let li = document.createElement("li");
+    li.classList = 'list-group-item d-flex justify-content-between';
 
-    div.appendChild(a);
-    return div;
+    let span = document.createElement("span");
+    span.textContent="Total (MXM)";
+
+    let strong = document.createElement("strong");
+    strong.textContent=`$ ${monto}`;
+
+    li.appendChild(span);
+    li.appendChild(strong);
+
+    return li; //regresamos el elemento.
 }
+
 /**
  * TODO: INSERTA LAS CARDS EL EL SEGMENTO QUE LAS VA A CONTENER
  * Agrega un hijo al id Card-group- correspondiente, esto lo hará de 3 columas
@@ -89,10 +78,18 @@ function botonDetalles(){
  */
  function insertCards(cards){
     console.log("Entrando a insertarCards")
-    let carrito = document.querySelector("#carrito2");
+    let costoTotal=0;
+    let contador = 0;
+    let carrito = document.querySelector("#pagoTotal");
     cards.forEach(card => {
         carrito.appendChild(card.crearCard());
+        costoTotal += card._precio;
+        contador+=1
     });
+    let articulos = document.querySelector("#numArts");
+    articulos.textContent = contador;
+    let total = montoTotal(costoTotal);
+    carrito.appendChild(total);
  }
 /**
  * TODO: CLASE CARD
@@ -152,51 +149,29 @@ function botonDetalles(){
       */
      crearCard()
      {
-         let a1 = document.createElement("a");
-         a1.classList = 'dropdown-item';
-         a1.href="#";
- 
-         let span1 = document.createElement("span"); //Contenedor de la card.
-         span1.classList="item" ;
+         let li = document.createElement("li");
+         li.classList = 'list-group-item d-flex justify-content-between lh-condensed';
+         
+         let div1 = document.createElement("div");
+         
+         let h6= document.createElement("h6");
+         h6.classList="my-0";
+         h6.textContent = this._nombre.substring(0,20)+"...";
 
-         let span2 = document.createElement("span"); //Contenedor de la card.
-         span2.classList="item-left" ;
- 
-         let img = document.createElement("img"); // Contenedor de la imagen
-         img.src = this._imagen;
-         img.width="50";
-         img.height="50";
- 
-         let span3=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-         span3.classList="item-info";
+         let small=document.createElement("small");
+         small.classList="text-muted";
+         small.textContent=this._descripcion.substring(0,20)+"...";
 
-         let span4=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-         span4.textContent=this._nombre;
+         let span = document.createElement("span");
+         span.classList="text-muted";
+         span.textContent=`$ ${this._precio}`;
 
-         let span5=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-         span5.textContent="$"+this._precio;
- 
-         let span6=document.createElement("span");  //Imagen, se asigna la dirección de la imagen obtenida del API.
-         span6.classList="item-right";
-         span6.style.marginLeft="15px";
+         div1.appendChild(h6);
+         div1.appendChild(small);
 
-         let boton1=document.createElement("button");
-         boton1.textContent="X";
-         boton1.classList="btn btn-xs btn-danger pull-right";
+         li.appendChild(div1);
+         li.appendChild(span);
 
-         let divisor = document.createElement("div");
-         divisor.classList="dropdown-divider";
-
-         span6.appendChild(boton1); /* span6 -> boton1 */
-         span3.appendChild(span4); /* span3 -> span4, span5 */
-         span3.appendChild(span5);
-         span2.appendChild(img);  /* span2 -> img, span3 */
-         span2.appendChild(span3);
-         span1.appendChild(span2); /* span1 -> span2, span6 */
-         span1.appendChild(span6);
-         a1.appendChild(span1);  /* a1->span1 */
-         a1.appendChild(divisor);
-
-         return a1; //regresamos el elemento.
+         return li; //regresamos el elemento.
      }
  }
